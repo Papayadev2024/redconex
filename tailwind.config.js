@@ -164,10 +164,9 @@ export default {
             zIndex: {
                 60: '60',
             },
-            // animation: {
-            //     bounce: 'bounce 1s infinite',
-            //     thrice: 'bounce 1s forwards',
-            // },
+            animation: {
+                spin_slow: 'spin 8s linear infinite',
+            },
         },
     },
 

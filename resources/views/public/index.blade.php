@@ -110,7 +110,7 @@
 
                                             @if ($slide->link1)
                                                 <div class="flex flex-col justify-center items-start font-gotham_bold group">
-                                                    <a href="{{$slide->link1}}" class="group-hover:animate-bounce group-hover:animate-thrice">
+                                                    <a href="{{$slide->link1}}" class=" ">
                                                         <div class="bg-[#E29720] px-5 py-3 rounded-full tracking-normal ">
                                                             <p class="leading-none text-[#21149E]">{{$slide->botontext1 ?? "Ingrese texto"}}</p>
                                                         </div>
@@ -148,7 +148,7 @@
                                         </div>
                                     </div> 
                                     <div class="absolute top-10 right-[8%] lg:flex hidden group">
-                                        <div class="flex flex-col justify-center items-start font-gotham_bold  group-hover:animate-bounce group-hover:animate-thrice">
+                                        <div class="flex flex-col justify-center items-start font-gotham_bold   ">
                                             <a target="_blank" href="https://api.whatsapp.com/send?phone={{ $general[0]->whatsapp }}&text={{ $general[0]->mensaje_whatsapp }}">
                                                 <div class="bg-[#E29720] px-5 py-3 rounded-full tracking-normal">
                                                     <p class="leading-none text-[#21149E]">Habla con nosotros</p>
@@ -188,7 +188,7 @@
                                                     {{$complemento->title}}
                                                 </h2>
                                                 <div class="flex flex-row w-full group">
-                                                    <a target="_blank" href="https://api.whatsapp.com/send?phone={{ $general[0]->whatsapp }}&text=Ya soy cliente y me interesa: *{{ $complemento->title }}* " class="group-hover:animate-bounce group-hover:animate-thrice bg-[#E29720] px-7 py-2 rounded-full text-[#21149E] text-center font-gotham_bold w-full"><span>Pídelo aquí</span></a>
+                                                    <a target="_blank" href="https://api.whatsapp.com/send?phone={{ $general[0]->whatsapp }}&text=Ya soy cliente y me interesa: *{{ $complemento->title }}* " class="  bg-[#E29720] px-7 py-2 rounded-full text-[#21149E] text-center font-gotham_bold w-full"><span>Pídelo aquí</span></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -243,7 +243,7 @@
                                 :class="selected === index 
                                     ? 'bg-[#E29720] text-[#110B79]' 
                                     : 'bg-white bg-opacity-10 text-white'" 
-                                class="px-5 py-2.5 rounded-full tracking-normal cursor-pointer group-hover:animate-bounce group-hover:animate-thrice" 
+                                class="px-5 py-2.5 rounded-full tracking-normal cursor-pointer  " 
                             >
                                 <p class="leading-none text-sm sm:text-base" x-text="cat.name"></p>
                             </div>
@@ -293,8 +293,8 @@
                         <div class="swiper-wrapper">   
                             <template x-for="producto in filteredProducts" :key="producto.id">
                                 <div class="swiper-slide my-auto" >
-                                    <div class="flex flex-col gap-3 max-w-[390px] bg-white hover:bg-[#1EA7A2] bg-opacity-10 p-6 rounded-3xl mx-auto">
-                                        
+                                    <div class=" max-w-[390px] bg-white hover:bg-[#1EA7A2] bg-opacity-10  mx-auto  rounded-3xl overflow-hidden">
+                                      <div class="flex flex-col p-6 gap-3 relative"> 
                                         <div class="flex flex-row w-full">
                                             <a class="bg-[#E29720] px-4 py-2 rounded-xl text-[#21149E] text-center font-gotham_bold w-auto line-clamp-2 ">
                                                 <span x-text="producto.producto"></span>
@@ -317,6 +317,14 @@
                                             alt="Imagen producto" 
                                         />
 
+                                        <div class="absolute right-3 md:right-3 top-1/3 -translate-y-1/3 "
+                                            x-show="producto.destacar === 1">
+                                            <img class="w-24 h-24 md:w-28 md:h-28 rounded-full object-contain animate-spin_slow" 
+                                                src="{{ asset('images/img/destacado.png') }}" 
+                                                alt="Imagen producto" 
+                                            />
+                                        </div>
+
                                         <meta name="csrf-token" content="{{ csrf_token() }}">
 
                                         <div class="flex flex-col gap-3 justify-center items-start">
@@ -337,6 +345,7 @@
                                             <span class="font-gotham_book text-xs text-white">Al seleccionar, acepta Términos y Condiciones.</span>
                                         </div>
                                     </div>
+                                  </div>
                                 </div>
                             </template>
                         </div>

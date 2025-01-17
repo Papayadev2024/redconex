@@ -618,7 +618,14 @@ class ProductsController extends Controller
   }
 
   public function updateVisible(Request $request)
-  {
+  { 
+
+    // $cantidad = $this->contardestacados();
+
+    // if($cantidad >= 1 && $request->status == 1){
+    //     return response()->json(['message' => 'Solo puedes destacar un producto'], 409 );
+    // }
+
     $id = $request->id;
     $field = $request->field;
     $status = $request->status;
@@ -636,6 +643,14 @@ class ProductsController extends Controller
     ]);
     return response()->json(['message' => 'registro actualizado']);
   }
+
+
+  public function contardestacados(){
+
+    $cantidad = Products::where('status', '=', 1)->where('visible', '=', 1)->where('destacar', '=', 1)->count();
+    return  $cantidad;
+  }
+
 
   public function borrarimg(Request $request){
     try {
