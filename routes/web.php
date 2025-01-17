@@ -23,6 +23,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\CertificadosController;
 use App\Http\Controllers\CollectionController;
+use App\Http\Controllers\ContactoViewController;
 use App\Http\Controllers\CotizacionController;
 use App\Http\Controllers\DescargablesController;
 use App\Http\Controllers\FaqsController;
@@ -155,6 +156,7 @@ Route::middleware(['auth:sanctum', 'verified', 'can:Admin'])->group(function () 
         //Datos Generales
         Route::resource('/datosgenerales', GeneralController::class);
         Route::resource('/homeview', HomeViewController::class);
+        Route::resource('/contactoview', ContactoViewController::class);
         Route::resource('/nosotrosview', NosotrosViewController::class);
         Route::resource('/innovacionesview', InnovacionViewController::class);
         Route::resource('/productosview', ProductosViewController::class);

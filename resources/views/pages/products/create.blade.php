@@ -406,7 +406,7 @@
 
                     <h2 class="font-semibold text-slate-800 dark:text-slate-100 text-2xl tracking-tight">
 
-                        Agregar nuevo producto
+                        Agregar servicio
                     </h2>
                 </header>
                 <div class="flex flex-col gap-2 p-3 ">
@@ -520,7 +520,7 @@
                                     </div>
 
                                     <div class="md:col-span-5">
-                                        <label for="especificacion">Especificación</label>
+                                        <label for="especificacion">Caracteristica (De un salto de linea por cada caracteristica)</label>
                                         <div class="relative mb-2 mt-2">
                                             {{-- <x-textarea name="especificacion" value="" rows="2" /> --}}
                                             <textarea class="ckeditor" id="especificacion" name="especificacion"></textarea>
@@ -1113,13 +1113,13 @@
 
                     <div class="md:col-span-5 text-right mt-6 flex justify-between px-4 pb-4">
                         <div class="inline-flex items-end">
-                            <a href="{{ URL::previous() }}"
+                            <a href="{{ route('products.index') }}"
                                 class="bg-red-500 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded">Volver</a>
                         </div>
                         <div class="inline-flex items-end">
                             <button type="submit"
                                 class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
-                                Guardar producto
+                                Guardar 
                             </button>
                         </div>
                     </div>

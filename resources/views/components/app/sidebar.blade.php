@@ -295,7 +295,7 @@
         <x-menu.item id="category" href="{{ route('categorias.index') }}" icon="fas fa-list-alt">Categorías</x-menu.item>
         {{-- <x-menu.item id="subcategory" href="{{ route('subcategorias.index') }}" icon="fas fa-list-alt">Subcategorías</x-menu.item> --}}
         {{-- <x-menu.item id="microcategory" href="{{ route('microcategorias.index') }}" icon="fas fa-list-alt">Microcategorías</x-menu.item> --}}
-        <x-menu.item id="product" href="{{ route('products.index') }}" icon="fas fa-pager">Productos</x-menu.item>
+        <x-menu.item id="product" href="{{ route('products.index') }}" icon="fas fa-pager">Servicios</x-menu.item>
       </x-menu.group>
 
       <!-- PRODUCTOS -->

@@ -1,4 +1,4 @@
-<x-app-layout title="Editar Producto">
+<x-app-layout title="Editar Servicio">
     @section('css')
         <link rel="stylesheet" href="{{ asset('/css/vendor/dropzone.min.css') }}" />
     @endsection
@@ -509,7 +509,7 @@
                                     </div>
                                     
                                     <div class="md:col-span-5">
-                                        <label for="especificacion">Especificación</label>
+                                        <label for="especificacion">Caracteristica (De un salto de linea por cada caracteristica)</label>
                                         <div class="relative mb-2 mt-2"> 
                                             {{-- <x-textarea name="especificacion" value="{!! $product->especificacion !!}" /> --}}
                                             <textarea class="ckeditor" id="especificacion" name="especificacion">{!! $product->especificacion !!}</textarea>

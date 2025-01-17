@@ -71,6 +71,12 @@
                         <i class="fa-brands fa-instagram text-xl"></i>
                     </a>
                 @endif
+                @if ($general[0]->youtube)
+                    <a href="{{ $general[0]->youtube }}" target="_blank"
+                        class="flex justify-start items-center gap-2 text-white font-roboto font-normal text-text14">
+                        <i class="fa-brands fa-youtube text-xl"></i>
+                    </a>
+                @endif
                 @if ($general[0]->twitter)
                     <a href="{{ $general[0]->twitter }}" target="_blank"
                         class="flex justify-start items-center gap-2 text-white font-roboto font-normal text-text14">

@@ -149,7 +149,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="md:col-span-5">
+                                                    {{-- <div class="md:col-span-5">
                                                         <label for="mapa">Url de mapa google</label>
                                                         <div class="relative mb-2 ">
                                                             <div
@@ -170,7 +170,7 @@
                                                                 class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                                 placeholder="Url de google maps">
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
 
                                                     <div class="md:col-span-2">
                                                         <label for="email">Correo electrónico</label>
@@ -242,7 +242,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="md:col-span-5">
+                                                    {{-- <div class="md:col-span-5">
                                                         <div class="grid grid-cols-1 gap-5">
                                                             <div class="mt-2">
                                                                 <div class=" flex items-end justify-between gap-2 ">
@@ -373,10 +373,10 @@
                                                             @endforeach    
                                                             </div>       
                                                        </div>
-                                                    </div>
+                                                    </div> --}}
 
 
-                                                    <div class="md:col-span-2">
+                                                    {{-- <div class="md:col-span-2">
                                                         <label for="support_one">Nombre de soporte 1</label>
                                                         <div class="relative mb-2">
                                                             <div
@@ -397,9 +397,9 @@
                                                                 class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                                 placeholder="Nombre de soporte 1">
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
 
-                                                    <div class="md:col-span-3">
+                                                    <div class="md:col-span-2">
                                                         <label for="whatsapp">Whatsapp de soporte 1 (sin
                                                             guiones)</label>
                                                         <div class="relative mb-3">
@@ -423,7 +423,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <div class="md:col-span-2">
+                                                    {{-- <div class="md:col-span-2">
                                                         <label for="support_two">Nombre de soporte 2</label>
                                                         <div class="relative mb-2">
                                                             <div
@@ -444,9 +444,9 @@
                                                                 class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                                 placeholder="Nombre de soporte 2">
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
                                                     
-                                                    <div class="md:col-span-3">
+                                                    {{-- <div class="md:col-span-3">
                                                         <label for="whatsapp">Whatsapp de soporte 2 (sin
                                                             guiones)</label>
                                                         <div class="relative mb-3">
@@ -468,10 +468,10 @@
                                                                 class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                                 placeholder="+51987654321">
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
 
 
-                                                    <div class="md:col-span-5">
+                                                    <div class="md:col-span-3">
                                                         <label for="mensaje_whatsapp">Mensaje predeterminado para
                                                             Whastapp</label>
                                                         <div class="relative mb-2">
