@@ -10,8 +10,8 @@
 
   <section class="flex flex-row justify-start items-center px-[5%] xl:px-[10%] pt-10 lg:pt-16 gap-6 relative">
       <div class="flex flex-col gap-1 max-w-xl text-left">
-        <h3 class="font-gotham_bold text-white text-lg " data-aos="fade-down">Contacto</h3>
-        <h2 class="font-gotham_bold text-white text-4xl lg:text-5xl" data-aos="fade-down">Tienes dudas? Pongase en <span class="text-[#E29720]">contacto</span></h2>
+        <h3 class="font-gotham_bold text-white text-lg " data-aos="fade-down">{{$textoscontacto->subtitle1section ?? "Ingrese texto"}}</h3>
+        <h2 class="font-gotham_bold text-white text-4xl lg:text-5xl" data-aos="fade-down">{{$textoscontacto->title1section ?? "Ingrese texto"}} <span class="text-[#E29720]">{{$textoscontacto->title1section2}}</span></h2>
       </div>
   </section>
 
@@ -59,8 +59,8 @@
           <div class="flex flex-col justify-center items-start gap-4">
                   
                   
-                  <h3 class="font-gotham_bold text-white text-2xl" data-aos="fade-down">¿Quieres contactar con nosotros directamente?</h3>
-                  <p class="font-gotham_book text-white text-base " data-aos="fade-down">Nullam vehicula lobortis mauris vel finibus. Nulla et auctor augue. Cras ex tortor, suscipit vel egestas non, malesuada dictum nisl.</p>
+                  <h3 class="font-gotham_bold text-white text-2xl" data-aos="fade-down">{{$textoscontacto->title2section ?? "Ingrese texto"}}</h3>
+                  <p class="font-gotham_book text-white text-base " data-aos="fade-down">{{$textoscontacto->description2section ?? "Ingrese texto"}}</p>
 
                   
 
@@ -153,7 +153,7 @@
 
                   <div class="flex flex-col items-center justify-center gap-5">
                       <div class="flex flex-col gap-1 max-w-3xl text-center" data-aos="fade-down">
-                          <h2 class="font-gotham_bold text-white text-4xl lg:text-5xl leading-none"> Revisa nuestras <span class="text-[#21149E]">preguntas frecuentes</span></h2>
+                          <h2 class="font-gotham_bold text-white text-4xl lg:text-5xl leading-none"> {{$textoscontacto->title3section ?? "Ingrese texto"}} <span class="text-[#21149E]">{{$textoscontacto->title3section2}}</span></h2>
                       </div> 
                       
                       <div class="grid w-full divide-y divide-neutral-200 bg-[#21149E] px-6 py-2 rounded-2xl" data-aos="fade-down">

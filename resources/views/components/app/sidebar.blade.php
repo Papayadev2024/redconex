@@ -93,6 +93,10 @@
             Textos - Nosotros
           </x-menu.item>
 
+          <x-menu.item id="contactoview" href="{{ route('contactoview.edit', 1) }}" icon="fas fa-address-card">
+            Textos - Contacto
+          </x-menu.item>
+
           {{-- <x-menu.item id="innovaciones" href="{{ route('innovacionesview.edit', 1) }}" icon="fas fa-address-card">
             Textos - Innovacion
           </x-menu.item> --}}
