@@ -54,7 +54,7 @@
     <div
         class="flex flex-col items-start gap-3 md:flex-row md:justify-between md:items-center w-full px-[5%] lg:px-[10%] py-5 bg-cover"
         style="background-image:url({{asset('images/img/footerbarra.png')}})">
-        <a href="#" target="_blank" class="text-white font-gotham_medium  text-sm text-center">Copyright &copy; 2024 Cadmo Soluciones.
+        <a href="#" target="_blank" class="text-white font-gotham_medium  text-sm text-center">Copyright &copy; 2025 Redconex Soluciones.
             Reservados todos los derechos</a>
        
         <div class="flex justify-start items-center gap-5 mx-auto sm:mx-0">
