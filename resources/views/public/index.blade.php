@@ -149,7 +149,7 @@
                                                 </p>
 
                                                 <p class="text-[#F07407] text-3xl xl:text-4xl font-gotham_bold w-full">
-                                                    +51 9458734355
+                                                    {{$general[0]->whatsapp}}
                                                 </p>
 
                                                 <p class="text-white text-base font-gotham_bold w-full leading-tight">

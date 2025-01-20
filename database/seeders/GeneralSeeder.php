@@ -14,26 +14,26 @@ class GeneralSeeder extends Seeder
     public function run(): void
     {
         General::create([
-            'address' => 'Av. Aramburu 1506',
-            'inside' => 'Oficina 404 - Piso 4',
-            'district' => 'Miraflores',
+            'address' => 'Ventanilla',
+            'inside' => 'Mz. G1 Lt. 16',
+            'district' => 'Mi Perú',
             'schedule' => "De Lunes a Viernes de 9:00am a 6:00pm y Sábados de 9:00am a 1:00pm",
             'city' => 'Lima',
             'country' => 'Perú',
-            'cellphone' => '01-6556920' ,
+            'cellphone' => '+51902556583' ,
             'office_phone' => '01-6556922' ,
-            'email' => 'ventas@hpi.com.pe',
-            'facebook' => 'https://www.facebook.com/people/Hydrotech-Pru-Import-EIRL/100063724503852/',
-            'instagram' => 'https://www.instagram.com/hpi_peru/?hl=es',
-            'youtube' => 'https://www.youtube.com/channel/UCxsk5-MS66lyPUWiV16ZbLg',
+            'email' => 'ventas@redconex.pe',
+            'facebook' => 'https://www.facebook.com/REDCONEXCONTIGO',
+            'instagram' => 'https://www.instagram.com/redconexcontigo?igsh=MWFpYWpnNmM3cHVleQ%3D%3D&utm_source=qr',
+            'youtube' => '',
             'twitter' => '',
-            'tiktok' => 'https://www.tiktok.com/@hydrotech.peru',
-            'linkedin' => 'https://www.linkedin.com/company/hydrotech-peru-import-hpi/',
-            'whatsapp' => '51992262598' ,
-            'form_email' => 'ventas@hpi.com.pe',
+            'tiktok' => 'https://www.tiktok.com/@redconex.peru?_t=ZM-8t9PHlaLJcD&_r=1',
+            'linkedin' => '',
+            'whatsapp' => '+51902556583' ,
+            'form_email' => 'ventas@redconex.pe',
             'business_hours' => 'horas',
             'mensaje_whatsapp' => 'Hola estamos atentos a lo que ud desee',
-            'aboutus' => 'Dommine se encuentra interesado en ti. Si deseas tener más información sobre nuestros productos y promociones, entonces completa el siguiente formulario para contactarte o ten en cuenta nuestra ubicación, número telefónico y dirección de correo electrónico.'
+            'aboutus' => ''
 
         ]);
     }

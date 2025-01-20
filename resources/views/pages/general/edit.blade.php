@@ -668,7 +668,7 @@
                                                         </div>
                                                     </div>
 
-                                                    <h2
+                                                    {{-- <h2
                                                         class="md:col-span-5 text-lg font-semibold text-slate-800 mt-2 dark:text-white">
                                                         Descripción de la empresa</h2>
 
@@ -678,7 +678,7 @@
                                                             <x-textarea name="aboutus"
                                                                 value="{!! $general->aboutus !!}" />
                                                         </div>
-                                                    </div>
+                                                    </div> --}}
                                                     <!-- <div class="md:col-span-2">
                                             <label for="city">City</label>
                                             <input type="text" name="city" id="city" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="" />
