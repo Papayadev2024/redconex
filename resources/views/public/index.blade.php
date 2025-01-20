@@ -83,6 +83,15 @@
         .blocker{
             z-index: 50!important;
         }
+
+        .comment.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .comment {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
     </style>
 
 @stop
@@ -110,23 +119,25 @@
 
                                             @if ($slide->link1)
                                                 <div class="flex flex-col justify-center items-start font-gotham_bold group">
+                                                    
                                                     <a href="{{$slide->link1}}" class=" ">
                                                         <div class="bg-[#E29720] px-5 py-3 rounded-full tracking-normal ">
-                                                            <p class="leading-none text-[#21149E]">{{$slide->botontext1 ?? "Ingrese texto"}}</p>
+                                                            <p class="leading-none text-[#21149E] text-base 2xl:text-xl">{{$slide->botontext1 ?? "Ingrese texto"}}</p>
                                                         </div>
                                                     </a>
+
                                                 </div> 
                                             @endif
                                            
 
                                             <div class="grid grid-cols-2 md:grid-cols-3 font-gotham_bold  gap-3 lg:gap-5 max-w-2xl">
                                                 <div class="flex flex-col justify-center">
-                                                    <span class="text-[#1EA7A2] text-3xl xl:text-5xl">100%</span>
-                                                    <h2 class="text-white text-sm sm:text-base xl:text-lg">Red fibra óptica</h2>
+                                                    <span class="text-[#1EA7A2] text-3xl xl:text-5xl">{{$textoshome->subtitle1section ?? "Ingrese texto"}}</span>
+                                                    <h2 class="text-white text-sm sm:text-base xl:text-lg">{{$textoshome->title1section ?? "Ingrese texto"}}</h2>
                                                 </div>
                                                 <div class="flex flex-col justify-center">
-                                                    <span class="text-[#1EA7A2] text-3xl xl:text-5xl">24/7</span>
-                                                    <h2 class="text-white text-sm sm:text-base xl:text-lg">Atención permanente</h2>
+                                                    <span class="text-[#1EA7A2] text-3xl xl:text-5xl">{{$textoshome->subtitle2section ?? "Ingrese texto"}}</span>
+                                                    <h2 class="text-white text-sm sm:text-base xl:text-lg">{{$textoshome->title2section ?? "Ingrese texto"}}</h2>
                                                 </div>
                                             </div>
                                             
@@ -134,7 +145,7 @@
                                         <div class="z-20 w-full lg:w-1/3 2xl:w-1/2 flex flex-col justify-end items-start lg:items-end">
                                             <div class="flex flex-col items-start justify-center  gap-1 z-10 text-left md:text-right bg-black bg-opacity-50 p-5 rounded-2xl w-full sm:w-auto" data-aos="zoom-in-up">
                                                 <p class="text-white text-base font-gotham_bold w-full leading-tight">
-                                                    Llámanos al
+                                                    {{$textoshome->subtitle3section ?? "Ingrese texto"}}
                                                 </p>
 
                                                 <p class="text-[#F07407] text-3xl xl:text-4xl font-gotham_bold w-full">
@@ -142,7 +153,7 @@
                                                 </p>
 
                                                 <p class="text-white text-base font-gotham_bold w-full leading-tight">
-                                                    y escoge tu plan ahora
+                                                    {{$textoshome->title3section ?? "Ingrese texto"}}
                                                 </p>
                                             </div>
                                         </div>
@@ -151,7 +162,7 @@
                                         <div class="flex flex-col justify-center items-start font-gotham_bold   ">
                                             <a target="_blank" href="https://api.whatsapp.com/send?phone={{ $general[0]->whatsapp }}&text={{ $general[0]->mensaje_whatsapp }}">
                                                 <div class="bg-[#E29720] px-5 py-3 rounded-full tracking-normal">
-                                                    <p class="leading-none text-[#21149E]">Habla con nosotros</p>
+                                                    <p class="leading-none text-[#21149E] text-base 2xl:text-xl">Habla con nosotros</p>
                                                 </div>
                                             </a>
                                         </div>
@@ -172,7 +183,7 @@
                     
                     <div class="w-full sm:w-full md:w-1/3  xl:w-1/4 flex flex-col justify-center" data-aos="fade-down">
                         <h2 class="font-gotham_bold text-4xl text-white text-left">
-                            ¿Eres cliente Redconex?
+                            {{$textoshome->title4section ?? "Ingrese texto"}}
                         </h2>
                     </div>
 
@@ -217,8 +228,8 @@
            
           <div class="px-[5%]  flex flex-col items-center justify-center gap-5">
             <div class="flex flex-col gap-1 max-w-xl text-center" data-aos="fade-down">
-                <h3 class="font-gotham_bold text-white text-lg ">Descrubre tu Plan Ideal</h3>
-                <h2 class="font-gotham_bold text-white text-4xl lg:text-5xl">Elige el <span class="text-[#E29720]">Plan de Internet</span> que se Ajusta a Ti</h2>
+                <h3 class="font-gotham_bold text-white text-lg ">{{$textoshome->subtitle5section ?? "Ingrese texto"}}</h3>
+                <h2 class="font-gotham_bold text-white text-4xl lg:text-5xl">{{$textoshome->title5section ?? "Ingrese texto"}} <span class="text-[#E29720]">{{$textoshome->title5section2 ?? "Ingrese texto"}}</span> {{$textoshome->title5section3 ?? "Ingrese texto"}}</h2>
             </div>
             
             {{-- <div x-data="{ selected: 0 }" class="flex flex-row gap-3 justify-center items-start font-gotham_medium">
@@ -379,8 +390,8 @@
 
                     <div class="w-full sm:w-full lg:w-2/3 flex flex-col justify-center gap-5 md:gap-10">
                         <div class="flex flex-col gap-1 max-w-2xl text-center mx-auto" data-aos="fade-down">
-                            <h3 class="font-gotham_bold text-white text-lg ">Zonas de Cobertura</h3>
-                            <h2 class="font-gotham_bold text-white text-4xl xl:text-5xl">Conoce las <span class="text-[#E29720]">áreas con nuestra conexión</span>  de alta velocidad.</h2>
+                            <h3 class="font-gotham_bold text-white text-lg ">{{$textoshome->subtitle6section ?? "Ingrese texto"}}</h3>
+                            <h2 class="font-gotham_bold text-white text-4xl xl:text-5xl">{{$textoshome->title6section ?? "Ingrese texto"}} <span class="text-[#E29720]">{{$textoshome->title6section2 ?? "Ingrese texto"}}</span>  {{$textoshome->title6section3 ?? "Ingrese texto"}}</h2>
                         </div> 
                         <div>
                             <img id="imagen-zona" data-aos="fade-down" class="rounded-2xl overflow-hidden h-52 md:h-96 w-full object-cover transition-opacity duration-300 opacity-100" src="{{asset($zona->url_image . $zona->name_image)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';" />
@@ -397,9 +408,9 @@
                     
                     <div class="w-full sm:w-full lg:w-1/2  flex flex-col justify-center">
                         <div class="flex flex-col gap-3 max-w-2xl text-left mx-auto" data-aos="fade-down">
-                            <h3 class="font-gotham_bold text-white text-lg ">Sobre Nosotros</h3>
-                            <h2 class="font-gotham_bold text-white text-4xl xl:text-5xl">¡Conéctate al Futuro con<span class="text-[#21149E]"> Red Conex.</span> La Mejor Velocidad en Internet que Puedes Imaginar!</h2>
-                            <p class="font-gotham_book text-white text-base ">¡Bienvenido a Red Conex, tu mejor aliado para una conexión de internet inigualable! Con más de [número de años en el mercado] años de experiencia, estamos aquí para transformar tu experiencia digital con planes de internet de alta velocidad que se adaptan a ti.</p>
+                            <h3 class="font-gotham_bold text-white text-lg ">{{$textoshome->subtitle7section ?? "Ingrese texto"}}</h3>
+                            <h2 class="font-gotham_bold text-white text-4xl xl:text-5xl">{{$textoshome->title7section ?? "Ingrese texto"}}<span class="text-[#21149E]"> {{$textoshome->title7section2 ?? "Ingrese texto"}}</span> {{$textoshome->title7section3 ?? "Ingrese texto"}}</h2>
+                            <p class="font-gotham_book text-white text-base ">{{$textoshome->description7section ?? "Ingrese texto"}}</p>
                         </div>   
                     </div>
 
@@ -411,11 +422,33 @@
                                         <div class="swiper-slide">
                                             <div class="flex flex-col justify-center">
                                                 <div class="relative max-w-md mx-auto  xl:ml-auto mt-6 lg:mt-12">
-                                                    <img class="rounded-3xl overflow-hidden h-[400px] w-72 object-cover " src="{{asset($testimonio->ocupation)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';" />
-                                                    <div class="bg-[#21149E] p-4 rounded-2xl max-w-[300px] md:max-w-[370px] absolute -bottom-12 left-5 -right-14 md:-right-1/2">
-                                                        <p class="font-gotham_book text-white text-base line-clamp-[7]">{{$testimonio->testimonie}}</p>
-                                                        <h3 class="font-gotham_bold text-white text-base text-right mt-1">{{$testimonio->name}}</h3>
-                                                    </div>
+                                                    
+                                                    @if ($testimonio->email)
+                                                        
+                                                        <div class="group w-72 h-[400px] rounded-3xl overflow-hidden relative video-container" controls>
+                                                                <div class="absolute top-0 left-0 size-full poster-container">
+                                                                    <img class="w-full h-full object-cover size-full" src="{{ asset($testimonio->ocupation) }}" onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';"/>
+                                                                </div>
+                                                                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 play-icon-container cursor-pointer group-hover:scale-110 transition-transform duration-300"><img src="{{ asset('images/img/iconoplay.png') }}"/></div>
+                                                                {{-- <source src="https://www.youtube.com/embed/{{ $testimonio->url_video }}" type="video/mp4"> --}}
+                                                                <iframe class="youtube-video w-full h-full hidden" width="100%" height="100%" src="https://www.youtube.com/embed/{{ $testimonio->email }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                                Your browser does not support the video tag.
+                                                        </div>
+                                                        <div class="bg-[#21149E] p-4 rounded-2xl max-w-[300px] md:max-w-[370px] absolute -bottom-12 left-5 -right-14 md:-right-1/2">
+                                                                {{-- <p class="font-gotham_book text-white text-base line-clamp-[7]">{{$testimonio->testimonie}}</p> --}}
+                                                                <h3 class="font-gotham_bold text-white text-base text-right mt-1">{{$testimonio->name}}</h3>
+                                                        </div>
+                                                        
+                                                    @else
+                                                        <div>
+                                                            <img class="rounded-3xl overflow-hidden h-[400px] w-72 object-cover " src="{{asset($testimonio->ocupation)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';" />
+                                                            <div class="bg-[#21149E] p-4 rounded-2xl max-w-[300px] md:max-w-[370px] absolute -bottom-12 left-5 -right-14 md:-right-1/2">
+                                                                <p class="font-gotham_book text-white text-base line-clamp-[7]">{{$testimonio->testimonie}}</p>
+                                                                <h3 class="font-gotham_bold text-white text-base text-right mt-1">{{$testimonio->name}}</h3>
+                                                            </div>
+                                                        </div>
+                                                    @endif
+
                                                 </div>
                                             </div>
                                         </div>
@@ -434,7 +467,7 @@
            
           <div class="px-[5%] flex flex-col items-center justify-center gap-5">
             <div class="flex flex-col gap-1 max-w-3xl text-center" data-aos="fade-down">
-                <h2 class="font-gotham_bold text-white text-4xl lg:text-5xl">¡Los Mejores <span class="text-[#E29720]">Planes de Internet</span> para Tu Hogar Te Esperan!</h2>
+                <h2 class="font-gotham_bold text-white text-4xl lg:text-5xl">{{$textoshome->title8section ?? "Ingrese texto"}} <span class="text-[#E29720]">{{$textoshome->title8section2 ?? "Ingrese texto"}}</span> {{$textoshome->title8section3 ?? "Ingrese texto"}}</h2>
             </div>  
           </div>
 
@@ -459,8 +492,8 @@
                 <div class="bg-[#1EA7A2]  rounded-3xl overflow-hidden flex flex-col lg:flex-row lg:justify-between gap-0 md:gap-10" data-aos="zoom-in-up">
                     <div class="flex flex-col gap-3 w-full lg:w-1/2 p-6 2xl:p-8 lg:max-w-xl  order-2 lg:order-1">
                         <div class="flex flex-col gap-1 text-left">
-                            <h3 class="font-gotham_bold text-white text-lg ">¡Se parte de la experiencia Red Conex!</h3>
-                            <h2 class="font-gotham_bold text-white text-3xl leading-none">¡Déjanos tu correo y recibe la mejor info!</h2>
+                            <h3 class="font-gotham_bold text-white text-lg ">{{$textoshome->subtitle9section ?? "Ingrese texto"}}</h3>
+                            <h2 class="font-gotham_bold text-white text-3xl leading-none">{{$textoshome->title9section ?? "Ingrese texto"}}</h2>
                         </div> 
                         <form id="footerBlog_Catalogo">
                             @csrf
@@ -500,7 +533,7 @@
                 <div class="px-[5%] md:px-[10%] flex flex-col gap-5 md:gap-10">
                     @if (count($posts) > 0)
                         <div class="flex flex-col justify-start gap-3 md:flex-row md:justify-between w-full md:items-center" data-aos="fade-down">
-                            <h2 class="font-gotham_bold text-white text-4xl lg:text-5xl">Nuestras últimas <br><span class="text-[#21149E]"> publicaciones</span></h2>
+                            <h2 class="font-gotham_bold text-white text-4xl lg:text-5xl">{{$textoshome->subtitle10section ?? "Ingrese texto"}} <br><span class="text-[#21149E]"> {{$textoshome->title10section ?? "Ingrese texto"}}</span></h2>
                             <div class="flex flex-row">
                                 <a href="{{ route('blog.all') }}">
                                     <div class="bg-[#E29720] text-[#110B79] rounded-3xl px-6 py-2 text-lg font-gotham_bold">
@@ -539,7 +572,7 @@
                     @if (count($faqs) > 0)
                         <div class="flex flex-col items-center justify-center gap-5">
                             <div class="flex flex-col gap-1 max-w-3xl text-center" data-aos="fade-down">
-                                <h2 class="font-gotham_bold text-white text-4xl lg:text-5xl leading-none"> Todo lo que debes saber de <span class="text-[#21149E]">nuestros planes</span></h2>
+                                <h2 class="font-gotham_bold text-white text-4xl lg:text-5xl leading-none"> {{$textoshome->subtitle11section ?? "Ingrese texto"}} <span class="text-[#21149E]">{{$textoshome->title11section ?? "Ingrese texto"}}</span></h2>
                             </div> 
                             
                             <div class="grid w-full divide-y divide-neutral-200 bg-[#21149E] px-6 py-2 rounded-2xl" data-aos="fade-down">
@@ -888,7 +921,7 @@
     
 
 @section('scripts_importados')
-    
+
     <script>   
         $('#modalformcotizar').submit(function(event) {
             event.preventDefault();
@@ -1286,12 +1319,62 @@
         });
 
 
-        var swiper = new Swiper(".testimonios", {
-            slidesPerView: 1,
-            spaceBetween: 15,
-            loop: true,
-            centeredSlides: false,
+        document.addEventListener('DOMContentLoaded', () => {
+            // Selecciona todas las instancias de videos
+            const videoContainers = document.querySelectorAll('.video-container');
+
+            videoContainers.forEach(container => {
+                const playIcon = container.querySelector('.play-icon-container');
+                const poster = container.querySelector('.poster-container');
+                const iframe = container.querySelector('.youtube-video');
+
+                playIcon.addEventListener('click', () => {
+                    // Oculta el ícono y el póster
+                    playIcon.style.display = 'none';
+                    poster.style.display = 'none';
+
+                    // Muestra el video
+                    iframe.classList.remove('hidden');
+
+                    // Agrega autoplay al iframe
+                    const src = iframe.getAttribute('src');
+                    iframe.setAttribute('src', src + (src.includes('?') ? '&autoplay=1' : '?autoplay=1'));
+                });
+            });
+
+            // Inicializar Swiper
+            const swiper = new Swiper(".testimonios", {
+                slidesPerView: 1,
+                spaceBetween: 15,
+                loop: true,
+                centeredSlides: false,
+                on: {
+                    slideChange: function () {
+                        pauseVideos();
+                    },
+                },
+            });
+
+            // Pausar los videos al cambiar de diapositiva
+            function pauseVideos() {
+                videoContainers.forEach(container => {
+                    const playIcon = container.querySelector('.play-icon-container');
+                    const poster = container.querySelector('.poster-container');
+                    const iframe = container.querySelector('.youtube-video');
+
+                    // Reiniciar iframe src para pausar video
+                    const src = iframe.getAttribute('src');
+                    iframe.setAttribute('src', src.replace(/&?autoplay=1/, ''));
+
+                    // Restaurar ícono y póster
+                    playIcon.style.display = 'flex';
+                    poster.style.display = 'block';
+                    iframe.classList.add('hidden');
+                });
+            }
         });
+
+       
     </script>
 
     <script>

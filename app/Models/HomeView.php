@@ -10,44 +10,50 @@ class HomeView extends Model
     use HasFactory;
     protected $fillable = [
         
+        'subtitle1section', 
         'title1section', 
-        'description1section', 
-        'url_image1section',
-
-        'title2section',
-        'description2section',
-        'url_image2section',
-
-        'title3section',
-        'description3section',
-        'url_image3section',
-
-        'title4section',
-        'description4section',
-        'url_image4section',
-
-        'title5section',
-        'description5section',
-        'url_image5section',
-
-        'title6section',
-        'description6section',
-        'url_image6section',
         
+        'subtitle2section',
+        'title2section',
+
+        'description3section',
+        'title3section',
+       
+        'title4section',
+
+        'subtitle5section',
+        'title5section',
+        'title5section2',
+        'title5section3',
+        
+        'subtitle6section',
+        'title6section',
+        'title6section2',
+        'title6section3',
+        
+        
+
+        'subtitle7section',
         'title7section',
+        'title7section2',
+        'title7section3',
         'description7section',
-        'url_image7section',
+ 
 
         'title8section',
-        'one_description8section',
-        'two_description8section',
-        'url_image8section',
-
+        'title8section2',
+        'title8section3',
 
         'subtitle9section',
         'title9section',
-        'one_description9section',
-        'two_description9section',
+        'url_9section',
+
+        'subtitle10section',
+        'title10section',
+
+        'subtitle11section',
+        'title11section',
+       
 
        
     ];

@@ -65,7 +65,9 @@
             </a>
           </li>
  
-
+          <x-menu.item id="cotizaciones" href="{{ route('cotizaciones') }}" icon="fas fa-address-card">
+            Cotizaciones
+          </x-menu.item>
         
 
           
@@ -85,9 +87,9 @@
           </x-menu.item>
 
 
-          {{-- <x-menu.item id="homeview" href="{{ route('homeview.edit', 1) }}" icon="fas fa-address-card">
+          <x-menu.item id="homeview" href="{{ route('homeview.edit', 1) }}" icon="fas fa-address-card">
             Textos - Home
-          </x-menu.item> --}}
+          </x-menu.item>
 
           <x-menu.item id="sobrenosotros" href="{{ route('nosotrosview.edit', 1) }}" icon="fas fa-address-card">
             Textos - Nosotros
@@ -137,9 +139,7 @@
             Subscripciones
           </x-menu.item>
 
-          <x-menu.item id="cotizaciones" href="{{ route('cotizaciones') }}" icon="fas fa-address-card">
-            Cotizaciones
-          </x-menu.item>
+         
 
           <x-menu.item id="blog" href="{{ route('blog.index') }}" icon="fas fa-address-card">
             Blog

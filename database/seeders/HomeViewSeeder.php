@@ -16,30 +16,46 @@ class HomeViewSeeder extends Seeder
         HomeView::updateOrCreate([
             'id' => 1
         ],[
-            'title1section' => 'Energía Inteligente para la industria',
-            'title2section' => 'Ver productos',
-            'url_image1section' => '/',
-            'description1section' => 'Soluciones de IoT integradas en sistemas de medición de energía de alta precisión.',
-            'description2section' => 'Líderes globales para asegurar solidez',
-            'url_image2section' => 'url_de_la_imagen_2', 
+            'subtitle1section' => '100%',
+            'title1section' => 'Red fibre optica',
 
-            'title3section' => 'Optimizamos procesos de medición energética',
-            'description3section' => 'Logramos eficiencias mediante una asesoría especializada según las necesidades del cliente.',
-            'url_image3section' => 'url_de_la_imagen_3', 
+            'subtitle2section' => '24/7',
+            'title2section' => 'Atención permanente',
 
-            'title4section' => 'Flexible Portfolio',
-            'description4section' => 'Portafolio amplio que incluye empresas líderes en la investigación, desarrollo, fabricación y comercialización de soluciones de gestión de energía tanto medidores de energía, analizadores de redes y calidad de energía, equipos de automatización para subestaciones y software de gestión energética. Cumpliendo con Normas IEC, IEEE, EN, ANSI, entre otras.',
-            'title5section' => 'Powerful team',
-            'description5section' => 'Contamos con un equipo de ingenieros especializados que desarrolla e integra soluciones basadas en el Internet de las cosas (Internet of Things - IoT) para los segmentos de Smart Grid. Smart Energy, Smart Homes y Smart Security.',
-            'url_image4section' => 'url_de_la_imagen_4', 
+            'subtitle3section' => 'Llámanos al',
+            'title3section' => 'y escoge tu plan ahora',
 
+            'title4section' => '¿Eres cliente Redconex?',
 
-            'footer5section' => 'Portafolio de productos',
-            'description7section' => 'Cras quis sapien vel est pharetra porta.',
+            'subtitle5section' => 'Descrubre tu Plan Ideal',
+            'title5section' => 'Elige el',
+            'title5section2' => 'Plan de Internet',
+            'title5section3' => 'que se Ajusta a Ti',
 
-            'title6section' => 'Nuestros datos de contacto',
-            'description6section' => 'Nullam nec orci dui. Praesent tristique facilisis quam, a egestas lorem consectetur fringilla. Suspendisse cursus erat eget ante auctor, non hendrerit ipsum egestas.',
-            'title7section' => 'Ponerse en contacto'
+            'subtitle6section' => 'Zonas de Cobertura',
+            'title6section' => 'Conoce las',
+            'title6section2' => 'areas con nuestra conexión',
+            'title6section3' => 'de alta velocidad.',
+
+            'subtitle7section' => 'Sobre Nosotros',
+            'title7section' => '¡Conéctate al Futuro con',
+            'title7section2' => 'Red Conex.',
+            'title7section3' => 'La Mejor Velocidad en Internet que Puedes Imaginar!',
+            'description7section' => '¡Bienvenido a Red Conex, tu mejor aliado para una conexión de internet inigualable! Con más de [número de años en el mercado] años de experiencia, estamos aquí para transformar tu experiencia digital con planes de internet de alta velocidad que se adaptan a ti.',
+
+            'title8section' => '¡Los Mejores',
+            'title8section2' => 'Planes de Internet',
+            'title8section3' => 'para Tu Hogar Te Esperan!',
+
+            'subtitle9section' => '¡Se parte de la experiencia Red Conex!',
+            'title9section' => '¡Déjanos tu correo y recibe la mejor info!',
+            'url_9section' => '/',
+
+            'subtitle10section' => 'Nuestras últimas',
+            'title10section' => 'publicaciones',
+
+            'subtitle11section' => 'Todo lo que debes saber de',
+            'title11section' => 'nuestros planes',
           
         ]);
     }
