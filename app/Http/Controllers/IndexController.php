@@ -1214,7 +1214,7 @@ class IndexController extends Controller
                   text-align: center;
                   background-image: url(' .
                         $appUrl .
-                        'mail/fondo.png);
+                        '/mail/fondo.png);
                   background-repeat: no-repeat;
                   background-position: center;
                   background-size: cover;
@@ -1236,7 +1236,7 @@ class IndexController extends Controller
                         $appUrl .
                         '" target="_blank" style="text-align:center" ><img src="' .
                         $appUrl .
-                        'mail/logo.png" alt="redconex" /></a>
+                        '/mail/logo.png" alt="redconex" /></a>
                     </th>
                   </tr>
                 </thead>
