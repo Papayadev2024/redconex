@@ -14,19 +14,22 @@
           <table id="tabladatos" class="display text-lg" style="width:100%">
             <thead>
               <tr>
-                <th>Nombre</th>
+                {{-- <th>Nombre</th> --}}
                 <th>Correo</th>
+                <th>Fecha de subscripción</th>
+
               </tr>
             </thead>
             <tbody>
 
               @foreach ($subscripciones as $item)
                 <tr>
-                  <td>
+                  {{-- <td>
                     {{ $item->nombre }}
 
-                  </td>
+                  </td> --}}
                   <td>{{ $item->email }}</td>
+                  <td>{{ $item->created_at->format('Y-m-d') }}</td>
                   {{-- <td>{{ $item->phone }}</td> --}}
                   {{-- <td>
                     <form action=" " method="POST">
@@ -43,8 +46,9 @@
             </tbody>
             <tfoot>
               <tr>
-                <th>Nombre</th>
+                {{-- <th>Nombre</th> --}}
                 <th>Correo</th>
+                <th>Fecha de subscripción</th>
               </tr>
             </tfoot>
           </table>

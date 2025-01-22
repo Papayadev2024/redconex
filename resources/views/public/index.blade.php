@@ -246,7 +246,7 @@
                     @endforeach
             </div> --}}
 
-            <div class="flex flex-row gap-3 justify-center items-start font-gotham_medium" data-aos="fade-down">
+            <div id="planes" class="flex flex-row gap-3 justify-center items-start font-gotham_medium" data-aos="fade-down">
                 <template x-for="(cat, index) in categories" :key="index">
                         <div class="group">
                             <div 
@@ -432,7 +432,7 @@
                                                                 <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 play-icon-container cursor-pointer group-hover:scale-110 transition-transform duration-300"><img src="{{ asset('images/img/iconoplay.png') }}"/></div>
                                                                 {{-- <source src="https://www.youtube.com/embed/{{ $testimonio->url_video }}" type="video/mp4"> --}}
                                                                 <iframe class="youtube-video w-full h-full hidden" width="100%" height="100%" src="https://www.youtube.com/embed/{{ $testimonio->email }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                                Your browser does not support the video tag.
+                                                                
                                                         </div>
                                                         <div class="bg-[#21149E] p-4 rounded-2xl max-w-[300px] md:max-w-[370px] absolute -bottom-12 left-5 -right-14 md:-right-1/2">
                                                                 {{-- <p class="font-gotham_book text-white text-base line-clamp-[7]">{{$testimonio->testimonie}}</p> --}}
@@ -482,7 +482,7 @@
                     <h2 class="font-gotham_bold text-white text-3xl max-w-sm mx-auto  lg:line-clamp-2">{{$benefi->titulo}}</h2>
                     <p class="font-gotham_book text-white text-base  lg:line-clamp-3">{{$benefi->descripcion}}</p>
                     <div class="flex flex-row w-full">
-                        <a class="bg-[#E29720] px-4 py-3 rounded-full text-[#21149E] text-center font-gotham_bold w-full"><span>Quiero más velocidad</span></a>
+                        <a href="#planes" class="bg-[#E29720] px-4 py-3 rounded-full text-[#21149E] text-center font-gotham_bold w-full"><span>Elegir un plan</span></a>
                     </div>
                 </div>
             @endforeach    
@@ -1400,6 +1400,28 @@
         const screenHeight = window.screen.height;
         document.getElementById('anchodispositivo').value = screenWidth;
         document.getElementById('largodispositivo').value = screenHeight;
+    </script>
+
+    <script>
+        // Mostrar mensaje de éxito
+        @if (session('success'))
+            Swal.fire({
+                title: '¡Éxito!',
+                text: "{{ session('success') }}",
+                icon: 'success',
+                confirmButtonText: 'Aceptar'
+            });
+        @endif
+
+        // Mostrar mensaje de error
+        @if (session('error'))
+            Swal.fire({
+                title: 'Error',
+                text: "{{ session('error') }}",
+                icon: 'error',
+                confirmButtonText: 'Aceptar'
+            });
+        @endif
     </script>
 @stop
 

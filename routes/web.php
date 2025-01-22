@@ -105,6 +105,8 @@ Route::post('/procesarcarrito', [IndexController::class, 'procesarCarrito'])->na
 Route::post('catalogo_filtro_ajax', [IndexController::class, 'catalogoFiltroAjax'])->name('catalogo_filtro_ajax');
 Route::post('cambiogaleria', [IndexController::class, 'cambioGaleria'])->name('cambioGaleria');
 Route::post('/subscripciones/guardar', [NewsletterSubscriberController::class, 'saveSubscripciones'])->name('subscripciones.guardar');
+Route::get('/subscripciones/{token}', [NewsletterSubscriberController::class, 'verify'])->name('verify');
+
 Route::post('/subscripciones/guardar2', [NewsletterSubscriberController::class, 'saveSubscripciones2'])->name('subscripciones.guardar2');
 Route::post('/cotizar', [CotizacionController::class, 'saveCotizaciones'])->name('cotizar');
 Route::post('/obtenerdata', [IndexController::class, 'obtenerdata'])->name('obtenerdata');

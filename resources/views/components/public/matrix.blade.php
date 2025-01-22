@@ -491,9 +491,9 @@
                         if (!flag) {
                             const e = obj[key];
                             Swal.fire({
-                                title: error.message,
-                                text: "Usuario ya existente",
-                                icon: "error",
+                                title: 'Correo existente',
+                                text: "Usuario existente sin verificar. Revise su bandeja de entrada y spam",
+                                icon: "warning",
                             });
                             flag = true; // Marcar como mostrado
                         }

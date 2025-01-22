@@ -12,5 +12,7 @@ class NewsletterSubscriber extends Model
         'nombre',
         'email',
         'phone',
+        'verification_token', 
+        'is_verified',
     ];
 }
