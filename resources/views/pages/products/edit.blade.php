@@ -804,7 +804,7 @@
 
                                 <div class="md:col-span-5 mt-2">
 
-                                    <label for="seotitulo">SEO - Titulo (Nombre de producto por default)</label>
+                                    <label for="seotitulo">SEO - Titulo (Google recomienda 60 caracteres - Nombre de producto por defecto)</label>
 
                                     <div class="relative mb-2  mt-2">
                                         <div
@@ -832,7 +832,7 @@
 
                                 <div class="md:col-span-5 mt-2">
 
-                                    <label for="seodescription">SEO - Descripción (Descripción de producto por
+                                    <label for="seodescription">SEO - Descripción (Google recomienda 160 caracteres - Descripción de producto por
                                         default)</label>
 
                                     <div class="relative mb-2  mt-2">
