@@ -71,7 +71,7 @@ class NewsletterSubscriberController extends Controller
 
     public function showSubscripciones(){
         
-        $subscripciones = NewsletterSubscriber::orderBy('created_at','desc')->where('is_verified', true)->where('active', true)->get();
+        $subscripciones = NewsletterSubscriber::orderBy('created_at','desc')->where('is_verified', true)->where('active', '=', 1)->get();
         
         return view('pages.subscripciones.index', compact('subscripciones'));
 
@@ -144,7 +144,7 @@ class NewsletterSubscriberController extends Controller
       $subscriber->update([
           'is_verified' => true,
           'verification_token' => null,
-          'active' => true,
+          'active' => 1,
       ]);
 
       $this->envioCorreoAdmin($subscriber);
