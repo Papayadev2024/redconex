@@ -832,8 +832,7 @@
 
                                 <div class="md:col-span-5 mt-2">
 
-                                    <label for="seodescription">SEO - Descripción (Google recomienda 160 caracteres - Descripción de producto por
-                                        default)</label>
+                                    <label for="seodescription">SEO - Descripción (Google recomienda 160 caracteres - Descripción de producto por default)</label>
 
                                     <div class="relative mb-2  mt-2">
                                         <div
