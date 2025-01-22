@@ -492,7 +492,7 @@
                             const e = obj[key];
                             Swal.fire({
                                 title: 'Correo existente',
-                                text: "Usuario existente sin verificar. Revise su bandeja de entrada y spam",
+                                text: "La direccion de correo ya existe",
                                 icon: "warning",
                             });
                             flag = true; // Marcar como mostrado
