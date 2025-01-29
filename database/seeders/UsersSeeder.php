@@ -24,6 +24,12 @@ class UsersSeeder extends Seeder
         ])->assignRole('Admin');
 
         User::create([
+            'name' => 'Admin Redconex',
+            'email' => 'info@redconex.pe',
+            'password' => Hash::make('redconex2025#'),
+        ])->assignRole('Admin');
+
+        User::create([
             'name' => 'Customer Mundo Web',
             'email' => 'customer@mundoweb.pe',
             'password' => Hash::make('12345678'),
