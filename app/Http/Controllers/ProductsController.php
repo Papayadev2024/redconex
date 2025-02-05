@@ -374,7 +374,7 @@ class ProductsController extends Controller
     $especificacion = Specifications::where("product_id", "=", $id)->get();
     // $allTags = Tag::all();
     $productosRelacionados = Products::where('status', '=', 1) ->where('id', '!=', $id)->get();
-    $categoria = Category::all();
+    $categoria = Category::where("status", "=", true)->get();
     $subcategoria = Subcategory::all();
     $microcategoria = Microcategory::all();
     $collection = Collection::all();
