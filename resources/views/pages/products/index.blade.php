@@ -27,6 +27,7 @@
                 <th class="w-24">Orden</th>
                 <th class="w-24">Imagen</th>
                 <th>Nombre</th>
+                <th>Categoria</th>
                 {{-- <th>Promocion</th> --}}
                 <th class="w-24">Destacar</th>
                 <th class="w-24">Visible</th>
@@ -44,6 +45,8 @@
                       @endif
                   </td>
                   <td>{{ $item->producto }}</td>
+                  <td>{{ $item->categoria->name ?? "Sin Categoria" }}</td>
+
                   {{-- <td>
                     <form method="POST" action="">
                       @csrf
@@ -115,6 +118,8 @@
                 <th>Orden</th>
                 <th>Imagen</th>
                 <th>Nombre</th>
+                <th>Categoria</th>
+
                 {{-- <th>Promocion</th> --}}
                 <th>Destacar</th>
                 <th>Visible</th>

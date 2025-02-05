@@ -211,18 +211,55 @@
                 </div>  
             </section>
         @endif
-
+            
         @if (count($productos) > 0)    
         <section 
             x-data="{
                 selected: 0,
                 categories: {{ json_encode($category) }},
                 products: {{ json_encode($productos) }},
+                swiperInstance: null,
                 get filteredProducts() {
-                    const selectedCategory = this.categories[this.selected];
+                    if (!this.categories.length) return [];
+                    const selectedCategory = this.categories[this.selected] || {};
                     return this.products.filter(product => product.categoria_id === selectedCategory.id);
+                },
+                reloadSwiper() {
+                    this.$nextTick(() => {
+                        if (window.swiperplan) {
+                            window.swiperplan.destroy(true, true); // Destruye la instancia existente
+                        }
+                        window.swiperplan = new Swiper('.planes', {
+                            slidesPerView: 3.5,
+                            spaceBetween: 10,
+                            centeredSlides: false,
+                            initialSlide: 0,
+                            loop: false,
+                            autoplay: {
+                                delay: 2500,
+                                disableOnInteraction: false,
+                            },
+                            scrollbar: {
+                                el: '.swiper-scrollbar',
+                                draggable: true,
+                            },
+                            breakpoints: {
+                                0: { slidesPerView: 1 },
+                                768: { slidesPerView: 2 },
+                                920: { slidesPerView: 2.5 },
+                                1024: { slidesPerView: 2.5 },
+                                1280: { slidesPerView: 3, spaceBetween: 20 },
+                                1300: { slidesPerView: 3.5, spaceBetween: 20 },
+                                1500: { slidesPerView: 4, spaceBetween: 20 },
+                                1600: { slidesPerView: 4, spaceBetween: 20 },
+                            },
+                        });
+                    });
                 }
-            }"
+   
+            
+            }" 
+            x-init="reloadSwiper()"
             class="bg-cover bg-opacity-100 relative py-10 lg:py-16"  style="background-image: url('{{asset('images/img/textura3.svg')}}');"
             >
            
@@ -250,7 +287,7 @@
                 <template x-for="(cat, index) in categories" :key="index">
                         <div class="group">
                             <div 
-                                @click="selected = index" 
+                                @click="selected = index; reloadSwiper();" 
                                 :class="selected === index 
                                     ? 'bg-[#E29720] text-[#110B79]' 
                                     : 'bg-white bg-opacity-10 text-white'" 
@@ -303,7 +340,7 @@
                     <div class="swiper planes w-full mt-6" data-aos="fade-down">
                         <div class="swiper-wrapper">   
                             <template x-for="producto in filteredProducts" :key="producto.id">
-                                <div class="swiper-slide my-auto" >
+                                <div class="swiper-slide">
                                     <div class=" max-w-[390px] bg-white hover:bg-[#1EA7A2] bg-opacity-10  mx-auto  rounded-3xl overflow-hidden">
                                       <div class="flex flex-col p-6 gap-3 relative"> 
                                         <div class="flex flex-row w-full">
@@ -1142,12 +1179,12 @@
             },
         });
 
-        var swiper = new Swiper(".planes", {
+        var swiperplan = new Swiper(".planes", {
             slidesPerView: 3.5,
             spaceBetween: 10,
             centeredSlides: false,
             initialSlide: 0,
-            loop: true,
+            loop: false,
             autoplay: {
                 delay: 2500,
                 disableOnInteraction: false,
@@ -1161,23 +1198,14 @@
                     slidesPerView: 1,
                    
                 },
+
                 768: {
-                    slidesPerView: 1.5,
-
-                  
-                },
-                850: {
                     slidesPerView: 2,
-
-                  
                 },
+                
                 920: {
                     slidesPerView: 2.5,
 
-                  
-                },
-                1024: {
-                    slidesPerView: 2.5,
                   
                 },
                 1280: {
@@ -1191,15 +1219,11 @@
                   
                 },
                 1500: {
-                    slidesPerView: 3.5,
-                    spaceBetween: 20,
-                  
-                },
-                1600: {
                     slidesPerView: 4,
                     spaceBetween: 20,
                   
                 },
+              
             },
         });
 

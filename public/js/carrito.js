@@ -1,4 +1,4 @@
-console.log(appUrl);
+
 let articulosCarrito = [];
 
     function mostrarTotalItems() {
