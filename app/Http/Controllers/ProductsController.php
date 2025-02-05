@@ -45,7 +45,7 @@ class ProductsController extends Controller
     $atributos = Attributes::where("status", "=", true)->get();
     $valorAtributo = AttributesValues::where("status", "=", true)->get();
     $tags = Tag::where("status", "=", true)->get();
-    $categoria = Category::all();
+    $categoria = Category::where("status", "=", true)->get();
     $productosRelacionados = Products::where('status', '=', 1)->get();
     $collection = Collection::all();
     return view('pages.products.create', compact('atributos', 'valorAtributo', 'categoria', 'tags', 'collection', 'productosRelacionados'));

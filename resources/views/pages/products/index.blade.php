@@ -190,7 +190,7 @@
 
       Swal.fire({
         title: "Seguro que deseas eliminar?",
-        text: "Vas a eliminar un Logo",
+        text: "Vas a eliminar un servicio",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
@@ -213,11 +213,11 @@
           }).done(function(res) {
 
             Swal.fire({
-              title: res.message,
-              icon: "success"
+                title: res.message,
+                icon: "success"
+            }).then(() => {
+                location.reload(); 
             });
-
-            location.reload();
 
           })
 
