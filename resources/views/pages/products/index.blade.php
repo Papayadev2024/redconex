@@ -215,6 +215,7 @@
             Swal.fire({
                 title: res.message,
                 icon: "success"
+                confirmButtonColor: "#3085d6",
             }).then(() => {
                 location.reload(); 
             });
