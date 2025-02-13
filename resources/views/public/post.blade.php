@@ -58,7 +58,7 @@
                                                 <a href="{{ route('detalleBlog', $post->id) }}">
                                                     <div class="flex flex-col w-full bg-[#21149E] overflow-hidden rounded-3xl text-left">
                                                         <div class="flex flex-row justify-center">
-                                                        <img class="w-full h-52 object-cover" src="{{asset('images/img/imagenblog.png')}}"/>
+                                                        <img class="w-full h-52 object-cover" src="{{ asset($post->url_image . $post->name_image) }}" onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';"/>
                                                         </div>
                                                         <div class="p-6 flex flex-col gap-3">
                                                             <h2 class="font-gotham_bold text-white text-2xl xl:text-[21px] line-clamp-3">{{$post->title}}</h2>
