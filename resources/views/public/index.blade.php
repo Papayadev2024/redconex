@@ -143,19 +143,21 @@
                                             
                                         </div>
                                         <div class="z-20 w-full lg:w-1/3 2xl:w-1/2 flex flex-col justify-end items-start lg:items-end">
+                                          @if (!empty($textoshome->subtitle3section) && !empty($textoshome->cellphone3section) && !empty($textoshome->title3section))
                                             <div class="flex flex-col items-start justify-center  gap-1 z-10 text-left md:text-right bg-black bg-opacity-50 p-5 rounded-2xl w-full sm:w-auto" data-aos="zoom-in-up">
                                                 <p class="text-white text-base font-gotham_bold w-full leading-tight">
-                                                    {{$textoshome->subtitle3section ?? "Ingrese texto"}}
+                                                    {{$textoshome->subtitle3section}}
                                                 </p>
 
                                                 <p class="text-[#F07407] text-3xl xl:text-4xl font-gotham_bold w-full">
-                                                    {{$general[0]->whatsapp}}
+                                                    {{$textoshome->cellphone3section}}
                                                 </p>
 
                                                 <p class="text-white text-base font-gotham_bold w-full leading-tight">
-                                                    {{$textoshome->title3section ?? "Ingrese texto"}}
+                                                    {{$textoshome->title3section}}
                                                 </p>
                                             </div>
+                                          @endif  
                                         </div>
                                     </div> 
                                     <div class="absolute top-10 right-[8%] lg:flex hidden group">

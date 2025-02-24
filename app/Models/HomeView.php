@@ -16,8 +16,10 @@ class HomeView extends Model
         'subtitle2section',
         'title2section',
 
-        'description3section',
+        // 'description3section',
         'title3section',
+        'subtitle3section',
+        'cellphone3section',
        
         'title4section',
 
