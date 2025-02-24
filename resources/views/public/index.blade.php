@@ -971,7 +971,7 @@
         var swiperplan = new Swiper(".planes", {
             slidesPerView: 3,
             spaceBetween: 20,
-            centeredSlides: true,
+            centeredSlides: false,
             initialSlide: 0,
             loop: false,
             autoplay: {
