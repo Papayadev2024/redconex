@@ -336,7 +336,7 @@
                         </div> --}}
 
                         <div class="swiper planes w-full mt-6" data-aos="fade-down">
-                            <div class="swiper-wrapper ">   
+                            <div class="swiper-wrapper flex flex-row justify-center">   
                                 <template x-for="producto in filteredProducts" :key="producto.id">
                                     <div class="swiper-slide">
                                         <div class=" max-w-[390px] bg-white hover:bg-[#1EA7A2] bg-opacity-10  mx-auto  rounded-3xl overflow-hidden">
