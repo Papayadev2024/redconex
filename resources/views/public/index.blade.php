@@ -233,7 +233,7 @@
                             }
                             window.swiperplan = new Swiper('.planes', {
                                 slidesPerView: 3,
-                                spaceBetween: 20,
+                                spaceBetween: 10,
                                 centeredSlides: false,
                                 initialSlide: 0,
                                 loop: false,
@@ -298,7 +298,7 @@
                     </div>
                 </div>
 
-                <div class="px-[5%] md:px-[8%] py-5 flex md:flex-row gap-5 md:gap-10">
+                <div class="px-[5%]  py-5 flex md:flex-row gap-5 md:gap-10">
         
                     <div class="w-full">
                         {{-- <div class="swiper planes w-full">
@@ -970,10 +970,10 @@
 
         var swiperplan = new Swiper(".planes", {
             slidesPerView: 3,
-            spaceBetween: 20,
+            spaceBetween: 10,
             centeredSlides: false,
             initialSlide: 0,
-            loop: true,
+            loop: false,
             autoplay: {
                 delay: 2500,
                 disableOnInteraction: false,
