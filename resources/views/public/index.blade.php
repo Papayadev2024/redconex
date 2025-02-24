@@ -236,7 +236,7 @@
                                 spaceBetween: 10,
                                 centeredSlides: false,
                                 initialSlide: 0,
-                                loop: false,
+                                loop: true,
                                 autoplay: {
                                     delay: 2500,
                                     disableOnInteraction: false,
@@ -973,7 +973,7 @@
             spaceBetween: 10,
             centeredSlides: false,
             initialSlide: 0,
-            loop: false,
+            loop: true,
             autoplay: {
                 delay: 2500,
                 disableOnInteraction: false,
