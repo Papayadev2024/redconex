@@ -973,7 +973,7 @@
             spaceBetween: 20,
             centeredSlides: false,
             initialSlide: 0,
-            loop: false,
+            loop: true,
             autoplay: {
                 delay: 2500,
                 disableOnInteraction: false,
