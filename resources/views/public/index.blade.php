@@ -301,42 +301,9 @@
                 <div class="px-[5%]  py-5 flex md:flex-row gap-5 md:gap-10">
         
                     <div class="w-full">
-                        {{-- <div class="swiper planes w-full">
-                            <div class="swiper-wrapper">   
-                            @foreach ($productos as $producto)    
-                                    <div class="swiper-slide my-auto">
-                                        <div class="flex flex-col gap-3 max-w-[390px] bg-white hover:bg-[#1EA7A2] bg-opacity-10 p-6 rounded-3xl mx-auto">
-                                            
-                                                <div class="flex flex-row w-full">
-                                                    <a class="bg-[#E29720] px-4 py-2 rounded-xl text-[#21149E] text-center font-gotham_bold w-auto line-clamp-2"><span>{{$producto->producto}}</span></a>
-                                                </div>
-                                                
-                                                <h2 class="font-gotham_bold text-white text-4xl line-clamp-2">{{$producto->extract}}</h2>
-
-                                                <div class="flex flex-col w-full">
-                                                    <span class="font-gotham_book font-semibold tracking-wide text-white text-base">Desde</span>
-                                                    <h2 class="font-gotham_bold text-white text-3xl">S/ {{$producto->precio}} <span class="font-gotham_book tracking-wide text-white text-base">/mes</span></h2>
-                                                </div>
-
-                                                <img class="w-full h-44 object-contain mx-auto my-2" src="{{asset($producto->imagen)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';" />
-
-                                                <div class="flex flex-col gap-3 justify-center items-start">
-                                                    <div class="flex flex-row w-full">
-                                                        <a id="linkmodalcotizar" data-id={{$producto->id}} class="btn-cotizar cursor-pointer bg-[#21149E] border border-[#21149E] px-7 py-2 rounded-full text-white text-center font-gotham_bold w-full"><span>Me interesa</span></a>
-                                                    </div>
-                                                    <div class="flex flex-row w-full">
-                                                        <a id="linkmodaldetalleplan" data-id={{$producto->id}} class="btn-detalle cursor-pointer bg-transparent border border-white px-7 py-2 rounded-full text-white text-center font-gotham_bold w-full"><span>Saber más</span></a>
-                                                    </div>
-                                                    <span class="font-gotham_book text-xs text-white">Al seleccionar, acepta Términos y Condiciones.</span>
-                                                </div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div> --}}
-
+                       
                         <div class="swiper planes w-full mt-6" data-aos="fade-down">
-                            <div class="swiper-wrapper flex flex-row justify-center">   
+                            <div class="swiper-wrapper" :class="{'flex flex-row justify-center': filteredProducts.length >= 1 && filteredProducts.length <= 3}">   
                                 <template x-for="producto in filteredProducts" :key="producto.id">
                                     <div class="swiper-slide">
                                         <div class=" max-w-[390px] bg-white hover:bg-[#1EA7A2] bg-opacity-10  mx-auto  rounded-3xl overflow-hidden">
