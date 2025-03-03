@@ -5,6 +5,10 @@
         overflow-y: auto;
         /* Permite el desplazamiento vertical si el contenido excede la altura del modal */
     }
+
+    .prose{
+        max-width: 100%!important;
+    }
 </style>
 <footer class="bg-[#21149E]"  style="background-image: url('{{asset('images/img/footertextura.png')}}');">
     <div class="grid grid-cols-1 w-full px-[5%] lg:px-[10%] py-10 lg:py-16 gap-10 md:gap-5">
