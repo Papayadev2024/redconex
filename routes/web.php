@@ -35,6 +35,7 @@ use App\Http\Controllers\LogosClientController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\InnovacionViewController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\LibroReclamacionesController;
 use App\Http\Controllers\LiquidacionController;
 use App\Http\Controllers\MicrocategoryController;
 use App\Http\Controllers\MisClientesController;
@@ -85,8 +86,8 @@ Route::get('/descargables/{filtro}', [IndexController::class, 'catalogosDescarga
 Route::get('/blog', [IndexController::class, 'blog'])->name('blog.all');
 Route::get('/blog/{filtro}', [IndexController::class, 'blog'])->name('blog');
 Route::get('/post/{id}', [IndexController::class, 'detalleBlog'])->name('detalleBlog');
-
-
+Route::get('/libro-de-reclamaciones', [IndexController::class, 'librodereclamaciones'])->name('librodereclamaciones');
+Route::post('guardarformulario', [LibroReclamacionesController::class, 'storePublic'])->name('guardarFormReclamo');
 /* Proceso de pago */
 Route::get('/carrito', [IndexController::class, 'carrito'])->name('carrito');
 Route::get('/pago', [IndexController::class, 'pago'])->name('pago');
@@ -130,6 +131,9 @@ Route::post('/getTotalProductos', [CategoryController::class, 'getTotalProductos
 /* Políticas */
 Route::get('/politicas-de-devolucion', [IndexController::class, 'politicasDevolucion'])->name('politicas_dev');
 Route::get('/terminos-y-condiciones', [IndexController::class, 'TerminosyCondiciones'])->name('terms_condition');
+
+Route::get('/obtenerProvincia/{departmentId}', [IndexController::class, 'obtenerProvincia'])->name('obtenerProvincia');
+Route::get('/obtenerDistritos/{provinceId}', [IndexController::class, 'obtenerDistritos'])->name('obtenerDistritos');
 
 Route::redirect('/register', '/login');
 
@@ -180,7 +184,10 @@ Route::middleware(['auth:sanctum', 'verified', 'can:Admin'])->group(function () 
         Route::post('/subcategorias/updateVisible', [SubcategoryController::class, 'updateVisible'])->name('subcategorias.updateVisible');
         // Route::get('/subcategorias/contarSubCategoriasDestacadas', [SubcategoryController::class, 'contarSubCategoriasDestacadas'] )->name('subcategorias.contarSubCategoriasDestacadas');
 
-
+        //Libro de reclamaciones
+        Route::resource('/reclamo', LibroReclamacionesController::class);
+        Route::post('/reclamo/borrar', [LibroReclamacionesController::class, 'borrar'])->name('reclamo.borrar');
+        
         //Microcategorias
         Route::resource('/microcategorias', MicrocategoryController::class);
         Route::post('/microcategorias/deleteMicrocategory', [MicrocategoryController::class, 'deleteMicrocategory'])->name('microcategorias.deleteMicrocategory');
@@ -327,10 +334,7 @@ Route::middleware(['auth:sanctum', 'verified', 'can:Customer'])->group(function 
     Route::post('/micuenta/direccion/cambiofoto', [IndexController::class, 'cambiofoto'])->name('cambiofoto');
     Route::post('/micuenta/pedidos/cambiofoto', [IndexController::class, 'cambiofoto'])->name('cambiofoto');
 
-    Route::get('/obtenerProvincia/{departmentId}', [IndexController::class, 'obtenerProvincia'])->name('obtenerProvincia');
-    Route::get('/obtenerDistritos/{provinceId}', [IndexController::class, 'obtenerDistritos'])->name('obtenerDistritos');
     Route::post('/guardarDireccion', [IndexController::class, 'guardarDireccion'])->name('guardar.direccion');
-
     Route::post('/micuenta/actualizarPerfil', [IndexController::class, 'actualizarPerfil'])->name('actualizarPerfil');
 });
 

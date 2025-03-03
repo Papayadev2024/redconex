@@ -32,6 +32,9 @@
                 <div class="flex flex-col gap-2 text-white font-gotham_light text-base">
                     <a class="cursor-pointer" id="linkPoliticas">Política de Privacidad</a>
                     <a class="cursor-pointer" id="linkTerminos">Términos y Condiciones</a>
+                    <a href="{{ route('librodereclamaciones') }}"><img class="w-24"
+                        src="{{ asset('images/img/reclamaciones.png') }}" />
+                    </a>
                 </div>
             </div>
 
