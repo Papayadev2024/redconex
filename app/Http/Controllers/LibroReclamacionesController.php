@@ -189,7 +189,7 @@ class LibroReclamacionesController extends Controller
                 <h2> Datos del reclamo </h2>
                 <br>
                 <hr>
-                <p> Tienda: Online BoostPeru </p>
+                <p> Tienda: Redconex </p>
                 <p> Identificacion del bien contratado: '.$typeitem.' </p>
                 <p> Monto Reclamado: '.$amounttotal.' </p>
                 <p> Descripción : '.$description.' </p>
