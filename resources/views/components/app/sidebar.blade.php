@@ -68,7 +68,7 @@
           <x-menu.item id="reclamo" href="{{ route('reclamo.index') }}" icon="fas fa-comment-dots">
             Reclamaciones
             @if ($reclamo !== 0)
-              <x-slot name="reclamo">
+              <x-slot name="tag">
                 {{ $reclamo }}
               </x-slot>
             @endif
