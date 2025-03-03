@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Category;
 use App\Models\Collection;
 use App\Models\General;
+use App\Models\LibroReclamaciones;
 use App\Models\Message;
 use App\Models\PolyticsCondition;
 use App\Models\TermsAndCondition;
@@ -60,7 +61,9 @@ class AppServiceProvider extends ServiceProvider
         });
 
         View::composer('components.app.sidebar', function ($view) {
-            // Obtener los datos del footer
+           
+            $reclamo =  LibroReclamaciones::where('is_read', '!=', 1)->where('status', '!=', 0)->count();
+            
             $mensajes = Message::where('is_read', '!=', 1 )->where('status', '!=', 0)
                                     ->where(function($query) {
                                         $query->where('source', '=', 'Inicio')
@@ -68,6 +71,7 @@ class AppServiceProvider extends ServiceProvider
                                             ->orWhere('source', '=', 'WSP - Tratamiento de Agua')
                                             ->orWhere('source', '=', 'WSP - Productos Químicos');
                                     })->count(); 
+                                    
             $mensajeslanding = Message::where('is_read', '!=', 1 )->where('status', '!=', 0)
                                         ->whereNotIn('source',  ['Inicio', 'Contacto', 'Producto', 'WSP - Productos Químicos','WSP - Tratamiento de Agua'])
                                         ->count();
@@ -78,6 +82,7 @@ class AppServiceProvider extends ServiceProvider
             // Pasar los datos a la vista
             $view->with('mensajes', $mensajes)
                  ->with('mensajeslanding', $mensajeslanding)
+                 ->with('reclamo', $reclamo)
                  ->with('mensajesproduct', $mensajesproduct);
         });
 

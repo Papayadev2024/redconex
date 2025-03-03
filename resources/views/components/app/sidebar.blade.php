@@ -64,6 +64,15 @@
               </div>
             </a>
           </li>
+
+          <x-menu.item id="reclamo" href="{{ route('reclamo.index') }}" icon="fas fa-comment-dots">
+            Reclamaciones
+            @if ($reclamo !== 0)
+              <x-slot name="reclamo">
+                {{ $reclamo }}
+              </x-slot>
+            @endif
+          </x-menu.item>
  
           <x-menu.item id="cotizaciones" href="{{ route('cotizaciones') }}" icon="fas fa-address-card">
             Cotizaciones
