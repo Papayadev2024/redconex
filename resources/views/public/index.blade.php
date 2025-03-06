@@ -193,19 +193,19 @@
                         <div class="swiper ofertas w-full">
                             <div class="swiper-wrapper">   
                                 @foreach ($complementos as $complemento)
-                                <div class="swiper-slide">
-                                        <div class="flex cursor-pointer flex-col md:flex-row gap-3 max-w-[390px] bg-[#21149E] p-6 rounded-3xl mx-auto">
-                                            <img  class="w-24 h-32 object-contain mx-auto" src="{{asset($complemento->url_image . $complemento->name_image)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';" />
-                                            <div class="flex flex-col gap-3 justify-center items-start">
-                                                <h2 class="font-gotham_bold text-2xl text-white line-clamp-2">
-                                                    {{$complemento->title}}
-                                                </h2>
-                                                <div class="flex flex-row w-full group">
-                                                    <a target="_blank" href="https://api.whatsapp.com/send?phone={{ $general[0]->whatsapp }}&text=Ya soy cliente y me interesa: *{{ $complemento->title }}* " class="  bg-[#E29720] px-7 py-2 rounded-full text-[#21149E] text-center font-gotham_bold w-full"><span>Pídelo aquí</span></a>
+                                    <div class="swiper-slide">
+                                            <div class="flex cursor-pointer flex-col md:flex-row gap-3 max-w-[390px] bg-[#21149E] p-6 rounded-3xl mx-auto">
+                                                <img  class="w-24 h-32 object-contain mx-auto" src="{{asset($complemento->url_image . $complemento->name_image)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';" />
+                                                <div class="flex flex-col gap-3 justify-center items-start">
+                                                    <h2 class="font-gotham_bold text-2xl text-white line-clamp-2">
+                                                        {{$complemento->title}}
+                                                    </h2>
+                                                    <div class="flex flex-row w-full group">
+                                                        <a target="_blank" href="https://api.whatsapp.com/send?phone={{ $general[0]->whatsapp }}&text=Ya soy cliente y me interesa: *{{ $complemento->title }}* " class="  bg-[#E29720] px-7 py-2 rounded-full text-[#21149E] text-center font-gotham_bold w-full"><span>Pídelo aquí</span></a>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                </div>
+                                    </div>
                                 @endforeach
                             </div>
                         </div>
@@ -913,22 +913,22 @@
                   
                 },
                 1280: {
-                    slidesPerView: 2.2,
+                    slidesPerView: 2,
                     spaceBetween: 20,
                   
                 },
                 1300: {
-                    slidesPerView: 2.2,
+                    slidesPerView: 2,
                     spaceBetween: 20,
                   
                 },
                 1500: {
-                    slidesPerView: 2.4,
+                    slidesPerView: 2,
                     spaceBetween: 20,
                   
                 },
                 1600: {
-                    slidesPerView: 2.9,
+                    slidesPerView: 2,
                     spaceBetween: 20,
                   
                 },
@@ -1189,3 +1189,24 @@
 @stop
 
 @stop
+
+{{-- 1280: {
+    slidesPerView: 2.2,
+    spaceBetween: 20,
+  
+},
+1300: {
+    slidesPerView: 2.2,
+    spaceBetween: 20,
+  
+},
+1500: {
+    slidesPerView: 2.4,
+    spaceBetween: 20,
+  
+},
+1600: {
+    slidesPerView: 2.9,
+    spaceBetween: 20,
+  
+}, --}}
