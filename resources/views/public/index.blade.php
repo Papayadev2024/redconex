@@ -129,7 +129,6 @@
                                                 </div> 
                                             @endif
                                            
-
                                             <div class="grid grid-cols-2 md:grid-cols-3 font-gotham_bold  gap-3 lg:gap-5 max-w-2xl">
                                                 <div class="flex flex-col justify-center">
                                                     <span class="text-[#1EA7A2] text-3xl xl:text-5xl">{{$textoshome->subtitle1section ?? "Ingrese texto"}}</span>
