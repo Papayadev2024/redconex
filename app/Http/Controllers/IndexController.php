@@ -652,7 +652,7 @@ class IndexController extends Controller
     public function blog(Request $request, string $filtro = null)
     {
         try {
-            $categorias = Category::where('status', '=', 1)->where('visible', '=', 1)->get();
+            $categorias = Category::where('status', '=', 1)->where('visible', '=', 1)->whereHas('blogs')->get();
 
             if ($filtro == 0) {
                 $posts = Blog::where('status', '=', 1)->where('visible', '=', 1)->get();
