@@ -304,8 +304,8 @@
                     <div class="w-full">
                        
                         <div class="swiper planes w-full mt-6" >
-                            <div class="swiper-wrapper" :class="{'flex flex-row justify-center': filteredProducts.length <= 2}">   
-                                <template x-for="producto in filteredProducts" :key="producto.id">
+                            <div class="swiper-wrapper" :class="{'md:flex sm:flex-row md:justify-center': filteredProducts.length >= 1 && filteredProducts.length <= 3}">   
+                                <template x-for="producto in filteredProducts" :key="producto.id" >
                                     <div class="swiper-slide">
                                         <div class=" max-w-[390px] bg-white hover:bg-[#1EA7A2] bg-opacity-10  mx-auto  rounded-3xl overflow-hidden">
                                         <div class="flex flex-col p-6 gap-3 relative"> 
@@ -376,8 +376,8 @@
             <section class="bg-cover bg-opacity-100 relative py-10 lg:py-16" style="background-image: url('{{asset('images/img/textura4.png')}}');">
                 <div class="px-[5%] md:px-[8%]  flex flex-col  lg:flex-row gap-5 md:gap-10">
                     <div class="w-full sm:w-full lg:w-1/3  flex flex-col justify-center">
-                        <div class="swiper lugares w-full mt-1 h-[350px]  md:h-[360px]">
-                            <div class="swiper-wrapper "  data-aos="fade-down">
+                        <div class="swiper lugares w-full mt-1 h-[110px]  md:h-[250px] lg:h-[360px]">
+                            <div class="swiper-wrapper" data-aos="fade-down">
                                 @foreach ($zonas as $zona)
                                     <div class="swiper-slide">
                                         <div 
@@ -973,12 +973,14 @@
 
 
         var swiper = new Swiper(".lugares", {
-            slidesPerView: 3,
+            slidesPerView: 2,
             direction: 'vertical',
             spaceBetween: 10,
             centeredSlides: false,
             initialSlide: 0,
             loop: true,
+            noSwiping: true, // Desactiva el swipe en todo el contenedor
+            noSwipingClass: 'swiper-no-swiping', // Clase para excluir elementos específicos
             autoplay: {
                 delay: 2500,
                 disableOnInteraction: false,
@@ -986,6 +988,21 @@
             scrollbar: {
                 el: '.swiper-scrollbar',
                 draggable: true,
+            },
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                   
+                },
+
+                768: {
+                    slidesPerView: 2,
+                },
+
+                1024: {
+                    slidesPerView: 3,
+                },
+
             },
         });
 
