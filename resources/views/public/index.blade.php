@@ -667,8 +667,9 @@
                     @endif
                 </div>
                 <div class="w-full md:w-1/2 ">
-                    <div class="bg-cover bg-center min-h-[500px] aspect-[3/4] h-full w-full" style="background-image: url('{{asset($producto->url_fichatecnica . $producto->name_fichatecnica)}}');" onerror="this.onerror=null;this.src='{{ asset('images/img/popimg.png') }}';" ></div>
+                    <img class="object-cover object-center min-h-[500px] aspect-[3/4] h-full w-full" src="{{asset($producto->url_fichatecnica . $producto->name_fichatecnica)}}"  onerror="this.onerror=null;this.src='{{ asset('images/img/popimg.png') }}';" >
                 </div>
+                {{-- style="background-image: url('');" --}}
             </div>
         </div>
     @endforeach
