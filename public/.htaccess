@@ -4,7 +4,7 @@
     </IfModule>
 
     <IfModule mod_headers.c>
-        Header set Access-Control-Allow-Origin "https://www.cadmo.pe"
+        Header set Access-Control-Allow-Origin "https://www.redconex.pe/"
     </IfModule>
 
     RewriteEngine On
