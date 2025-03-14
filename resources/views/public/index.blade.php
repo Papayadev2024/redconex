@@ -80,6 +80,7 @@
         #imagen-zona {
             transition: opacity 0.3s ease-in-out;
         }
+
         .blocker{
             z-index: 50!important;
         }
@@ -88,6 +89,7 @@
             opacity: 0;
             pointer-events: none;
         }
+
         .comment {
             opacity: 1;
             transition: opacity 0.3s ease-in-out;
@@ -213,6 +215,7 @@
             </section>
         @endif
             
+        
         @if (count($productos) > 0)    
             <section 
                 x-data="{
@@ -234,7 +237,7 @@
                                 slidesPerView: 3,
                                 spaceBetween: 10,
                                 centeredSlides: false,
-                                initialSlide: 0,
+                                initialSlide: 1,
                                 loop: true,
                                 autoplay: {
                                     delay: 2500,
@@ -247,8 +250,7 @@
                                 breakpoints: {
                                     0: { slidesPerView: 1 },
                                     768: { slidesPerView: 2 },
-                                    1024: { slidesPerView: 3},
-                                    1500: { slidesPerView: 3},
+                                    1024: { slidesPerView: 3}
                                 },
                             });
                         });
@@ -369,6 +371,7 @@
             </section>
         @endif
 
+        
         @if (count($zonas) > 0)   
             <section class="bg-cover bg-opacity-100 relative py-10 lg:py-16" style="background-image: url('{{asset('images/img/textura4.png')}}');">
                 <div class="px-[5%] md:px-[8%]  flex flex-col  lg:flex-row gap-5 md:gap-10">
@@ -464,6 +467,7 @@
             </section>
         @endif
 
+
         <section class="bg-cover bg-opacity-100 relative py-10 lg:py-16 flex flex-col gap-10" 
           style="background-image: url('{{asset('images/img/textura3.svg')}}');">
            
@@ -528,6 +532,7 @@
                 </div>
             </div>
         </section>
+
 
         @if (count($faqs) > 0 || count($posts) > 0)
             <section class="bg-cover bg-opacity-100 relative py-10 lg:py-16" 
@@ -714,8 +719,6 @@
         </div>
     </div>
 
-    
-
 @section('scripts_importados')
 
     <script>   
@@ -789,6 +792,7 @@
             });
         })
     </script>
+
     <script>
         $(document).ready(function () {
             $(document).on('click', '.btn-cotizar', function () {
@@ -875,8 +879,6 @@
             },
         });
 
-
-
         var swiper = new Swiper(".ofertas", {
             slidesPerView: 2.2,
             spaceBetween: 10,
@@ -942,7 +944,7 @@
             slidesPerView: 3,
             spaceBetween: 10,
             centeredSlides: false,
-            initialSlide: 0,
+            initialSlide: 1,
             loop: true,
             autoplay: {
                 delay: 2500,
