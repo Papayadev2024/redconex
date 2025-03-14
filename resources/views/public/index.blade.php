@@ -304,7 +304,7 @@
                     <div class="w-full">
                        
                         <div class="swiper planes w-full mt-6" >
-                            <div class="swiper-wrapper" :class="{'flex flex-row justify-center': filteredProducts.length >= 1 && filteredProducts.length <= 3}">   
+                            <div class="swiper-wrapper" >   
                                 <template x-for="producto in filteredProducts" :key="producto.id">
                                     <div class="swiper-slide">
                                         <div class=" max-w-[390px] bg-white hover:bg-[#1EA7A2] bg-opacity-10  mx-auto  rounded-3xl overflow-hidden">
