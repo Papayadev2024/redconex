@@ -303,7 +303,7 @@
         
                     <div class="w-full">
                        
-                        <div class="swiper planes w-full mt-6" data-aos="fade-down">
+                        <div class="swiper planes w-full mt-6" >
                             <div class="swiper-wrapper" :class="{'flex flex-row justify-center': filteredProducts.length >= 1 && filteredProducts.length <= 3}">   
                                 <template x-for="producto in filteredProducts" :key="producto.id">
                                     <div class="swiper-slide">
