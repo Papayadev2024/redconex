@@ -527,13 +527,23 @@
                                         </div>
                                     </div>
 
-                                    <div class="md:col-span-5">
+                                    <div class="md:col-span-3">
                                         <label for="imagen">Imagen Principal (1000x1000px)</label>
                                         <div class="relative mb-2  mt-2">
                                             <input id="imagen" name="imagen"
                                                 class="p-2.5 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                                 aria-describedby="user_avatar_help" id="user_avatar" type="file">
                                         </div>
+                                    </div>
+
+                                    <div class="md:col-span-2 flex flex-row flex-4 justify-center items-center">
+                                        <label class="inline-flex items-center cursor-pointer mb-2">
+                                          <input id="liquidacion" name="liquidacion" type="checkbox" class="sr-only peer">
+                                          <div
+                                            class="relative w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+                                          </div>
+                                          <span class="block ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Anexar a "Saber mas"</span>
+                                        </label>
                                     </div>
 
                                     {{-- <div class="md:col-span-5 mt-2">
@@ -897,17 +907,17 @@
                                     </div>
                                 </div> --}}
 
-                                {{-- <div class="md:col-span-5">
-                                    <label for="archive">Ficha Técnica</label>
+                                <div class="md:col-span-5">
+                                    <label for="archive">Imagen de fondo (Saber mas)</label>
                                     <div class="relative mb-2  mt-2">
-                                        <input name="fichatecnica" accept="application/pdf"
+                                        <input name="fichatecnica"
                                             class="p-2.5 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                             aria-describedby="user_avatar_help" id="user_avatar" type="file">
                                     </div>
                                 </div>
 
 
-                                <div class="md:col-span-5">
+                                {{-- <div class="md:col-span-5">
                                     <label for="archive">Hoja de Seguridad</label>
                                     <div class="relative mb-2  mt-2">
                                         <input name="fichariesgo" accept="application/pdf"

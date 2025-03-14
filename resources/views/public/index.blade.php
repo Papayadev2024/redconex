@@ -164,7 +164,7 @@
                                         <div class="flex flex-col justify-center items-start font-gotham_bold   ">
                                             <a target="_blank" href="https://api.whatsapp.com/send?phone={{ $general[0]->whatsapp }}&text={{ $general[0]->mensaje_whatsapp }}">
                                                 <div class="bg-[#E29720] px-5 py-3 rounded-full tracking-normal">
-                                                    <p class="leading-none text-[#21149E] text-base 2xl:text-xl">Habla con nosotros</p>
+                                                    <p class="leading-none text-[#21149E] text-base 2xl:text-xl text-center">Habla con nosotros al <br><span>{{ $general[0]->whatsapp }}</span></p>
                                                 </div>
                                             </a>
                                         </div>
@@ -628,13 +628,17 @@
                         </h2>
                     </div>
 
-                    <div class="font-gotham_book text-white text-sm line-clamp-5">{!!$producto->description!!}</div>
-        
-                    <img class="w-full h-36 object-contain mx-auto my-2" 
-                        src="{{ asset($producto->imagen) }}" 
-                        onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';"
-                        alt="{{$producto->producto}}" 
-                    />
+                    <div class="font-gotham_book text-white text-sm">{!!$producto->description!!}</div>
+                    
+                    @if ($producto->liquidacion)
+                        <img class="w-full h-36 object-contain mx-auto my-2" 
+                            src="{{ asset($producto->imagen) }}" 
+                            onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';"
+                            alt="{{$producto->producto}}" 
+                        />
+                    @endif
+                    
+
                     @php
                         $html  = $producto->especificacion;
                         preg_match_all('/<p>(.*?)<\/p>/', $html, $matches);
@@ -659,7 +663,7 @@
                     @endif
                 </div>
                 <div class="w-full md:w-1/2 ">
-                    <div class="bg-cover bg-center min-h-[500px] h-full w-full" style="background-image: url('{{asset('images/img/popimg.png')}}');" onerror="this.onerror=null;this.src='{{ asset('images/img/popimg.png') }}';" ></div>
+                    <div class="bg-cover bg-center min-h-[500px] aspect-[3/4] h-full w-full" style="background-image: url('{{asset($producto->url_fichatecnica . $producto->name_fichatecnica)}}');" onerror="this.onerror=null;this.src='{{ asset('images/img/popimg.png') }}';" ></div>
                 </div>
             </div>
         </div>
@@ -928,7 +932,7 @@
                   
                 },
                 1600: {
-                    slidesPerView: 2,
+                    slidesPerView: 3,
                     spaceBetween: 20,
                   
                 },
@@ -1136,8 +1140,6 @@
                 });
             }
         });
-
-       
     </script>
 
     <script>

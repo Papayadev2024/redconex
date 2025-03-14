@@ -182,8 +182,6 @@ class ProductsController extends Controller
       });
 
 
-
-
       $producto = Products::create($cleanedData);
 
       // if ($producto['descuento'] == 0 || is_null($producto['descuento'])) {
@@ -562,7 +560,6 @@ class ProductsController extends Controller
     });
     $cleanedData['description'] = $data['description'];
     $cleanedData['order'] = $data['order'];
-    // $cleanedData['extract'] = $data['extract'];
     // $cleanedData['especificacion'] = $data['especificacion'];
 
     // $cleanedData['sku'] = $data['sku'];
@@ -572,7 +569,9 @@ class ProductsController extends Controller
     // } else {
     //   $cleanedData['preciofiltro'] = $data['descuento'];
     // }
-
+    if (!isset($cleanedData['liquidacion']) || $cleanedData['liquidacion'] === '') {
+        $cleanedData['liquidacion'] = null;
+    }  
     
     $product->update($cleanedData);
 
