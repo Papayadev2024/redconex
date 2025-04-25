@@ -68,7 +68,7 @@
                         </span>
                     </div>
                     <div class="flex flex-row w-full">
-                        <a class="bg-[#21149E] px-7 py-2 rounded-full text-white text-center font-gotham_bold w-full"><span>Pídelo aquí</span></a>
+                        <a target="_blank" href="{{$textosnosotros->link2section}}" class="bg-[#21149E] px-7 py-2 rounded-full text-white text-center font-gotham_bold w-full"><span>Pídelo aquí</span></a>
                     </div>
                 </div>
             </div>
@@ -85,7 +85,7 @@
                             </span>
                         </div>
                         <div class="flex flex-row w-full">
-                            <a class="bg-[#21149E] px-7 py-2 rounded-full text-white text-center font-gotham_bold w-full"><span>Pídelo aquí</span></a>
+                            <a target="_blank" href="{{$textosnosotros->link3section}}" class="bg-[#21149E] px-7 py-2 rounded-full text-white text-center font-gotham_bold w-full"><span>Pídelo aquí</span></a>
                         </div>
                     </div>
                 </div>

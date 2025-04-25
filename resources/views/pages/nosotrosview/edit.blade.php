@@ -93,8 +93,9 @@
                                     </div> --}}
 
 
-                                    <h2 class="font-semibold text-slate-800 dark:text-slate-100 text-xl tracking-tight">Atencion al cliente</h2>
+                                    <h2 class="md:col-span-5 font-semibold text-slate-800 dark:text-slate-100 text-xl tracking-tight">Atencion al cliente</h2>
 
+                                    <h2 class="md:col-span-5 font-semibold text-slate-800 dark:text-slate-100 text-base tracking-tight">Columna izquierda</h2>
 
                                     <div class="md:col-span-5">
                                         <label for="title2section">Titulo</label>
@@ -133,6 +134,21 @@
                                         </div>
                                     </div>
 
+                                    <div class="md:col-span-5">
+                                        <label for="link2section">Link</label>
+                                        <div class="relative mb-2">
+                                            <div
+                                                class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                                <i class="w-6 text-gray-500 fas fa-edit"></i>
+                                            </div>
+                                            <input type="text" id="link2section" name="link2section"
+                                                value="{{ $nosotros->link2section }}"
+                                                class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                placeholder="Ingrese la url completa (https://...)">
+                                        </div>
+                                    </div>
+
+                                    <h2 class="md:col-span-5 font-semibold text-slate-800 dark:text-slate-100 text-base tracking-tight">Columna derecha</h2>
 
                                     <div class="md:col-span-5">
                                         <label for="title3section">Titulo</label>
@@ -168,6 +184,20 @@
                                             <input id="url_image3section" name="url_image3section"
                                                 class="p-2.5 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                                 aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                        </div>
+                                    </div>
+
+                                    <div class="md:col-span-5">
+                                        <label for="link3section">Link</label>
+                                        <div class="relative mb-2">
+                                            <div
+                                                class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                                <i class="w-6 text-gray-500 fas fa-edit"></i>
+                                            </div>
+                                            <input type="text" id="link3section" name="link3section"
+                                                value="{{ $nosotros->link3section }}"
+                                                class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                placeholder="Ingrese la url completa (https://...)">
                                         </div>
                                     </div>
 
