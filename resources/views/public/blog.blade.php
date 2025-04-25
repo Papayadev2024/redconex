@@ -99,7 +99,7 @@
                                         </div>
                                         <div class="p-6 flex flex-col gap-3">
                                             <h2 class="font-gotham_bold text-white text-2xl xl:text-[21px] line-clamp-3">{{ $post->title }}</h2>
-                                            <div class="font-gotham_book text-white text-base text-justify line-clamp-3">{!!$lastpost->extract ?? $lastpost->description!!}</div>
+                                            <div class="font-gotham_book text-white text-base text-justify line-clamp-3">{!!$post->extract ?? $post->description!!}</div>
                                             <div class="flex flex-row w-full">
                                                 <a href="{{ route('detalleBlog', $post->id) }}" class="bg-[#E29720] px-4 py-3 rounded-full text-[#21149E] text-center font-gotham_bold w-full"><span>Leer más</span></a>
                                             </div>
