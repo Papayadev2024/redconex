@@ -111,7 +111,7 @@
                             <section class="bg-center h-svh bg-cover flex flex-col justify-center relative" style="background-image: url({{asset($slide->url_image . $slide->name_image)}})">
                                 
                                     <img class="opacity-40 object-cover absolute top-0 h-full w-full" src="{{asset('images/img/texturaconex.png')}}" />
-                                    <div class="flex flex-col lg:flex-row px-[5%]  py-[5%]  lg:px-[10%] pt-20 gap-5 justify-center items-start lg:items-end">
+                                    <div class="flex flex-col lg:flex-row px-[5%] py-[5%] lg:px-[10%] pt-20 gap-5 justify-center items-start lg:items-end">
                                         <div class="z-20 w-full md:w-full xl:w-2/3 2xl:w-1/2 flex flex-col gap-4 2xl:gap-10 justify-center">
                                             
                                             <div class="flex flex-col gap-1">
@@ -840,6 +840,13 @@
         document.addEventListener('DOMContentLoaded', function () {
             const items = document.querySelectorAll('.swiper-slide .flex');
             const mainImage = document.getElementById('imagen-zona');
+
+            // Establecer la primera imagen como activa al cargar
+            if (items.length > 0) {
+                const firstImage = items[0].getAttribute('data-image');
+                mainImage.src = firstImage;
+                mainImage.style.opacity = 1; // Asegurarse de que es visible
+            }
 
             items.forEach(item => {
                 item.addEventListener('click', function () {

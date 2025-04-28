@@ -94,8 +94,69 @@
         </section>
 
 
+        <section class="bg-cover bg-opacity-100 relative pb-10 xl:pb-16 flex flex-col gap-10">
+           
+          <div class="px-[5%] lg:px-[10%] flex flex-col items-start justify-center gap-5">
+            <div class="flex flex-col gap-1" >
+                <h3 class="font-gotham_bold text-white text-lg " data-aos="fade-down">Nuestra Historia</h3>
+                <h2 class="font-gotham_bold text-white text-4xl lg:text-5xl leading-none" data-aos="fade-down">Conectando sueños, 
+                     <span class="text-[#E29720]" data-aos="fade-down">cambiando vidas</span></h2>
+                <p class="text-white text-base font-gotham_book" data-aos="fade-down"> 
+                    En un mundo donde la distancia separa y las oportunidades no siempre llegan a todos, RedConex nació con un propósito claro: llevar internet a quienes más lo necesitan, cerrando brechas, impulsando sueños y conectando familias.
+                </p>
+            </div>
+          </div>
 
-        <section class="bg-cover bg-opacity-100 relative pb-10 xl:pb-16 flex flex-col gap-10" 
+          <div class="px-[5%] md:px-[8%] grid grid-cols-1 lg:grid-cols-3 gap-5">
+            <div class="flex flex-col gap-5 w-full bg-black bg-opacity-10 p-6 rounded-3xl" data-aos="fade-down">
+                <div class="flex flex-row justify-start">
+                    <div class="bg-[#1EA7A2] p-0 rounded-full overflow-hidden">
+                        <img class="object-contain w-12 lg:w-16" src="{{asset('images/img/iconoabout.png')}}" onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';" />
+                    </div>
+                </div>
+                <h2 class="font-gotham_bold text-white text-xl">Tecnología como herramienta de igualdad</h2>
+                <p class="font-gotham_book text-white text-base">Desde el inicio, creímos que la tecnología no debía ser un privilegio. Una conexión no es solo velocidad o megas: es educación, trabajo, familia y oportunidades. Por eso decidimos apostar por los lugares olvidados, donde la conectividad transforma vidas.</p>
+            </div>
+            <div class="flex flex-col gap-5 w-full bg-black bg-opacity-10 p-6 rounded-3xl" data-aos="fade-down">
+                <div class="flex flex-row justify-start">
+                    <div class="bg-[#1EA7A2] p-0 rounded-full overflow-hidden">
+                        <img class="object-contain w-12 lg:w-16" src="{{asset('images/img/iconoabout.png')}}" onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';" />
+                    </div>
+                </div>
+                <h2 class="font-gotham_bold text-white text-xl">Conexiones que cuentan historias</h2>
+                <p class="font-gotham_book text-white text-base">Cada fibra óptica que instalamos es mucho más que infraestructura. Es un niño estudiando desde casa, un joven aprendiendo para cumplir sus metas, una madre trabajando por el futuro de sus hijos, un emprendedor creciendo, una familia reencontrándose.</p>
+            </div>
+            <div class="flex flex-col gap-5 w-full bg-black bg-opacity-10 p-6 rounded-3xl" data-aos="fade-down">
+                <div class="flex flex-row justify-start">
+                    <div class="bg-[#1EA7A2] p-0 rounded-full overflow-hidden">
+                        <img class="object-contain w-12 lg:w-16" src="{{asset('images/img/iconoabout.png')}}" onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';" />
+                    </div>
+                </div>
+                <h2 class="font-gotham_bold text-white text-xl">Más que internet, construimos puentes</h2>
+                <p class="font-gotham_book text-white text-base">No creemos en barreras, creemos en la conexión. Porque cuando unimos personas, impulsamos el futuro. En RedConex, no solo llevamos internet: creamos oportunidades y acercamos sueños.</p>
+            </div>
+           </div>  
+        </section>
+
+        <section class="bg-cover bg-opacity-100 relative py-10 lg:py-16 bg-[#110B79]">
+            <div class="px-[5%] md:px-[10%] flex flex-col  lg:flex-row gap-5 md:gap-10 lg:items-center">
+                
+                <div class="w-full lg:w-1/2">
+                </div>
+
+                <div class="w-full sm:w-full lg:w-1/2  flex flex-col justify-center">
+                    <div class="flex flex-col gap-3 max-w-2xl text-left mx-auto" data-aos="fade-down">
+                        <h3 class="font-gotham_bold text-white text-lg ">Nuesta misión</h3>
+                        <h2 class="font-gotham_bold text-white text-4xl ">En Redconex llevamos la mejor<span class="text-[#E29720]"> experiencia digital a cada hogar</span></h2>
+                        <p class="font-gotham_book text-white text-base ">Brindamos internet de fibra óptica de alta calidad a un costo accesible para todas las familias.  Nos comprometemos con una atención cercana y respetuosa, asegurando un soporte técnico veloz y eficiente, porque más que conectar dispositivos, conectamos personas y sus sueños.</p>
+                    </div>   
+                </div>
+                
+            </div>  
+        </section>
+
+
+        <section class="bg-cover bg-opacity-100 relative py-10 xl:py-16 flex flex-col gap-10" 
           style="background-image: url('{{asset('images/img/textura3.svg')}}');">
            
           <div class="px-[5%]  flex flex-col items-center justify-center gap-5">
