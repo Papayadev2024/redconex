@@ -839,7 +839,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const items = document.querySelectorAll('.swiper-slide .flex');
+            const items = document.querySelectorAll('.lugares .swiper-slide .flex');
             const mainImage = document.getElementById('imagen-zona');
 
             // Establecer la primera imagen como activa al cargar
