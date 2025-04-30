@@ -398,8 +398,9 @@
                             <h3 class="font-gotham_bold text-white text-lg ">{{$textoshome->subtitle6section ?? "Ingrese texto"}}</h3>
                             <h2 class="font-gotham_bold text-white text-4xl xl:text-5xl">{{$textoshome->title6section ?? "Ingrese texto"}} <span class="text-[#E29720]">{{$textoshome->title6section2 ?? "Ingrese texto"}}</span>  {{$textoshome->title6section3 ?? "Ingrese texto"}}</h2>
                         </div> 
+                        @php $primeraZona = $zonas->last(); @endphp
                         <div>
-                            <img id="imagen-zona" data-aos="fade-down" class="rounded-2xl overflow-hidden h-52 md:h-96 w-full object-cover transition-opacity duration-300 opacity-100" src="{{asset($zona->url_image . $zona->name_image)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';" />
+                            <img id="imagen-zona" data-aos="fade-down" class="rounded-2xl overflow-hidden h-52 md:h-96 w-full object-cover transition-opacity duration-300 opacity-100" src="{{asset($primeraZona->url_image . $primeraZona->name_image)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';" />
                         </div>
                     </div>
                 </div>  
@@ -842,12 +843,6 @@
             const mainImage = document.getElementById('imagen-zona');
 
             // Establecer la primera imagen como activa al cargar
-            if (items.length > 0) {
-                const firstImage = items[0].getAttribute('data-image');
-                mainImage.src = firstImage;
-                mainImage.style.opacity = 1; // Asegurarse de que es visible
-            }
-
             items.forEach(item => {
                 item.addEventListener('click', function () {
                     const newImageSrc = this.getAttribute('data-image');
