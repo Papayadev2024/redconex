@@ -42,7 +42,7 @@
 
         <section class="bg-cover bg-opacity-100 relative py-10 lg:py-16"  style="background-image:url({{asset('images/img/texturanosotros.png')}})">
             <div class="px-[5%] md:px-[10%]">
-                <div class="flex flex-col lg:flex-row lg:items-center 2xl:p-14 bg-[#1EA7A2] rounded-3xl">
+                <div class="flex flex-col lg:flex-row lg:items-center bg-[#1EA7A2] rounded-3xl">
                     <div x-data="{ expanded: false }" class="w-full sm:w-full lg:w-1/2  flex flex-col justify-center p-7 md:p-10">
                         <div class="flex flex-col gap-3 max-w-2xl text-left mx-auto" data-aos="fade-down">
                             <h3 class="font-gotham_bold text-white text-lg ">{{$textosnosotros->subtitle5section ?? ""}}</h3>
@@ -63,7 +63,7 @@
                     </div>
 
                     <div class="w-full lg:w-1/2 flex flex-row justify-center items-end">
-                        <img class="w-full h-full object-cover object-bottom" src="{{asset($textosnosotros->url_image5section)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/cables.png') }}';" />
+                        <img class="w-full h-full object-cover object-bottom" src="{{asset($textosnosotros->url_mage5section)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/cables.png') }}';" />
                     </div>
                 </div>
             </div>  
@@ -91,7 +91,7 @@
 
         <section class="bg-cover bg-opacity-100 relative pb-10 lg:pb-16 bg-[#110B79]">
             <div class="px-[5%] md:px-[10%]">
-                <div class="flex flex-col  lg:flex-row lg:items-center 2xl:p-14 bg-[#21149E] rounded-3xl">
+                <div class="flex flex-col  lg:flex-row lg:items-center bg-[#21149E] rounded-3xl">
                     <div class="w-full sm:w-full lg:w-1/2  flex flex-col justify-center p-7 md:p-10">
                         <div class="flex flex-col gap-3 max-w-2xl text-left mx-auto" data-aos="fade-down">
                             <h2 class="font-gotham_bold text-white text-4xl ">{!! preg_replace('/\*(.*?)\*/', '<span class="text-[#E29720]">$1</span>', $textosnosotros->title7section) !!}</h2>
@@ -127,10 +127,7 @@
                 <div class="flex flex-col gap-5 w-full bg-black bg-opacity-10 p-6 rounded-3xl text-center" data-aos="zoom-in-up">
                     <div class="flex flex-row justify-center">
                         <div class="bg-[#E29720] p-3 rounded-full">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
-                                <path d="M27.502 15C27.502 8.09644 21.9055 2.5 15.002 2.5C8.09839 2.5 2.50195 8.09644 2.50195 15C2.50195 21.9035 8.09839 27.5 15.002 27.5C21.9055 27.5 27.502 21.9035 27.502 15Z" fill="#E29720" stroke="#110B79" stroke-width="1.875"/>
-                                <path d="M10.002 15.625L13.127 18.75L20.002 11.25" stroke="#110B79" stroke-width="1.875" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <img class="h-10 w-10 object-contain" src="{{ asset($valor->url_image . $valor->name_image) }}" onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';">
                         </div>
                     </div>
                     <h2 class="font-gotham_bold text-white text-3xl max-w-sm mx-auto ">{{$valor->title}}</h2>

@@ -80,24 +80,22 @@
             </div> --}}
 
 
-              {{-- <div class="md:col-span-5">
+              <div class="md:col-span-5">
                 <label for="description">Imagen</label>
                 <div class="relative mb-2 mt-2">
-                  <img src="{{ asset($misclientes->url_image . $misclientes->name_image) }}"
+                  <img src="{{ asset($misclientes->url_image . $misclientes->name_image) }}" onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';"
                     class="max-w-xs max-h-48 object-cover  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 </div>
               </div>
 
-
-
               <div class="md:col-span-5">
-                <label for="imagen">Subir imagen (198x72 px)</label>
+                <label for="imagen">Subir imagen</label>
                 <div class="relative mb-2  mt-2">
                   <input name="imagen"
                     class="p-2.5 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                     aria-describedby="user_avatar_help" id="imagen" type="file">
                 </div>
-              </div> --}}
+              </div>
 
 
               <div class="md:col-span-5 text-right mt-6 flex justify-between">
