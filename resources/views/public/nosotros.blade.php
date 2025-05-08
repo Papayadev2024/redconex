@@ -91,7 +91,7 @@
 
         <section class="bg-cover bg-opacity-100 relative pb-10 lg:pb-16 bg-[#110B79]">
             <div class="px-[5%] md:px-[10%]">
-                <div class="flex flex-col  lg:flex-row lg:items-center bg-[#21149E] rounded-3xl">
+                <div class="flex flex-col  lg:flex-row lg:items-center bg-[#21149E] rounded-3xl overflow-hidden">
                     <div class="w-full sm:w-full lg:w-1/2  flex flex-col justify-center p-7 md:p-10">
                         <div class="flex flex-col gap-3 max-w-2xl text-left mx-auto" data-aos="fade-down">
                             <h2 class="font-gotham_bold text-white text-4xl ">{!! preg_replace('/\*(.*?)\*/', '<span class="text-[#E29720]">$1</span>', $textosnosotros->title7section) !!}</h2>
