@@ -64,26 +64,54 @@ class NosotrosViewController extends Controller
     {
         $nosotros = NosotrosView::findOrfail($id); 
 
-        if ($request->hasFile("url_image2section")) {
-            $file = $request->file('url_image2section');
+        if ($request->hasFile("imagen_dos")) {
+            $file = $request->file('imagen_dos');
             $routeImg = 'storage/images/nosotroshome/';
             $nombreImagen = Str::random(10) . '_' . $file->getClientOriginalName();
       
             $this->saveImg($file, $routeImg, $nombreImagen);
       
             $nosotros['url_image2section'] = $routeImg . $nombreImagen;
-           
         } 
 
-        if ($request->hasFile("url_image4section")) {
-            $file = $request->file('url_image4section');
+        if ($request->hasFile("imagen_tres")) {
+            $file = $request->file('imagen_tres');
             $routeImg = 'storage/images/nosotroshome/';
             $nombreImagen = Str::random(10) . '_' . $file->getClientOriginalName();
       
             $this->saveImg($file, $routeImg, $nombreImagen);
       
-            $nosotros['url_image4section'] = $routeImg . $nombreImagen;
-           
+            $nosotros['url_image3section'] = $routeImg . $nombreImagen;
+        } 
+
+        if ($request->hasFile("imagen_cinco")) {
+            $file = $request->file('imagen_cinco');
+            $routeImg = 'storage/images/nosotroshome/';
+            $nombreImagen = Str::random(10) . '_' . $file->getClientOriginalName();
+      
+            $this->saveImg($file, $routeImg, $nombreImagen);
+      
+            $nosotros['url_image5section'] = $routeImg . $nombreImagen;
+        } 
+
+        if ($request->hasFile("imagen_seis")) {
+            $file = $request->file('imagen_seis');
+            $routeImg = 'storage/images/nosotroshome/';
+            $nombreImagen = Str::random(10) . '_' . $file->getClientOriginalName();
+      
+            $this->saveImg($file, $routeImg, $nombreImagen);
+      
+            $nosotros['url_image6section'] = $routeImg . $nombreImagen;
+        }
+
+        if ($request->hasFile("imagen_siete")) {
+            $file = $request->file('imagen_siete');
+            $routeImg = 'storage/images/nosotroshome/';
+            $nombreImagen = Str::random(10) . '_' . $file->getClientOriginalName();
+      
+            $this->saveImg($file, $routeImg, $nombreImagen);
+      
+            $nosotros['url_image7section'] = $routeImg . $nombreImagen;
         } 
 
         $nosotros->update($request->all());

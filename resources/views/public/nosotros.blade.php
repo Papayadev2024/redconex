@@ -35,126 +35,78 @@
         }
     </style>
 @stop
-
+<script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
 @section('content')
-    <main class="bg-cover bg-center pt-16 xl:pt-5"  style="background-image:url({{asset('images/img/texturanosotros.png')}})">
+    <main class="bg-cover bg-center pt-16 xl:pt-5" style="background-image:url({{asset('images/img/texturanosotros.png')}})">
 
+        <section class="bg-cover bg-opacity-100 relative py-10 lg:py-16"  style="background-image:url({{asset('images/img/texturanosotros.png')}})">
+            <div class="px-[5%] md:px-[10%]">
+                <div class="flex flex-col lg:flex-row lg:items-center 2xl:p-14 bg-[#1EA7A2] rounded-3xl">
+                    <div x-data="{ expanded: false }" class="w-full sm:w-full lg:w-1/2  flex flex-col justify-center p-7 md:p-10">
+                        <div class="flex flex-col gap-3 max-w-2xl text-left mx-auto" data-aos="fade-down">
+                            <h3 class="font-gotham_bold text-white text-lg ">{{$textosnosotros->subtitle5section ?? ""}}</h3>
+                            <h2 class="font-gotham_bold text-white text-4xl xl:text-5xl">{!! preg_replace('/\*(.*?)\*/', '<span class="text-[#21149E]">$1</span>', $textosnosotros->title5section) !!}</h2>
+                            <div
+                                x-ref="content"
+                                :style="expanded ? '' : 'max-height: 13rem; overflow: hidden;'"
+                                x-transition.duration.500ms
+                                class="font-gotham_book text-white text-base flex flex-col gap-3 overflow-hidden transition-all ease-in-out">
+                                {!!$textosnosotros->description5section ?? ""!!}
+                            </div>
+                            <div class="w-auto">
+                                <a  @click="expanded = !expanded" class="bg-[#21149E] px-4 py-2.5 rounded-xl text-white font-gotham_book transition-all duration-300 ease-in-out">
+                                    <span x-text="expanded ? 'Leer menos' : 'Leer más'"></span>
+                                </a>
+                            </div>
+                        </div>   
+                    </div>
+
+                    <div class="w-full lg:w-1/2 flex flex-row justify-center items-end">
+                        <img class="w-full h-full object-cover object-bottom" src="{{asset($textosnosotros->url_image5section)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/cables.png') }}';" />
+                    </div>
+                </div>
+            </div>  
+        </section>
        
-        <section class="bg-cover bg-opacity-100 relative py-10 xl:py-16" 
-          style="background-image: url('{{asset('images/img/textura3.svg')}}');">
-           
-          <div class="px-[5%]  flex flex-col items-center justify-center gap-5">
-            <div class="flex flex-col gap-1 max-w-3xl text-center">
-                <h3 data-aos="fade-down" class="font-gotham_bold text-white text-lg ">{{$textosnosotros->subtitle1section ?? "Ingrese un texto"}}</h3>
-                <h2 data-aos="fade-down" class="font-gotham_bold text-white text-4xl lg:text-5xl leading-none">{{$textosnosotros->title1section ?? "Ingrese un texto"}} <span class="text-[#E29720]">{{$textosnosotros->title1section2 ?? "Ingrese un texto"}}</span></h2>
-                <p data-aos="fade-down" class="text-white text-base font-gotham_book"> 
-                    {{$textosnosotros->description1section ?? "Ingrese un texto"}}
-                </p>
-            </div>
-          </div>
-
-          <div class="px-[5%] md:px-[8%] py-5 flex flex-col md:flex-row gap-5 md:gap-10 md:justify-center">
-                
-            <div class="flex flex-col md:flex-row gap-3 w-auto md:w-[420px] bg-[#1EA7A2] py-3 md:py-0 px-3 rounded-3xl">
-                <img class="w-auto h-40 object-contain mx-auto " src="{{asset($textosnosotros->url_image2section)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/nosotroscable.png') }}';" />
-                <div class="flex flex-col gap-3 justify-center items-start p-3">
-                    <div class="flex flex-col gap-0">
-                        <h2 class="font-gotham_bold text-4xl text-white line-clamp-1" data-aos="fade-down">
-                            {{$textosnosotros->title2section ?? "Ingrese un texto"}}
-                        </h2>
-                        <span class="font-gotham_book text-lg text-white line-clamp-1 " data-aos="fade-down">
-                            {{$textosnosotros->subtitle2section ?? "Ingrese un texto"}}
-                        </span>
-                    </div>
-                    <div class="flex flex-row w-full">
-                        <a target="_blank" href="{{$textosnosotros->link2section}}" class="bg-[#21149E] px-7 py-2 rounded-full text-white text-center font-gotham_bold w-full"><span>Pídelo aquí</span></a>
-                    </div>
-                </div>
-            </div>
-
-                <div class="flex flex-col md:flex-row gap-3 w-auto md:w-[420px] bg-[#1EA7A2] py-3 md:py-0 px-3 rounded-3xl">
-                    <img class="w-auto h-40 object-contain mx-auto " src="{{asset($textosnosotros->url_image3section)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/nosotrosvaron.png') }}';" />
-                    <div class="flex flex-col gap-3 justify-center items-start p-3">
-                        <div class="flex flex-col gap-0">
-                            <h2 class="font-gotham_bold text-4xl text-white line-clamp-1" data-aos="fade-down">
-                                {{$textosnosotros->title3section ?? "Ingrese un texto"}}
-                            </h2>
-                            <span class="font-gotham_book text-lg text-white line-clamp-1" data-aos="fade-down">
-                                {{$textosnosotros->subtitle3section ?? "Ingrese un texto"}}
-                            </span>
-                        </div>
-                        <div class="flex flex-row w-full">
-                            <a target="_blank" href="{{$textosnosotros->link3section}}" class="bg-[#21149E] px-7 py-2 rounded-full text-white text-center font-gotham_bold w-full"><span>Pídelo aquí</span></a>
-                        </div>
-                    </div>
-                </div>
-
-           </div>  
-        </section>
-
-
-        <section class="bg-cover bg-opacity-100 relative pb-10 xl:pb-16 flex flex-col gap-10">
-           
-          <div class="px-[5%] lg:px-[10%] flex flex-col items-start justify-center gap-5">
-            <div class="flex flex-col gap-1" >
-                <h3 class="font-gotham_bold text-white text-lg " data-aos="fade-down">Nuestra Historia</h3>
-                <h2 class="font-gotham_bold text-white text-4xl lg:text-5xl leading-none" data-aos="fade-down">Conectando sueños, 
-                     <span class="text-[#E29720]" data-aos="fade-down">cambiando vidas</span></h2>
-                <p class="text-white text-base font-gotham_book" data-aos="fade-down"> 
-                    En un mundo donde la distancia separa y las oportunidades no siempre llegan a todos, RedConex nació con un propósito claro: llevar internet a quienes más lo necesitan, cerrando brechas, impulsando sueños y conectando familias.
-                </p>
-            </div>
-          </div>
-
-          <div class="px-[5%] md:px-[8%] grid grid-cols-1 lg:grid-cols-3 gap-5">
-            <div class="flex flex-col gap-5 w-full bg-black bg-opacity-10 p-6 rounded-3xl" data-aos="fade-down">
-                <div class="flex flex-row justify-start">
-                    <div class="bg-[#1EA7A2] p-0 rounded-full overflow-hidden">
-                        <img class="object-contain w-12 lg:w-16" src="{{asset('images/img/iconoabout.png')}}" onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';" />
-                    </div>
-                </div>
-                <h2 class="font-gotham_bold text-white text-xl">Tecnología como herramienta de igualdad</h2>
-                <p class="font-gotham_book text-white text-base">Desde el inicio, creímos que la tecnología no debía ser un privilegio. Una conexión no es solo velocidad o megas: es educación, trabajo, familia y oportunidades. Por eso decidimos apostar por los lugares olvidados, donde la conectividad transforma vidas.</p>
-            </div>
-            <div class="flex flex-col gap-5 w-full bg-black bg-opacity-10 p-6 rounded-3xl" data-aos="fade-down">
-                <div class="flex flex-row justify-start">
-                    <div class="bg-[#1EA7A2] p-0 rounded-full overflow-hidden">
-                        <img class="object-contain w-12 lg:w-16" src="{{asset('images/img/iconoabout.png')}}" onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';" />
-                    </div>
-                </div>
-                <h2 class="font-gotham_bold text-white text-xl">Conexiones que cuentan historias</h2>
-                <p class="font-gotham_book text-white text-base">Cada fibra óptica que instalamos es mucho más que infraestructura. Es un niño estudiando desde casa, un joven aprendiendo para cumplir sus metas, una madre trabajando por el futuro de sus hijos, un emprendedor creciendo, una familia reencontrándose.</p>
-            </div>
-            <div class="flex flex-col gap-5 w-full bg-black bg-opacity-10 p-6 rounded-3xl" data-aos="fade-down">
-                <div class="flex flex-row justify-start">
-                    <div class="bg-[#1EA7A2] p-0 rounded-full overflow-hidden">
-                        <img class="object-contain w-12 lg:w-16" src="{{asset('images/img/iconoabout.png')}}" onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';" />
-                    </div>
-                </div>
-                <h2 class="font-gotham_bold text-white text-xl">Más que internet, construimos puentes</h2>
-                <p class="font-gotham_book text-white text-base">No creemos en barreras, creemos en la conexión. Porque cuando unimos personas, impulsamos el futuro. En RedConex, no solo llevamos internet: creamos oportunidades y acercamos sueños.</p>
-            </div>
-           </div>  
-        </section>
-
+        
         <section class="bg-cover bg-opacity-100 relative py-10 lg:py-16 bg-[#110B79]">
-            <div class="px-[5%] md:px-[10%] flex flex-col  lg:flex-row gap-5 md:gap-10 lg:items-center">
-                
-                <div class="w-full lg:w-1/2">
-                </div>
+            <div class="px-[5%] md:px-[10%]">
+                <div class="flex flex-col  lg:flex-row gap-5 md:gap-10 lg:items-center p-7 md:p-10 2xl:p-14 bg-[#21149E] rounded-3xl">
+                    <div class="w-full lg:w-1/2 flex flex-row justify-center">
+                        <img class="w-full h-full object-cover max-w-md" src="{{asset($textosnosotros->url_image6section)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/nosotrosmision.png') }}';" />
+                    </div>
 
-                <div class="w-full sm:w-full lg:w-1/2  flex flex-col justify-center">
-                    <div class="flex flex-col gap-3 max-w-2xl text-left mx-auto" data-aos="fade-down">
-                        <h3 class="font-gotham_bold text-white text-lg ">Nuesta misión</h3>
-                        <h2 class="font-gotham_bold text-white text-4xl ">En Redconex llevamos la mejor<span class="text-[#E29720]"> experiencia digital a cada hogar</span></h2>
-                        <p class="font-gotham_book text-white text-base ">Brindamos internet de fibra óptica de alta calidad a un costo accesible para todas las familias.  Nos comprometemos con una atención cercana y respetuosa, asegurando un soporte técnico veloz y eficiente, porque más que conectar dispositivos, conectamos personas y sus sueños.</p>
-                    </div>   
+                    <div class="w-full sm:w-full lg:w-1/2  flex flex-col justify-center">
+                        <div class="flex flex-col gap-3 max-w-2xl text-left mx-auto" data-aos="fade-down">
+                            <h2 class="font-gotham_bold text-white text-4xl ">{!! preg_replace('/\*(.*?)\*/', '<span class="text-[#E29720]">$1</span>', $textosnosotros->title6section) !!}</h2>
+                            <div class="font-gotham_book text-white text-base">
+                                {{ $textosnosotros->description6section ?? "" }}
+                            </div>
+                        </div>   
+                    </div>
                 </div>
-                
             </div>  
         </section>
 
+        <section class="bg-cover bg-opacity-100 relative pb-10 lg:pb-16 bg-[#110B79]">
+            <div class="px-[5%] md:px-[10%]">
+                <div class="flex flex-col  lg:flex-row lg:items-center 2xl:p-14 bg-[#21149E] rounded-3xl">
+                    <div class="w-full sm:w-full lg:w-1/2  flex flex-col justify-center p-7 md:p-10">
+                        <div class="flex flex-col gap-3 max-w-2xl text-left mx-auto" data-aos="fade-down">
+                            <h2 class="font-gotham_bold text-white text-4xl ">{!! preg_replace('/\*(.*?)\*/', '<span class="text-[#E29720]">$1</span>', $textosnosotros->title7section) !!}</h2>
+                            <p class="font-gotham_book text-white text-base ">{{ $textosnosotros->description7section ?? "" }}</p>
+                        </div>   
+                    </div>
+
+                    <div class="w-full lg:w-1/2 flex flex-row justify-center">
+                        <img class="w-full h-full object-cover" src="{{asset($textosnosotros->url_image7section)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/nosotrosvision.png') }}';" />
+                    </div>
+                </div>
+            </div>  
+        </section>
+
+        
 
         <section class="bg-cover bg-opacity-100 relative py-10 xl:py-16 flex flex-col gap-10" 
           style="background-image: url('{{asset('images/img/textura3.svg')}}');">
@@ -186,6 +138,56 @@
                 </div>
             @endforeach
            </div>  
+        </section>
+
+        <section class="bg-cover bg-opacity-100 relative pb-10 xl:pb-16"  style="background-image: url('{{asset('images/img/textura3.svg')}}');">
+           
+            <div class="px-[5%]  flex flex-col items-center justify-center gap-5">
+                <div class="flex flex-col gap-1 max-w-3xl text-center">
+                    <h3 data-aos="fade-down" class="font-gotham_bold text-white text-lg ">{{$textosnosotros->subtitle1section ?? "Ingrese un texto"}}</h3>
+                    <h2 data-aos="fade-down" class="font-gotham_bold text-white text-4xl lg:text-5xl leading-none">{{$textosnosotros->title1section ?? "Ingrese un texto"}} <span class="text-[#E29720]">{{$textosnosotros->title1section2 ?? "Ingrese un texto"}}</span></h2>
+                    <p data-aos="fade-down" class="text-white text-base font-gotham_book"> 
+                        {{$textosnosotros->description1section ?? "Ingrese un texto"}}
+                    </p>
+                </div>
+            </div>
+
+            <div class="px-[5%] md:px-[8%] py-5 flex flex-col md:flex-row gap-5 md:gap-10 md:justify-center">
+                <div class="flex flex-col md:flex-row gap-3 w-auto md:w-[420px] bg-[#1EA7A2] py-3 md:py-0 px-3 rounded-3xl">
+                    <img class="w-auto h-40 object-contain mx-auto " src="{{asset($textosnosotros->url_image2section)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/nosotroscable.png') }}';" />
+                    <div class="flex flex-col gap-3 justify-center items-start p-3">
+                        <div class="flex flex-col gap-0">
+                            <h2 class="font-gotham_bold text-4xl text-white line-clamp-1" data-aos="fade-down">
+                                {{$textosnosotros->title2section ?? "Ingrese un texto"}}
+                            </h2>
+                            <span class="font-gotham_book text-lg text-white line-clamp-1 " data-aos="fade-down">
+                                {{$textosnosotros->subtitle2section ?? "Ingrese un texto"}}
+                            </span>
+                        </div>
+                        <div class="flex flex-row w-full">
+                            <a target="_blank" href="{{$textosnosotros->link2section}}" class="bg-[#21149E] px-7 py-2 rounded-full text-white text-center font-gotham_bold w-full"><span>Pídelo aquí</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-3 w-auto md:w-[420px] bg-[#1EA7A2] py-3 md:py-0 px-3 rounded-3xl">
+                    <img class="w-auto h-40 object-contain mx-auto " src="{{asset($textosnosotros->url_image3section)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/nosotrosvaron.png') }}';" />
+                    <div class="flex flex-col gap-3 justify-center items-start p-3">
+                        <div class="flex flex-col gap-0">
+                            <h2 class="font-gotham_bold text-4xl text-white line-clamp-1" data-aos="fade-down">
+                                {{$textosnosotros->title3section ?? "Ingrese un texto"}}
+                            </h2>
+                            <span class="font-gotham_book text-lg text-white line-clamp-1" data-aos="fade-down">
+                                {{$textosnosotros->subtitle3section ?? "Ingrese un texto"}}
+                            </span>
+                        </div>
+                        <div class="flex flex-row w-full">
+                            <a target="_blank" href="{{$textosnosotros->link3section}}" class="bg-[#21149E] px-7 py-2 rounded-full text-white text-center font-gotham_bold w-full"><span>Pídelo aquí</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            
         </section>
 
 

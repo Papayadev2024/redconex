@@ -30,5 +30,18 @@ class NosotrosView extends Model
         'title4section2', 
         'description4section', 
 
+        'subtitle5section',
+        'title5section',
+        'description5section',
+        'url_image5section',
+
+        'title6section',
+        'description6section',
+        'url_image6section',
+
+        'title7section',
+        'description7section',
+        'url_image7section',
+
     ];
 }

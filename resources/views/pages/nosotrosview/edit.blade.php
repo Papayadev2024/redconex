@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
-        <form action="{{ route('nosotrosview.update', $nosotros->id) }}" method="POST">
+        <form action="{{ route('nosotrosview.update', $nosotros->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div
@@ -25,8 +25,134 @@
                             <div class="rounded shadow-lg p-4 px-4 w-full">
 
                                 <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5 ">
+                                    
+                                    <h2 class="md:col-span-5 font-semibold text-slate-800 dark:text-slate-100 text-xl tracking-tight">Historia</h2>
+                                    
+                                    <div class="md:col-span-5">
+                                        <label for="subtitle5section">Subtitulo</label>
+                                        <div class="relative mb-2 ">
+                                            <div
+                                                class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                                <i class="w-6 text-gray-500 fas fa-edit"></i>
+                                            </div>
+                                            <input type="text" id="subtitle5section" name="subtitle5section"
+                                                value="{{ $nosotros->subtitle5section }}"
+                                                class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                placeholder="Ingrese texto">
+                                        </div>
+                                    </div>
 
-                                    <h2 class="font-semibold text-slate-800 dark:text-slate-100 text-xl tracking-tight">Portada</h2>
+                                    <div class="md:col-span-3">
+                                        <label for="title5section">Titulo</label>
+                                        <div class="relative mb-2 ">
+                                            <div
+                                                class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                                <i class="w-6 text-gray-500 fas fa-edit"></i>
+                                            </div>
+                                            <input type="text" id="title5section" name="title5section"
+                                                value="{{ $nosotros->title5section }}"
+                                                class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                placeholder="Ingrese texto">
+                                        </div>
+                                    </div>
+
+                                    <div class="md:col-span-5">
+                                        <label for="description5section">Descripción</label>
+                                        <div class="relative mb-2">
+                                            <div
+                                                class="absolute top-3 left-0 flex items-center pl-3 pointer-events-none">
+                                                    <i class="w-6 text-gray-500 fas fa-edit"></i>
+                                            </div>
+                                            <textarea class="ckeditor" id="description5section" name="description5section">{{ $nosotros->description5section }}</textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="md:col-span-5">
+                                        <label for="imagen_cinco">Imagen</label>
+                                        <div class="relative mb-2  mt-2">
+                                            <input id="imagen_cinco" name="imagen_cinco"
+                                                class="p-2.5 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                                aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                        </div>
+                                    </div>
+
+                                    <h2 class="md:col-span-5 font-semibold text-slate-800 dark:text-slate-100 text-xl tracking-tight">Mision</h2>
+
+                                    <div class="md:col-span-3">
+                                        <label for="title6section">Titulo</label>
+                                        <div class="relative mb-2 ">
+                                            <div
+                                                class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                                <i class="w-6 text-gray-500 fas fa-edit"></i>
+                                            </div>
+                                            <input type="text" id="title6section" name="title6section"
+                                                value="{{ $nosotros->title6section }}"
+                                                class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                placeholder="Ingrese texto">
+                                        </div>
+                                    </div>
+
+                                    <div class="md:col-span-5">
+                                        <label for="description6section">Descripción</label>
+                                        <div class="relative mb-2">
+                                            <div
+                                                class="absolute top-3 left-0 flex items-center pl-3 pointer-events-none">
+                                                    <i class="w-6 text-gray-500 fas fa-edit"></i>
+                                            </div>
+                                            <textarea type="text" id="description6section" name="description6section"
+                                                class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                placeholder="Ingrese la descripcion">{{ $nosotros->description6section }}</textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="md:col-span-5">
+                                        <label for="imagen_seis">Imagen</label>
+                                        <div class="relative mb-2  mt-2">
+                                            <input id="imagen_seis" name="imagen_seis"
+                                                class="p-2.5 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                                aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                        </div>
+                                    </div>
+                                    
+                                    <h2 class="md:col-span-5 font-semibold text-slate-800 dark:text-slate-100 text-xl tracking-tight">Vision</h2>
+
+                                    <div class="md:col-span-3">
+                                        <label for="title7section">Titulo</label>
+                                        <div class="relative mb-2 ">
+                                            <div
+                                                class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                                <i class="w-6 text-gray-500 fas fa-edit"></i>
+                                            </div>
+                                            <input type="text" id="title7section" name="title7section"
+                                                value="{{ $nosotros->title7section }}"
+                                                class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                placeholder="Ingrese texto">
+                                        </div>
+                                    </div>
+
+                                    <div class="md:col-span-5">
+                                        <label for="description7section">Descripción</label>
+                                        <div class="relative mb-2">
+                                            <div
+                                                class="absolute top-3 left-0 flex items-center pl-3 pointer-events-none">
+                                                    <i class="w-6 text-gray-500 fas fa-edit"></i>
+                                            </div>
+                                            <textarea type="text" id="description7section" name="description7section"
+                                                class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                placeholder="Ingrese la descripcion">{{ $nosotros->description7section }}</textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="md:col-span-5">
+                                        <label for="imagen_siete">Imagen</label>
+                                        <div class="relative mb-2  mt-2">
+                                            <input id="imagen_siete" name="imagen_siete"
+                                                class="p-2.5 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                                aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                                        </div>
+                                    </div>
+
+                                    <h2 class="md:col-span-5 font-semibold text-slate-800 dark:text-slate-100 text-xl tracking-tight">Portada</h2>
                                     
                                     <div class="md:col-span-5">
                                         <label for="subtitle1section">Subtitulo</label>
@@ -126,9 +252,9 @@
                                     </div>
 
                                     <div class="md:col-span-5">
-                                        <label for="url_image2section">Imagen</label>
+                                        <label for="imagen_dos">Imagen</label>
                                         <div class="relative mb-2  mt-2">
-                                            <input id="url_image2section" name="url_image2section"
+                                            <input id="imagen_dos" name="imagen_dos"
                                                 class="p-2.5 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                                 aria-describedby="user_avatar_help" id="user_avatar" type="file">
                                         </div>
@@ -179,9 +305,9 @@
                                     </div>
 
                                     <div class="md:col-span-5">
-                                        <label for="url_image3section">Imagen</label>
+                                        <label for="imagen_tres">Imagen</label>
                                         <div class="relative mb-2  mt-2">
-                                            <input id="url_image3section" name="url_image3section"
+                                            <input id="imagen_tres" name="imagen_tres"
                                                 class="p-2.5 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                                 aria-describedby="user_avatar_help" id="user_avatar" type="file">
                                         </div>
@@ -364,6 +490,24 @@
 
         });
     </script>
-
+    <script src="/ckeditor/ckeditor.js"></script>
+    <script>
+       CKEDITOR.replace('description5section', {
+            toolbar: [
+                { name: 'document', items: ['Source'] }, // Código fuente
+                { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', '-', 'Undo', 'Redo'] },
+                { name: 'styles', items: ['Styles', 'Format', 'FontSize'] }, // Tamaño y fuente
+                { name: 'colors', items: ['TextColor', 'BGColor'] }, // Color de texto y fondo
+                { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat'] },
+                { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Blockquote'] },
+                { name: 'insert', items: ['Table', 'HorizontalRule'] },
+                { name: 'links', items: ['Link', 'Unlink'] },
+                { name: 'tools', items: ['Maximize'] } // Maximizar
+            ],
+            extraPlugins: 'colorbutton,font', // Activa plugins para color y fuentes
+            removePlugins: 'elementspath', // Elimina la ruta de elementos
+            resize_enabled: true // Permite redimensionar el editor
+        });
+    </script>
 
 </x-app-layout>
