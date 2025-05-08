@@ -100,7 +100,7 @@
                     </div>
 
                     <div class="w-full lg:w-1/2 flex flex-row justify-center">
-                        <img class="w-full h-full object-cover" src="{{asset($textosnosotros->url_image7section)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/nosotrosvision.png') }}';" />
+                        <img class="w-full h-full object-cover min-h-96" src="{{asset($textosnosotros->url_image7section)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/nosotrosvision.png') }}';" />
                     </div>
                 </div>
             </div>  
