@@ -1467,6 +1467,26 @@ class IndexController extends Controller
     
         return view('public.librodereclamaciones', compact('departamentofiltro'));
       }
+
+      public function atencionalcliente()
+      {
+        return view('public.atencionalcliente');
+      }
+
+      public function atencionreclamo()
+      {
+        return view('public.atencionreclamo');
+      }
+
+      public function atencionqueja()
+      {
+        return view('public.atencionqueja');
+      }
+
+      public function atencionapelacion()
+      {
+        return view('public.atencionapelacion');
+      }
     
 
 }

@@ -110,7 +110,7 @@
                         <div class="swiper-slide">
                             <section class="bg-center h-svh bg-cover flex flex-col justify-center relative" style="background-image: url({{asset($slide->url_image . $slide->name_image)}})">
                                 
-                                    <img class="opacity-40 object-cover absolute top-0 h-full w-full" src="{{asset('images/img/texturaconex.png')}}" />
+                                    {{-- <img class="opacity-40 object-cover absolute top-0 h-full w-full" src="{{asset('images/img/texturaconex.png')}}" /> --}}
                                     <div class="flex flex-col lg:flex-row px-[5%] py-[5%] lg:px-[10%] pt-20 gap-5 justify-center items-start lg:items-end">
                                         <div class="z-20 w-full md:w-full xl:w-2/3 2xl:w-1/2 flex flex-col gap-4 2xl:gap-10 justify-center">
                                             
@@ -133,12 +133,12 @@
                                            
                                             <div class="grid grid-cols-2 md:grid-cols-3 font-gotham_bold  gap-3 lg:gap-5 max-w-2xl">
                                                 <div class="flex flex-col justify-center">
-                                                    <span class="text-[#1EA7A2] text-3xl xl:text-5xl">{{$textoshome->subtitle1section ?? "Ingrese texto"}}</span>
-                                                    <h2 class="text-white text-sm sm:text-base xl:text-lg">{{$textoshome->title1section ?? "Ingrese texto"}}</h2>
+                                                    <span class="text-[#1EA7A2] text-3xl xl:text-5xl">{{$textoshome->subtitle1section ?? " "}}</span>
+                                                    <h2 class="text-white text-sm sm:text-base xl:text-lg">{{$textoshome->title1section ?? " "}}</h2>
                                                 </div>
                                                 <div class="flex flex-col justify-center">
-                                                    <span class="text-[#1EA7A2] text-3xl xl:text-5xl">{{$textoshome->subtitle2section ?? "Ingrese texto"}}</span>
-                                                    <h2 class="text-white text-sm sm:text-base xl:text-lg">{{$textoshome->title2section ?? "Ingrese texto"}}</h2>
+                                                    <span class="text-[#1EA7A2] text-3xl xl:text-5xl">{{$textoshome->subtitle2section ?? " "}}</span>
+                                                    <h2 class="text-white text-sm sm:text-base xl:text-lg">{{$textoshome->title2section ?? " "}}</h2>
                                                 </div>
                                             </div>
                                             

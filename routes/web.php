@@ -52,6 +52,7 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\StrengthController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\ValoresAtributosController;
+use App\Http\Controllers\ClaimOsiptelController;
 
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\TemplateController;
@@ -82,6 +83,10 @@ Route::get('/servicios', [IndexController::class, 'servicios'])->name('servicios
 // Route::get('/comentario', [IndexController::class, 'comentario'])->name('comentario');
 // Route::post('/comentario/nuevo', [IndexController::class, 'hacerComentario'])->name('nuevocomentario');
 Route::get('/contacto', [IndexController::class, 'contacto'])->name('contacto');
+Route::get('/atencionalcliente', [IndexController::class, 'atencionalcliente'])->name('atencionalcliente');
+Route::get('/atencionalcliente/reclamo', [IndexController::class, 'atencionreclamo'])->name('atencionreclamo');
+Route::get('/atencionalcliente/queja', [IndexController::class, 'atencionqueja'])->name('atencionqueja');
+Route::get('/atencionalcliente/apelacion', [IndexController::class, 'atencionapelacion'])->name('atencionapelacion');
 // Route::get('/descargables/{filtro}', [IndexController::class, 'catalogosDescargables'])->name('descargables');
 Route::get('/blog', [IndexController::class, 'blog'])->name('blog.all');
 Route::get('/blog/{filtro}', [IndexController::class, 'blog'])->name('blog');
@@ -111,6 +116,8 @@ Route::get('/subscripciones/{token}', [NewsletterSubscriberController::class, 'v
 Route::post('/subscripciones/guardar2', [NewsletterSubscriberController::class, 'saveSubscripciones2'])->name('subscripciones.guardar2');
 Route::post('/cotizar', [CotizacionController::class, 'saveCotizaciones'])->name('cotizar');
 Route::post('/obtenerdata', [IndexController::class, 'obtenerdata'])->name('obtenerdata');
+
+Route::post('/reclamos', [ClaimOsiptelController::class, 'store'])->name('claims.store');
 
 /* Página 404 */
 Route::get('/404', [IndexController::class, 'error'])->name('error');
