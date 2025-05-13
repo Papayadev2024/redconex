@@ -63,7 +63,7 @@
                     </div>
 
                     <div class="w-full lg:w-1/2 flex flex-row justify-center items-end">
-                        <img class="w-full h-full object-cover object-bottom" src="{{asset($textosnosotros->url_mage5section)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/cables.png') }}';" />
+                        <img class="w-full h-full object-cover object-bottom" src="{{asset($textosnosotros->url_image5section)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/cables.png') }}';" />
                     </div>
                 </div>
             </div>  
