@@ -22,7 +22,7 @@ return new class extends Migration
 
             $table->string('subtitle3section')->nullable();
             $table->string('title3section')->nullable();
-            $table->string('cellphone3section')->nullable();
+            
 
             $table->string('title4section')->nullable();
 

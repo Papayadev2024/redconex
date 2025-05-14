@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('claim_osiptels', function (Blueprint $table) {
+        Schema::create('complaint_osiptels', function (Blueprint $table) {
             $table->id();
 
             // Paso 1 - Tipo de servicio y verificación
@@ -79,8 +79,10 @@ return new class extends Migration
             // Estado y seguimiento
             $table->string('status')->default('pendiente');
             $table->string('claim_number')->nullable();
+            $table->string('complaint_number')->nullable();
             
             $table->boolean('is_read')->default(false);
+
             $table->timestamps();
         });
     }
@@ -90,6 +92,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('claim_osiptels');
+        Schema::dropIfExists('complaint_osiptels');
     }
 };

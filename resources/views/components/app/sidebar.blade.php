@@ -73,6 +73,34 @@
               </x-slot>
             @endif
           </x-menu.item>
+
+
+          <x-menu.item id="reclamos" href="{{ route('reclamos.index') }}" icon="fas fa-comment-dots">
+            Reclamos Osiptel
+            @if ($mensajesclaim !== 0)
+              <x-slot name="tag">
+                {{ $mensajesclaim }}
+              </x-slot>
+            @endif
+          </x-menu.item>
+
+          <x-menu.item id="quejas" href="{{ route('quejas.index') }}" icon="fas fa-comment-dots">
+            Quejas Osiptel
+            @if ($mensajescomplaint !== 0)
+              <x-slot name="tag">
+                {{ $mensajescomplaint }}
+              </x-slot>
+            @endif
+          </x-menu.item>
+
+          <x-menu.item id="apelaciones" href="{{ route('apelacion.index') }}" icon="fas fa-comment-dots">
+            Apelaciones Osiptel
+            @if ($mensajesappeal !== 0)
+              <x-slot name="tag">
+                {{ $mensajesappeal }}
+              </x-slot>
+            @endif
+          </x-menu.item>
  
           <x-menu.item id="cotizaciones" href="{{ route('cotizaciones') }}" icon="fas fa-address-card">
             Cotizaciones

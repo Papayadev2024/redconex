@@ -7,6 +7,9 @@ use App\Models\Collection;
 use App\Models\General;
 use App\Models\LibroReclamaciones;
 use App\Models\Message;
+use App\Models\ClaimOsiptel;
+use App\Models\ComplaintOsiptel;
+use App\Models\AppealOsiptel;
 use App\Models\PolyticsCondition;
 use App\Models\TermsAndCondition;
 use Illuminate\Contracts\Pagination\Paginator;
@@ -78,11 +81,20 @@ class AppServiceProvider extends ServiceProvider
 
             $mensajesproduct = Message::where('is_read', '!=', 1 )->where('status', '!=', 0)
                                         ->where('source', '=', 'Producto')
-                                        ->count();                           
+                                        ->count();
+            
+            $mensajesclaim = ClaimOsiptel::where('is_read', '!=', 1 )->count();                          
+            $mensajescomplaint = ComplaintOsiptel::where('is_read', '!=', 1 )->count();                          
+            $mensajesappeal = AppealOsiptel::where('is_read', '!=', 1 )->count();                          
+                                        
+                                        
             // Pasar los datos a la vista
             $view->with('mensajes', $mensajes)
                  ->with('mensajeslanding', $mensajeslanding)
                  ->with('reclamo', $reclamo)
+                 ->with('mensajesclaim', $mensajesclaim)
+                 ->with('mensajescomplaint', $mensajescomplaint)
+                 ->with('mensajesappeal', $mensajesappeal)
                  ->with('mensajesproduct', $mensajesproduct);
         });
 

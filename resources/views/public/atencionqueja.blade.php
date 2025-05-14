@@ -95,7 +95,7 @@
                 <div class="grid grid-cols-1">
                     
                     
-                    <form action="{{ route('claims.save') }}" method="POST"  class="w-full" enctype="multipart/form-data"
+                    <form action="{{ route('complaint.save') }}" method="POST"  class="w-full" enctype="multipart/form-data"
                         x-data="{
                             paso: 1,
                             // Modelos para los campos del Paso 1
@@ -138,6 +138,7 @@
                             address_email_noti: '',
                             address_location_noti: '',
                             address_reference_noti: '',
+                            claim_number: '',
                             claim_issue: '',
                             claim: '',
                             doc_aditional: '',
@@ -166,6 +167,7 @@
                                 notification: false,
                                 address_email_noti: false,
                                 address_location_noti: false,
+                                claim_number: false,
                                 claim_issue: false,
                                 claim: false,
                                 doc_aditional: false,
@@ -222,6 +224,7 @@
                                 this.errorsStep2.address_email_noti = !this.address_email_noti;
                                 this.errorsStep2.address_location_noti = !this.address_location_noti;
                                 this.errorsStep2.address_reference_noti = !this.address_reference_noti;
+                                this.errorsStep2.claim_number = !this.claim_number;
                                 this.errorsStep2.claim_issue = !this.claim_issue;
                                 this.errorsStep2.claim = !this.claim;
                                 this.errorsStep2.doc_aditional = !this.doc_aditional;
@@ -417,7 +420,7 @@
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                                     <div class="relative">
                                         <label for="ruc" class="text-white text-sm">RUC</label>
-                                        <input x-model="ruc" @input="errorsStep2.ruc = false" type="text" id="ruc" name="ruc"
+                                        <input x-model="ruc" @input="errorsStep2.RUC = false" type="text" id="ruc" name="ruc"
                                             class="mt-1.5 p-2 rounded bg-white bg-opacity-10 text-white font-gotham_book w-full focus:border-white focus:ring-0 placeholder:text-white placeholder:text-opacity-60" />
                                         <span x-show="errorsStep2.ruc" class="text-red-300 text-xs 2xl:text-base mt-1 block font-gotham_book">
                                             Por favor ingrese el RUC
@@ -433,7 +436,6 @@
                                     </div>
                                 </div>
                             </div>
-
 
                             <div class="relative">
                                 <label for="address_dep" class="font-gotham_book text-sm text-white">Departamento de instalación</label>
@@ -689,10 +691,19 @@
                                     class="mt-1.5 p-2 rounded bg-white bg-opacity-10 text-white font-gotham_book w-full focus:border-white focus:ring-0 placeholder:text-white placeholder:text-opacity-60">
                             </div>
 
-                            <h2 class="md:col-span-2 text-white font-gotham_book font-semibold text-lg">Datos del reclamo</h2>
+                            <h2 class="md:col-span-2 text-white font-gotham_book font-semibold text-lg">Datos de la queja</h2>
+
+                            <div class="relative md:col-span-2">
+                                <label for="claim_number" class="font-gotham_book text-sm text-white">Codigo o N° de reclamo</label>
+                                <input x-model="claim_number" @input="errorsStep2.claim_number = false" type="text" name="claim_number" id="claim_number" placeholder="" 
+                                    class="mt-1.5 p-2 rounded bg-white bg-opacity-10 text-white font-gotham_book w-full focus:border-white focus:ring-0 placeholder:text-white placeholder:text-opacity-60">
+                                <span x-show="errorsStep2.claim_number" class="text-red-300 text-xs 2xl:text-base mt-1 block font-gotham_book">
+                                    Por favor ingrese el código o número de reclamo
+                                </span>
+                            </div>
 
                             <div class="md:col-span-2 relative">
-                                <label for="claim_issue" class="font-gotham_book text-sm text-white">Materia de reclamo</label>
+                                <label for="claim_issue" class="font-gotham_book text-sm text-white">Motivo de queja</label>
                                 <div class="flex flex-col mt-1.5">
                                     <select  x-model="claim_issue" name="claim_issue" id="claim_issue" placeholder="Seleccione" 
                                         class="customselect min-w-[300px] font-gotham_book w-full mt-1.5"
@@ -706,64 +717,16 @@
                                         "
                                         >
                                         <option value="" disabled selected >Seleccione una opción</option>
-                                        <option value="Facturación y cobro">Facturación y cobro</option>
-                                        <option value="Incumplimiento de condiciones contractuales, ofertas y promociones">Incumplimiento de condiciones contractuales, ofertas y promociones</option>
-                                        <option value="Falta De Servicio">Falta De Servicio</option>
-                                        <option value="Contratación no solicitada">Contratación no solicitada</option>
-                                        <option value="Migración">Migración</option>
-                                        <option value="Calidad e idoneidad en la prestación del servicio">Calidad e idoneidad en la prestación del servicio</option>
-                                        <option value="Instalación, activación o traslado del servicio">Instalación, activación o traslado del servicio</option>
-                                        <option value="Recargas">Recargas</option>
-                                        <option value="Portabilidad">Portabilidad</option>
-                                        <option value="La negativa a contratar el servicio">La negativa a contratar el servicio</option>
-                                        <option value="Otras materias reclamables">Otras materias reclamables</option>
+                                        <option value="Otros defectos de tramitación">Otros defectos de tramitación</option>
+                                        <option value="Falta de respuesta al reclamo (aplicación de silencio administrativo positivo)">Falta de respuesta al reclamo (aplicación de silencio administrativo positivo)</option>
+                                        <option value="No se permitió la presentación de reclamo, recurso de apelación o queja o no se otorgó el código respectivo">No se permitió la presentación de reclamo, recurso de apelación o queja o no se otorgó el código respectivo</option>
+                                        <option value="Suspensión del servicio pese a reclamo en trámite">Suspensión del servicio pese a reclamo en trámite</option>
+                                        <option value="Requerimiento de pago del monto reclamado">Requerimiento de pago del monto reclamado</option>
+                                        <option value="No se permitió el pago a cuenta del monto no reclamado">No se permitió el pago a cuenta del monto no reclamado</option>
                                     </select>
                                     <span x-show="errorsStep2.claim_issue" class="text-red-300 text-xs 2xl:text-base mt-1 block font-gotham_book">
-                                        Por favor seleccione la materia de reclamo
+                                        Por favor seleccione el motivo de queja
                                     </span>
-                                </div>
-                            </div>
-
-                            <div class="md:col-span-2 relative">
-                                <label for="claim_issue_second" class="font-gotham_book text-sm text-white">Problema específico</label>
-                                <div class="flex flex-col mt-1.5">
-                                    <select type="text" name="claim_issue_second" id="claim_issue_second" placeholder="Seleccione" 
-                                        class="customselect min-w-[300px] font-gotham_book w-full mt-1.5">
-                                        <option value="" disabled selected >Seleccione una opción</option>
-                                      
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="relative md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-5" id="sectionDinamyc">
-                                <div class="relative md:col-span-2">
-                                    <label for="amount_claim" class="font-gotham_book text-sm text-white">Monto reclamado (S/)</label>
-                                    <input type="text" name="amount_claim" id="amount_claim" placeholder="" 
-                                        class="mt-1.5 p-2 rounded bg-white bg-opacity-10 text-white font-gotham_book w-full focus:border-white focus:ring-0 placeholder:text-white placeholder:text-opacity-60">
-                                </div>
-
-                                <h2 class="md:col-span-2 text-white font-gotham_book text-lg">Adjuntar recibo(s) objeto de reclamo o indicar alguna de las siguientes opciones:</h2>
-
-                                <div class="md:col-span-2 relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                                    
-                                    <div class="relative">
-                                        <label for="number_recibe" class="font-gotham_book text-sm text-white">N° del recibo</label>
-                                        <input type="text" name="number_recibe" id="number_recibe" placeholder="" 
-                                            class="mt-1.5 p-2 rounded bg-white bg-opacity-10 text-white font-gotham_book w-full focus:border-white focus:ring-0 placeholder:text-white placeholder:text-opacity-60">
-                                    </div>
-
-                                    <div class="relative">
-                                        <label for="date_emision" class="font-gotham_book text-sm text-white">Fecha de emisión</label>
-                                        <input type="date" name="date_emision" id="date_emision" placeholder="" 
-                                            class="mt-1.5 p-2 rounded bg-white bg-opacity-10 text-white font-gotham_book w-full focus:border-white focus:ring-0 placeholder:text-white placeholder:text-opacity-60">
-                                    </div>
-
-                                    <div class="relative">
-                                        <label for="date_finish" class="font-gotham_book text-sm text-white">Fecha de vencimiento</label>
-                                        <input type="date" name="date_finish" id="date_finish" placeholder="" 
-                                            class="mt-1.5 p-2 rounded bg-white bg-opacity-10 text-white font-gotham_book w-full focus:border-white focus:ring-0 placeholder:text-white placeholder:text-opacity-60">
-                                    </div>
-
                                 </div>
                             </div>
 
@@ -834,44 +797,13 @@
                         <div class="flex flex-col justify-start gap-3 p-4 w-full md:col-span-2 border border-white font-gotham_light text-white">
                             
                             <h3 class="font-semibold text-base">Acceso al Expediente de Reclamos:</h3>
-                            <p class="text-sm">En caso necesites conocer el estado de tu expediente de reclamo, puedes comunicarte a nuestro Canal de Atención telefónico (01) 707 3000. Esta solicitud será atendida en un plazo máximo de tres (3) días hábiles.</p>
+                            <p class="text-sm">En caso necesites conocer el estado de tu expediente de reclamo, puedes comunicarte a nuestro Canal de Atención telefónico (01) 707 3000. Esta solicitud será atendida en un plazo máximo de tres (03) días hábiles.</p>
                             
-                            <h3 class="font-semibold text-base mt-3">Plazo para la Resolución de Reclamos</h3>
-                            <p class="text-sm">Los reclamos presentados por los usuarios ante la empresa operadora serán resueltos en los siguientes plazos máximos:</p>
+                            <h3 class="font-semibold text-base mt-3">Plazo para la Resolución de Quejas</h3>
+                            <p class="text-sm">La queja será resuelta dentro del plazo de trece (13) días hábiles contados desde el día siguiente a la fecha de su recepción por el TRASU.</p>
                         
-                            <p class="text-sm">1. Hasta en tres (3) días hábiles, contados desde el día siguiente de su presentación ante la empresa operador en reclamos por:</p>
+                            <p class="text-sm">Excepcionalmente, cuando la complejidad del expediente lo amerite, el TRASU podrá, por única vez, ampliar el plazo para resolver dicha solicitud hasta en diez (10) días hábiles adicionales.</p>
 
-                            <ul class="list-disc ml-8">
-                                <li class="text-sm">Calidad e idoneidad en la prestación del servicio.</li>
-                                <li class="text-sm">Falta del servicio público móvil y/o bloqueo del equipo terminal móvil, por uso prohibido del servicio en establecimientos penitenciarios.</li>
-                                <li class="text-sm">Falta de entrega del recibo o de la copia del recibo o de la facturación detallada solicitada por el usuario.</li>
-                                <li class="text-sm">Portabilidad numérica y la Negativa a brindar la facturación detallada o llamadas entrantes.</li>
-                                <li class="text-sm">Baja o suspensión del servicio no solicitada.</li>
-                            </ul>
-                        
-                            <p class="text-sm">2. Hasta en quince (15) días hábiles, contados desde el día siguiente de su presentación ante la empresa operadora, en reclamos por:</p>
-
-                            <ul class="list-disc ml-8">
-                                <li class="text-sm">Facturación cuyo monto reclamado sea de hasta 0.5% de la Unidad Impositiva Tributaria.</li>
-                                <li class="text-sm">Tarjetas de pago.</li>
-                                <li class="text-sm">Instalación o activación del servicio.</li>
-                                <li class="text-sm">Traslado del servicio.</li>
-                            </ul>
-                        
-                            <p class="text-sm">3. Hasta veinte (20) días hábiles, contados desde el día siguiente de su presentación ante la empresa operadora, en los demás casos.</p>
-
-                            <ul class="list-disc ml-8">
-                                <li class="text-sm">Incumplimiento de condiciones contractuales, ofertas y promociones</li>
-                                <li class="text-sm">Falta de ejecución de baja o suspensión del servicio</li>
-                                <li class="text-sm">Contratación no solicitada</li>
-                                <li class="text-sm">Migración</li>
-                                <li class="text-sm">Negativa a contratar el servicio</li>
-                                <li class="text-sm">Facturación y cobro cuyo monto reclamado sea de mayor a 0.5% de la Unidad Impositiva Tributaria</li>
-                            </ul>
-
-                            <p class="text-sm mt-3">Para las materias de reclamo que hayan sido previstas en otras normas, se aplica el plazo que haya sido señalado en las mismas, en caso contrario, se regirán por el plazo mayor que establece el presente Reglamento.</p>
-
-                        
                         </div>
 
                     </form>
@@ -983,158 +915,6 @@
         });
     </script>
     <script>
-        $(document).ready(function () {
-            const secondOptions = {
-                "Facturación y cobro": [
-                    "Montos por prorrateo",
-                    "Monto por cargo de reconexión",
-                    "Cálculo de los consumos facturados",
-                    "Pagos no procesados o registrados",
-                    "Montos no facturados oportunamente",
-                    "La tarifa aplicada de consumos adicionales facturados",
-                    "Otro monto correspondiente a cualquier concepto facturado en el recibo cuyo consumo se desconoce",
-                    "La aplicación del incremento tarifario no comunicado previamente al abonado",
-                    "Cobros de equipos o por reintegro del descuento vinculados a la permanencia del servicio",
-                ],
-                "Incumplimiento de condiciones contractuales, ofertas y promociones": [
-                    "La aplicación de condiciones y tarifas del plan contratado distintas a las pactadas en el contrato",
-                    "Incumplimiento de ofertas o promociones ofrecidas y/o contratadas",
-                    "Descuentos no reconocidos de los atributos y/o beneficios del plan contratado, oferta y/o promoción",
-                    "La omisión de información o inexacta sobre cobertura u otras características o limitaciones del servicio servicios adicionales o suplementarios",
-                ],
-                "Falta De Servicio": [
-                    "Suspensión, corte o baja injustificado del servicio",
-                    "Suspensión del servicio por uso prohibido en establecimientos peritenciarios",
-                    "Falta de reactivación del servicio pese al pago del recibo",
-                    "Interrupción injustificada del servicio",
-                    "Cambio de titularided del servicio o reposición de SIM card sin consentimiento del abonado",
-                ],
-                "Falta de ejecución de baja o suspensión del servicio": [
-                    "Falta con la ejecución de la baja del servicio",
-                    "Falta con la ejecución de la suspensión temporal del servicio",
-                    "Montos posteriores a la fecha en que se efectuó la baja",
-                    "Montos posteriores a la fecha en que se efectuó la baja o suspensión temporal",
-                ],
-                "Contratación no solicitada": [
-                    "Desconocimiento del abonado de la contratación del servicio",
-                    "Desconoce contratación o afiliación a servicios adicionales o suplementarios",
-                    "Desconoce contrato adquirido o financiamiento de equipo con cargo en el recibo",
-                ],
-                "Migración": [
-                    "Condicionamiento, negativa o falta de respuesta a la solicitud de la migración",
-                    "Falta de ejecución de la migración dentro del plazo establecido",
-                    "Facturación corresponde al plan anterior",
-                    "Migración no solicitada",
-                ],
-                "Calidad e idoneidad en la prestación del servicio": [
-                    "Problema con la prestación de servicio de Internet",
-                    "Comunicaciones entrecortadas, ruido o otros",
-                    "Intermitencia",
-                    "Lentitud",
-                    "Avería",
-                ],
-                "Instalación, activación o traslado del servicio": [
-                    "Falta de instalación o activación",
-                    "Falta de traslado del servicio solicitado por el abonado",
-                    "Falta de respuesta a la solicitud de trasladado o negativa",
-                    "Falta de devolución de los montos cobrados por instalación, activación o traslado no ejecutados",
-                ],
-                "Recargas": [
-                    "Falta de asignación de saldo o atributos",
-                    "Descuentos indebidos de los saldos o del crédito"
-                ],
-                "Portabilidad": [
-                    "Negativa a recibir la solicitud de portabilidad",
-                    "Rechazo a la solicitud de portabilidad",
-                    "Falta de entrega de información sobre portabilidad",
-                    "Falta de consentimiento del abonado para efectuar la portabilidad",
-                    "Falta de retorno del número telefónico",
-                    "Falta de cobertura",
-                ],
-                "La negativa a contratar el servicio": [],
-                "Otras materias reclamables": [
-                    "Negativa a contratar el servicio",
-                    "Falta de entrega de recibos",
-                    "Negativa a brindar la facturación detallada",
-                    "Negativa a brindar detalle de llamadas entrantes",
-                    "Cambio de titularidad no ejecutada",
-                ]
-            };
-    
-            // Opciones del segundo select que deben mostrar el bloque dinámico
-            const showSectionForSecond = new Set([
-                "Montos por prorrateo",
-                "Monto por cargo de reconexión",
-                "Cálculo de los consumos facturados",
-                "Pagos no procesados o registrados",
-                "Montos no facturados oportunamente",
-                "La tarifa aplicada de consumos adicionales facturados",
-                "Otro monto correspondiente a cualquier concepto facturado en el recibo cuyo consumo se desconoce",
-                "La aplicación del incremento tarifario no comunicado previamente al abonado",
-                "Cobros de equipos o por reintegro del descuento vinculados a la permanencia del servicio",
-                "La aplicación de condiciones y tarifas del plan contratado distintas a las pactadas en el contrato",
-                "Incumplimiento de ofertas o promociones ofrecidas y/o contratadas",
-                "Descuentos no reconocidos de los atributos y/o beneficios del plan contratado, oferta y/o promoción",
-                "Falta con la ejecución de la baja del servicio",
-                "Falta con la ejecución de la suspensión temporal del servicio",
-                "Montos posteriores a la fecha en que se efectuó la baja",
-                "Montos posteriores a la fecha en que se efectuó la baja o suspensión temporal",
-                "Desconocimiento del abonado de la contratación del servicio",
-                "Desconoce contratación o afiliación a servicios adicionales o suplementarios",
-                "Desconoce contrato adquirido o financiamiento de equipo con cargo en el recibo",
-                "Falta de ejecución de la migración dentro del plazo establecido",
-                "Facturación corresponde al plan anterior",
-                "Migración no solicitada",
-                "Falta de consentimiento del abonado para efectuar la portabilidad",
-            ]);
-    
-            function clearSectionFields() {
-                $('#sectionDinamyc').find('input').val('');
-            }
-    
-            function hideSecondSelectAndSection() {
-                $('#claim_issue_second').parent().parent().hide();
-                $('#claim_issue_second').val('');
-                $('#sectionDinamyc').hide();
-                clearSectionFields();
-            }
-    
-            // Al cambiar el primer select
-            $('#claim_issue').on('change', function () {
-                const selected = $(this).val();
-                const secondSelect = $('#claim_issue_second');
-    
-                secondSelect.empty().append('<option value="" disabled selected>Seleccione una opción</option>');
-                clearSectionFields();
-                $('#sectionDinamyc').hide();
-    
-                if (secondOptions[selected] && secondOptions[selected].length > 0) {
-                    secondOptions[selected].forEach(option => {
-                        secondSelect.append(`<option value="${option}">${option}</option>`);
-                    });
-                    $('#claim_issue_second').parent().parent().show();
-                } else {
-                    hideSecondSelectAndSection();
-                }
-            });
-    
-            // Al cambiar el segundo select
-            $('#claim_issue_second').on('change', function () {
-                const selectedSecond = $(this).val();
-                if (showSectionForSecond.has(selectedSecond)) {
-                    $('#sectionDinamyc').show();
-                } else {
-                    $('#sectionDinamyc').hide();
-                    clearSectionFields();
-                }
-            });
-    
-            // Estado inicial
-            hideSecondSelectAndSection();
-            $('#sectionDinamyc').hide();
-        });
-    </script>
-    <script>
         $(document).ready(function() {
             $('form').on('submit', function(e) {
                 e.preventDefault();
@@ -1173,14 +953,14 @@
 
                             Swal.fire({
                                 icon: 'success',
-                                title: '¡Reclamo enviado!',
-                                html: `Tu reclamo ha sido registrado correctamente.<br><br>
-                                    <strong>Número de reclamo:</strong> ${response.claim_number}.<br><br>
+                                title: 'Queja enviada!',
+                                html: `Tu queja ha sido registrada correctamente.<br><br>
+                                    <strong>Número de queja:</strong> ${response.complaint_number}.<br><br>
                                     `,
                                 confirmButtonText: 'Aceptar'
                             }).then((result) => {
                                 // Redirigir a página de éxito o recargar
-                                window.location.href = '/reclamo-exitoso?numero=' + response.claim_number;
+                                window.location.href = '/queja-exitoso?numero=' + response.complaint_number;
                             });
                         } else {
                             // Mostrar error si success es false

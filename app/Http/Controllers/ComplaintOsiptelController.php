@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ClaimOsiptel;
-use App\Http\Requests\StoreClaimOsiptelRequest;
-use App\Http\Requests\UpdateClaimOsiptelRequest;
+use App\Models\ComplaintOsiptel;
+use App\Http\Requests\StoreComplaintOsiptelRequest;
+use App\Http\Requests\UpdateComplaintOsiptelRequest;
 
 use App\Models\General;
 use Illuminate\Http\Request;
@@ -15,15 +15,15 @@ use Intervention\Image\Drivers\Gd\Driver;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 
-class ClaimOsiptelController extends Controller
+class ComplaintOsiptelController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $mensajes = ClaimOsiptel::orderBy('created_at', 'DESC')->get();
-        return view('pages.claimosiptel.index', compact('mensajes'));
+        $mensajes = ComplaintOsiptel::orderBy('created_at', 'DESC')->get();
+        return view('pages.complaintosiptel.index', compact('mensajes'));
     }
 
     /**
@@ -92,11 +92,12 @@ class ClaimOsiptelController extends Controller
             
             // Reclamo
             'claim_issue' => 'required|string',
-            'claim_issue_second' => 'nullable|string',
-            'amount_claim' => 'nullable|numeric',
-            'number_recibe' => 'nullable|string',
-            'date_emision' => 'nullable|date',
-            'date_finish' => 'nullable|date',
+            'claim_number' => 'required|string',
+            // 'claim_issue_second' => 'nullable|string',
+            // 'amount_claim' => 'nullable|numeric',
+            // 'number_recibe' => 'nullable|string',
+            // 'date_emision' => 'nullable|date',
+            // 'date_finish' => 'nullable|date',
             'claim' => 'required|string|max:5000',
             
             // Documento adicional
@@ -135,14 +136,20 @@ class ClaimOsiptelController extends Controller
         }
             
         // Crear el reclamo
-        $claim = ClaimOsiptel::create($data);
+        $claim = ComplaintOsiptel::create($data);
 
         return response()->json([
             'success' => true,
             'message' => 'Reclamo registrado correctamente',
-            'claim_number' => $claim->claim_number,
+            'complaint_number' => $claim->complaint_number,
             'data' => $claim
         ]);
+    }
+
+
+    public function store(StoreComplaintOsiptelRequest $request)
+    {
+        //
     }
 
     /**
@@ -150,11 +157,11 @@ class ClaimOsiptelController extends Controller
      */
     public function show($id)
     {
-        $message = ClaimOsiptel::findOrFail($id);
+        $message = ComplaintOsiptel::findOrFail($id);
         $message->is_read = 1; 
         $message->save();
 
-        return view('pages.claimosiptel.show', compact('message'));
+        return view('pages.complaintosiptel.show', compact('message'));
     }
 
     public function saveFile($file, $route, $fileName)
@@ -176,13 +183,14 @@ class ClaimOsiptelController extends Controller
     {   
         $general = General::first();
         $claimNumber = $request->query('numero');
-        $claim = ClaimOsiptel::where('claim_number', $claimNumber)->firstOrFail();
-        return view('public.reclamo-exitoso', compact('claim','general'));
+        $claim = ComplaintOsiptel::where('complaint_number', $claimNumber)->firstOrFail();
+        return view('public.queja-exitoso', compact('claim','general'));
     }
+
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ClaimOsiptel $claimOsiptel)
+    public function edit(ComplaintOsiptel $complaintOsiptel)
     {
         //
     }
@@ -190,7 +198,7 @@ class ClaimOsiptelController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateClaimOsiptelRequest $request, ClaimOsiptel $claimOsiptel)
+    public function update(UpdateComplaintOsiptelRequest $request, ComplaintOsiptel $complaintOsiptel)
     {
         //
     }
@@ -198,7 +206,7 @@ class ClaimOsiptelController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ClaimOsiptel $claimOsiptel)
+    public function destroy(ComplaintOsiptel $complaintOsiptel)
     {
         //
     }

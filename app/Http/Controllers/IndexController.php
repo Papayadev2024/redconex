@@ -1475,17 +1475,23 @@ class IndexController extends Controller
 
       public function atencionreclamo()
       {
-        return view('public.atencionreclamo');
+        $departamentofiltro = DB::select('select * from departments where active = ? order by 2', [1]);
+        
+        return view('public.atencionreclamo', compact('departamentofiltro'));
       }
 
       public function atencionqueja()
       {
-        return view('public.atencionqueja');
+        $departamentofiltro = DB::select('select * from departments where active = ? order by 2', [1]);
+
+        return view('public.atencionqueja', compact('departamentofiltro'));
       }
 
       public function atencionapelacion()
       {
-        return view('public.atencionapelacion');
+        $departamentofiltro = DB::select('select * from departments where active = ? order by 2', [1]);
+        
+        return view('public.atencionapelacion', compact('departamentofiltro'));
       }
     
 

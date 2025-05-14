@@ -53,6 +53,8 @@ use App\Http\Controllers\StrengthController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\ValoresAtributosController;
 use App\Http\Controllers\ClaimOsiptelController;
+use App\Http\Controllers\ComplaintOsiptelController;
+use App\Http\Controllers\AppealOsiptelController;
 
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\TemplateController;
@@ -117,7 +119,14 @@ Route::post('/subscripciones/guardar2', [NewsletterSubscriberController::class, 
 Route::post('/cotizar', [CotizacionController::class, 'saveCotizaciones'])->name('cotizar');
 Route::post('/obtenerdata', [IndexController::class, 'obtenerdata'])->name('obtenerdata');
 
-Route::post('/reclamos', [ClaimOsiptelController::class, 'store'])->name('claims.store');
+Route::post('/guardarreclamos', [ClaimOsiptelController::class, 'savereclamo'])->name('claims.save');
+Route::get('/reclamo-exitoso', [ClaimOsiptelController::class, 'showSuccess'])->name('reclamo.exitoso');
+
+Route::post('/guardarquejas', [ComplaintOsiptelController::class, 'savereclamo'])->name('complaint.save');
+Route::get('/queja-exitoso', [ComplaintOsiptelController::class, 'showSuccess'])->name('queja.exitoso');
+
+Route::post('/guardarapelacion', [AppealOsiptelController::class, 'savereclamo'])->name('appeal.save');
+Route::get('/apelacion-exitoso', [AppealOsiptelController::class, 'showSuccess'])->name('apelacion.exitoso');
 
 /* Página 404 */
 Route::get('/404', [IndexController::class, 'error'])->name('error');
@@ -194,6 +203,15 @@ Route::middleware(['auth:sanctum', 'verified', 'can:Admin'])->group(function () 
         //Libro de reclamaciones
         Route::resource('/reclamo', LibroReclamacionesController::class);
         Route::post('/reclamo/borrar', [LibroReclamacionesController::class, 'borrar'])->name('reclamo.borrar');
+        
+        //Libro de reclamaciones Osiptel
+        Route::resource('/reclamos', ClaimOsiptelController::class);
+
+        //Libro de quejas Osiptel
+        Route::resource('/quejas', ComplaintOsiptelController::class);
+
+        //Libro de apelacion Osiptel
+        Route::resource('/apelacion', AppealOsiptelController::class);
         
         //Microcategorias
         Route::resource('/microcategorias', MicrocategoryController::class);

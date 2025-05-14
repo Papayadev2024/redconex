@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ClaimOsiptel extends Model
+class AppealOsiptel extends Model
 {
     use HasFactory;
 
@@ -20,7 +20,7 @@ class ClaimOsiptel extends Model
         'address_district_noti', 'address_location_noti', 'address_reference_noti', 
         'claim_issue', 'claim_issue_second', 'amount_claim', 'number_recibe', 
         'date_emision', 'date_finish', 'claim', 'doc_aditional', 'archive_aditional_path',
-        'status', 'claim_number', 'is_read'
+        'status', 'claim_number','complaint_number','appeal_number', 'resolution', 'is_read'
     ];
 
     protected $casts = [
@@ -38,7 +38,8 @@ class ClaimOsiptel extends Model
         parent::boot();
 
         static::creating(function ($model) {
-            $model->claim_number = 'CLAIM-' . strtoupper(uniqid());
+            $model->appeal_number = 'APPEAL-' . strtoupper(uniqid());
         });
     }
+
 }
