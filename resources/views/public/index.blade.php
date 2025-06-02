@@ -199,13 +199,13 @@
             style="background-image: url('{{asset('images/img/textura2.png')}}');">
                 <div class="px-[5%] md:pl-[8%] md:pr-0 py-5 flex flex-col  md:flex-row gap-5 md:gap-10">
                     
-                    <div class="w-full sm:w-full md:w-1/3  xl:w-1/4 flex flex-col justify-center" data-aos="fade-down">
+                    <div class="w-full sm:w-full md:w-1/3  xl:w-1/4 flex flex-col justify-center">
                         <h2 class="font-gotham_bold text-4xl text-white text-left">
                             {{$textoshome->title4section ?? "Ingrese texto"}}
                         </h2>
                     </div>
 
-                    <div class="w-full sm:w-3/4 md:w-2/3 xl:w-3/4" data-aos="fade-down">
+                    <div class="w-full sm:w-3/4 md:w-2/3 xl:w-3/4">
                         <div class="swiper ofertas w-full">
                             <div class="swiper-wrapper">   
                                 @foreach ($complementos as $complemento)
