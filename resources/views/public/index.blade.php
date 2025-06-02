@@ -116,16 +116,17 @@
 @section('content')
     <main>
         
-
+        {{-- custom-slide-bg-{{ $loop->index }} --}}
         @if (count($slider) > 0)
             <div class="swiper slider">
                 <div class="swiper-wrapper">
                     @foreach ($slider as $slide)    
                         <div class="swiper-slide">
-                            <section class="bg-center h-[65svh] md:h-[80svh] bg-cover flex flex-col justify-center relative 
-                                            custom-slide-bg-{{ $loop->index }}">
+                            <section class="bg-center h-[65svh] md:h-[80svh] bg-cover md:bg-cover flex flex-col justify-center relative ">
                                 
-                                    {{-- <img class="opacity-40 object-cover absolute top-0 h-full w-full" src="{{asset('images/img/texturaconex.png')}}" /> --}}
+                                    <img class="object-cover absolute inset-0 h-full w-full hidden md:flex" src="{{ asset($slide->url_image . $slide->name_image) }}" />
+                                    <img class="object-cover absolute inset-0 h-full w-full flex md:hidden" src="{{ asset($slide->url_image2 . $slide->name_image2) }}" />
+                                    
                                     <div class="flex flex-col lg:flex-row px-[5%] py-[5%] lg:px-[10%] pt-20 gap-5 justify-center items-start lg:items-end">
                                         <div class="z-20 w-full md:w-full xl:w-2/3 2xl:w-1/2 flex flex-col gap-4 2xl:gap-10 justify-center">
                                             
@@ -176,6 +177,7 @@
                                           @endif  
                                         </div>
                                     </div> 
+                                    
                                     <div class="absolute top-10 right-[8%] lg:flex hidden group">
                                         <div class="flex flex-col justify-center items-start font-gotham_bold   ">
                                             <a target="_blank" href="https://api.whatsapp.com/send?phone={{ $general[0]->whatsapp }}&text={{ $general[0]->mensaje_whatsapp }}">
