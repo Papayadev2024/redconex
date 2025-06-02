@@ -297,7 +297,7 @@
                                 <span x-show="errors.address_birthay" class="text-red-300 text-xs 2xl:text-base mt-1 block font-gotham_book">Por favor ingrese su lugar de nacimiento</span>
                             </div>
 
-                            <button type="button" @click="if(!validateStep1()) { return } else { paso = 2 }"  class="md:col-span-2 bg-[#F07407] text-white text-lg font-gotham_medium px-12 py-2 rounded mx-auto mt-3">
+                            <button type="button" @click="if(!validateStep1()) { return } else { paso = 2 }"  class="md:col-span-2 bg-[#E29720] text-white text-lg font-gotham_medium px-12 py-2 rounded mx-auto mt-3">
                                 Continuar
                             </button>
 
@@ -310,7 +310,7 @@
                             
                             <div class="md:col-span-2 flex flex-row px-4 py-2.5 bg-[#D1ECF1] items-center justify-start gap-3">
                                 <i class="fa fa-exclamation-circle fa-2x mr-2 text-[#0c5460]" aria-hidden="true"></i> 
-                                <span class="text-sm 2xl:text-lg text-[#0c5460] font-gotham_book font-semibold">Recuerda que estos datos son únicamente para validar tu condición de abonado/usuario del servicio de Win.</span>   
+                                <span class="text-sm 2xl:text-lg text-[#0c5460] font-gotham_book font-semibold">{!!$atencion->reclamo_header ?? 'Ingrese la descripcion' !!}</span>   
                             </div>
                     
                             <h2 class="md:col-span-2 text-white font-gotham_book font-semibold text-lg">Condición de quién presenta el reclamo</h2>
@@ -763,20 +763,9 @@
 
                             <div class="md:col-span-2 flex flex-row px-4 py-5 bg-[#D1ECF1] items-start justify-start gap-3">
                                 <i class="fa fa-at fa-2x mr-2  text-[#0c5460]" aria-hidden="true"></i> 
-                                <span class="text-sm 2xl:text-lg text-[#0c5460] font-gotham_book font-semibold">
-                                    Al brindar mi correo electrónico, autorizo a que cualquier comunicación respecto al reclamo 
-                                    se realice a través del mismo WIN-NET TELECOM S.A.C. (en adelante, “WIN”), con RUC N° 20521233991, 
-                                    domiciliado en Av. República de Panamá Nro. 3418 Int. 2301, urb. Limatambo, distrito de San Isidro, 
-                                    provincia y departamento de Lima, es el titular del Banco de Datos Personales denominado “Quejas y R
-                                    eclamos”, cuyo código de registro es RNPDP-PJP N° 25896. De conformidad con el artículo 18° de la Ley 
-                                    de Protección de datos personales le informamos que sus datos serán tratados por nuestro personal a 
-                                    efectos de atender su reclamo o queja. Para mayor información respecto al tratamiento de sus datos 
-                                    personales sírvase ingresar a nuestra Política de Privacidad. En caso quisiera ejercer sus derechos de 
-                                    acceso, rectificación, cancelación, oposición e información, sírvase llenar el siguiente Formulario de 
-                                    Atención de Derechos ARCO. Cabe indicar que los datos personales que usted proporciona en el presente 
-                                    documento (que podrían contener datos sensibles) serán utilizados y/o tratados por WIN, estricta y 
-                                    únicamente con la finalidad de realizar las actividades conducentes a atender su reclamo.
-                                </span>   
+                                <div class="text-sm 2xl:text-lg text-[#0c5460] font-gotham_book font-semibold">
+                                    {!!$atencion->reclamo_footer ?? 'Ingrese la descripcion' !!}
+                                </div>   
                             </div>
 
 
@@ -785,25 +774,17 @@
                                 <button type="button" @click="paso = 1" class="md:col-span-2 bg-[#9b9692] text-white text-lg font-gotham_medium px-12 py-2 rounded mx-auto mt-3">
                                     Atrás
                                 </button>
-                                <button type="submit" @click="if(!validateStep2()) { return false }" class="md:col-span-2 bg-[#F07407] text-white text-lg font-gotham_medium px-12 py-2 rounded mx-auto mt-3">
+                                <button type="submit" @click="if(!validateStep2()) { return false }" class="md:col-span-2 bg-[#E29720] text-white text-lg font-gotham_medium px-12 py-2 rounded mx-auto mt-3">
                                     Enviar
                                 </button>
                             </div>
 
                         </div>
                         
-                        <p class="md:col-span-2 text-center text-white font-gotham_book text-sm py-6">Al hacer clic en CONTINUAR aceptas haber leído nuestra <a class="cursor-pointer" id="linkPoliticas_second"><span class="text-[#F07407]"> política de privacidad.</span></a></p>
+                        <p class="md:col-span-2 text-center text-white font-gotham_book text-sm py-6">Al hacer clic en CONTINUAR aceptas haber leído nuestra <a class="cursor-pointer" id="linkPoliticas_second"><span class="text-[#E29720]"> política de privacidad.</span></a></p>
                             
                         <div class="flex flex-col justify-start gap-3 p-4 w-full md:col-span-2 border border-white font-gotham_light text-white">
-                            
-                            <h3 class="font-semibold text-base">Acceso al Expediente de Reclamos:</h3>
-                            <p class="text-sm">En caso necesites conocer el estado de tu expediente de reclamo, puedes comunicarte a nuestro Canal de Atención telefónico (01) 707 3000. Esta solicitud será atendida en un plazo máximo de tres (03) días hábiles.</p>
-                            
-                            <h3 class="font-semibold text-base mt-3">Plazo para la Resolución de Quejas</h3>
-                            <p class="text-sm">La queja será resuelta dentro del plazo de trece (13) días hábiles contados desde el día siguiente a la fecha de su recepción por el TRASU.</p>
-                        
-                            <p class="text-sm">Excepcionalmente, cuando la complejidad del expediente lo amerite, el TRASU podrá, por única vez, ampliar el plazo para resolver dicha solicitud hasta en diez (10) días hábiles adicionales.</p>
-
+                            {!!$atencion->reclamo_two ?? 'Ingrese la descripcion' !!}
                         </div>
 
                     </form>

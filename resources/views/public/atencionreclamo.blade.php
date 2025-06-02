@@ -294,7 +294,7 @@
                                 <span x-show="errors.address_birthay" class="text-red-300 text-xs 2xl:text-base mt-1 block font-gotham_book">Por favor ingrese su lugar de nacimiento</span>
                             </div>
 
-                            <button type="button" @click="if(!validateStep1()) { return } else { paso = 2 }"  class="md:col-span-2 bg-[#F07407] text-white text-lg font-gotham_medium px-12 py-2 rounded mx-auto mt-3">
+                            <button type="button" @click="if(!validateStep1()) { return } else { paso = 2 }"  class="md:col-span-2 bg-[#E29720] text-white text-lg font-gotham_medium px-12 py-2 rounded mx-auto mt-3">
                                 Continuar
                             </button>
 
@@ -307,7 +307,7 @@
                             
                             <div class="md:col-span-2 flex flex-row px-4 py-2.5 bg-[#D1ECF1] items-center justify-start gap-3">
                                 <i class="fa fa-exclamation-circle fa-2x mr-2 text-[#0c5460]" aria-hidden="true"></i> 
-                                <span class="text-sm 2xl:text-lg text-[#0c5460] font-gotham_book font-semibold">Recuerda que estos datos son únicamente para validar tu condición de abonado/usuario del servicio de Win.</span>   
+                                <span class="text-sm 2xl:text-lg text-[#0c5460] font-gotham_book font-semibold">{!!$atencion->reclamo_header ?? 'Ingrese la descripcion' !!}</span>   
                             </div>
                     
                             <h2 class="md:col-span-2 text-white font-gotham_book font-semibold text-lg">Condición de quién presenta el reclamo</h2>
@@ -801,18 +801,7 @@
                             <div class="md:col-span-2 flex flex-row px-4 py-5 bg-[#D1ECF1] items-start justify-start gap-3">
                                 <i class="fa fa-at fa-2x mr-2  text-[#0c5460]" aria-hidden="true"></i> 
                                 <span class="text-sm 2xl:text-lg text-[#0c5460] font-gotham_book font-semibold">
-                                    Al brindar mi correo electrónico, autorizo a que cualquier comunicación respecto al reclamo 
-                                    se realice a través del mismo WIN-NET TELECOM S.A.C. (en adelante, “WIN”), con RUC N° 20521233991, 
-                                    domiciliado en Av. República de Panamá Nro. 3418 Int. 2301, urb. Limatambo, distrito de San Isidro, 
-                                    provincia y departamento de Lima, es el titular del Banco de Datos Personales denominado “Quejas y R
-                                    eclamos”, cuyo código de registro es RNPDP-PJP N° 25896. De conformidad con el artículo 18° de la Ley 
-                                    de Protección de datos personales le informamos que sus datos serán tratados por nuestro personal a 
-                                    efectos de atender su reclamo o queja. Para mayor información respecto al tratamiento de sus datos 
-                                    personales sírvase ingresar a nuestra Política de Privacidad. En caso quisiera ejercer sus derechos de 
-                                    acceso, rectificación, cancelación, oposición e información, sírvase llenar el siguiente Formulario de 
-                                    Atención de Derechos ARCO. Cabe indicar que los datos personales que usted proporciona en el presente 
-                                    documento (que podrían contener datos sensibles) serán utilizados y/o tratados por WIN, estricta y 
-                                    únicamente con la finalidad de realizar las actividades conducentes a atender su reclamo.
+                                    {!!$atencion->reclamo_footer ?? 'Ingrese la descripcion' !!}
                                 </span>   
                             </div>
 
@@ -822,56 +811,17 @@
                                 <button type="button" @click="paso = 1" class="md:col-span-2 bg-[#9b9692] text-white text-lg font-gotham_medium px-12 py-2 rounded mx-auto mt-3">
                                     Atrás
                                 </button>
-                                <button type="submit" @click="if(!validateStep2()) { return false }" class="md:col-span-2 bg-[#F07407] text-white text-lg font-gotham_medium px-12 py-2 rounded mx-auto mt-3">
+                                <button type="submit" @click="if(!validateStep2()) { return false }" class="md:col-span-2 bg-[#E29720] text-white text-lg font-gotham_medium px-12 py-2 rounded mx-auto mt-3">
                                     Enviar
                                 </button>
                             </div>
 
                         </div>
                         
-                        <p class="md:col-span-2 text-center text-white font-gotham_book text-sm py-6">Al hacer clic en CONTINUAR aceptas haber leído nuestra <a class="cursor-pointer" id="linkPoliticas_second"><span class="text-[#F07407]"> política de privacidad.</span></a></p>
+                        <p class="md:col-span-2 text-center text-white font-gotham_book text-sm py-6">Al hacer clic en CONTINUAR aceptas haber leído nuestra <a class="cursor-pointer" id="linkPoliticas_second"><span class="text-[#E29720]"> política de privacidad.</span></a></p>
                             
                         <div class="flex flex-col justify-start gap-3 p-4 w-full md:col-span-2 border border-white font-gotham_light text-white">
-                            
-                            <h3 class="font-semibold text-base">Acceso al Expediente de Reclamos:</h3>
-                            <p class="text-sm">En caso necesites conocer el estado de tu expediente de reclamo, puedes comunicarte a nuestro Canal de Atención telefónico (01) 707 3000. Esta solicitud será atendida en un plazo máximo de tres (3) días hábiles.</p>
-                            
-                            <h3 class="font-semibold text-base mt-3">Plazo para la Resolución de Reclamos</h3>
-                            <p class="text-sm">Los reclamos presentados por los usuarios ante la empresa operadora serán resueltos en los siguientes plazos máximos:</p>
-                        
-                            <p class="text-sm">1. Hasta en tres (3) días hábiles, contados desde el día siguiente de su presentación ante la empresa operador en reclamos por:</p>
-
-                            <ul class="list-disc ml-8">
-                                <li class="text-sm">Calidad e idoneidad en la prestación del servicio.</li>
-                                <li class="text-sm">Falta del servicio público móvil y/o bloqueo del equipo terminal móvil, por uso prohibido del servicio en establecimientos penitenciarios.</li>
-                                <li class="text-sm">Falta de entrega del recibo o de la copia del recibo o de la facturación detallada solicitada por el usuario.</li>
-                                <li class="text-sm">Portabilidad numérica y la Negativa a brindar la facturación detallada o llamadas entrantes.</li>
-                                <li class="text-sm">Baja o suspensión del servicio no solicitada.</li>
-                            </ul>
-                        
-                            <p class="text-sm">2. Hasta en quince (15) días hábiles, contados desde el día siguiente de su presentación ante la empresa operadora, en reclamos por:</p>
-
-                            <ul class="list-disc ml-8">
-                                <li class="text-sm">Facturación cuyo monto reclamado sea de hasta 0.5% de la Unidad Impositiva Tributaria.</li>
-                                <li class="text-sm">Tarjetas de pago.</li>
-                                <li class="text-sm">Instalación o activación del servicio.</li>
-                                <li class="text-sm">Traslado del servicio.</li>
-                            </ul>
-                        
-                            <p class="text-sm">3. Hasta veinte (20) días hábiles, contados desde el día siguiente de su presentación ante la empresa operadora, en los demás casos.</p>
-
-                            <ul class="list-disc ml-8">
-                                <li class="text-sm">Incumplimiento de condiciones contractuales, ofertas y promociones</li>
-                                <li class="text-sm">Falta de ejecución de baja o suspensión del servicio</li>
-                                <li class="text-sm">Contratación no solicitada</li>
-                                <li class="text-sm">Migración</li>
-                                <li class="text-sm">Negativa a contratar el servicio</li>
-                                <li class="text-sm">Facturación y cobro cuyo monto reclamado sea de mayor a 0.5% de la Unidad Impositiva Tributaria</li>
-                            </ul>
-
-                            <p class="text-sm mt-3">Para las materias de reclamo que hayan sido previstas en otras normas, se aplica el plazo que haya sido señalado en las mismas, en caso contrario, se regirán por el plazo mayor que establece el presente Reglamento.</p>
-
-                        
+                            {!!$atencion->reclamo_one ?? 'Ingrese la descripcion' !!}
                         </div>
 
                     </form>

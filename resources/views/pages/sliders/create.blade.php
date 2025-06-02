@@ -92,17 +92,17 @@
                                             </span>
 
 
-                                             {{-- <div class="md:col-span-5">
+                                            <div class="md:col-span-5">
                                                 <label for="imagen2">Subir imagen (Vista movil: 735px192px)</label>
                                                 <div class="relative mb-2  mt-2">
                                                     <input name="imagen2" class="p-2.5 block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="user_avatar_help" id="user_avatar" type="file">
                                                 </div>
-                                            </div> --}}
-                                            {{-- <span class="text-red-400">
+                                            </div> 
+                                            <span class="text-red-400">
                                                 @error('imagen2')
                                                     {{$message}}
                                                 @enderror
-                                            </span> --}}
+                                            </span>
                                              
 
                                             <div class="md:col-span-5 text-right mt-6 flex justify-between">

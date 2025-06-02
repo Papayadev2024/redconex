@@ -668,6 +668,65 @@
                                                         </div>
                                                     </div>
 
+
+                                                    <div class="md:col-span-5">
+                                                        <label for="reclamo_header">Descripción Reclamo/Queja/Apelacion - Header</label>
+                                                        <div class="relative mb-2">
+                                                            <div
+                                                                class="absolute top-3 left-0 flex items-center pl-3 pointer-events-none">
+                                                                    <i class="w-6 text-gray-500 fas fa-edit"></i>
+                                                            </div>
+                                                            <textarea class="ckeditor" id="reclamo_header" name="reclamo_header">{{ $general->reclamo_header }}</textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="md:col-span-5">
+                                                        <label for="reclamo_footer">Descripción Reclamo/Queja/Apelacion - Footer</label>
+                                                        <div class="relative mb-2">
+                                                            <div
+                                                                class="absolute top-3 left-0 flex items-center pl-3 pointer-events-none">
+                                                                    <i class="w-6 text-gray-500 fas fa-edit"></i>
+                                                            </div>
+                                                            <textarea class="ckeditor" id="reclamo_footer" name="reclamo_footer">{{ $general->reclamo_footer }}</textarea>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="md:col-span-5">
+                                                        <label for="reclamo_one">Descripción Reclamo</label>
+                                                        <div class="relative mb-2">
+                                                            <div
+                                                                class="absolute top-3 left-0 flex items-center pl-3 pointer-events-none">
+                                                                    <i class="w-6 text-gray-500 fas fa-edit"></i>
+                                                            </div>
+                                                            <textarea class="ckeditor" id="reclamo_one" name="reclamo_one">{{ $general->reclamo_one }}</textarea>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="md:col-span-5">
+                                                        <label for="reclamo_two">Descripción Queja</label>
+                                                        <div class="relative mb-2">
+                                                            <div
+                                                                class="absolute top-3 left-0 flex items-center pl-3 pointer-events-none">
+                                                                    <i class="w-6 text-gray-500 fas fa-edit"></i>
+                                                            </div>
+                                                            <textarea class="ckeditor" id="reclamo_two" name="reclamo_two">{{ $general->reclamo_two }}</textarea>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="md:col-span-5">
+                                                        <label for="reclamo_tree">Descripción Apelacion</label>
+                                                        <div class="relative mb-2">
+                                                            <div
+                                                                class="absolute top-3 left-0 flex items-center pl-3 pointer-events-none">
+                                                                    <i class="w-6 text-gray-500 fas fa-edit"></i>
+                                                            </div>
+                                                            <textarea class="ckeditor" id="reclamo_tree" name="reclamo_tree">{{ $general->reclamo_tree }}</textarea>
+                                                        </div>
+                                                    </div>
+
                                                     {{-- <h2
                                                         class="md:col-span-5 text-lg font-semibold text-slate-800 mt-2 dark:text-white">
                                                         Descripción de la empresa</h2>
@@ -753,23 +812,95 @@
 
     </div>
 
+    <script src="/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('reclamo_header', {
+            toolbar: [
+                { name: 'document', items: ['Source'] }, // Código fuente
+                { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', '-', 'Undo', 'Redo'] },
+                { name: 'styles', items: ['Styles', 'Format', 'FontSize'] }, // Tamaño y fuente
+                { name: 'colors', items: ['TextColor', 'BGColor'] }, // Color de texto y fondo
+                { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat'] },
+                { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Blockquote'] },
+                { name: 'insert', items: ['Table', 'HorizontalRule'] },
+                { name: 'links', items: ['Link', 'Unlink'] },
+                { name: 'tools', items: ['Maximize'] } // Maximizar
+            ],
+            extraPlugins: 'colorbutton,font', // Activa plugins para color y fuentes
+            removePlugins: 'elementspath', // Elimina la ruta de elementos
+            resize_enabled: true // Permite redimensionar el editor
+        });
+
+        CKEDITOR.replace('reclamo_footer', {
+            toolbar: [
+                { name: 'document', items: ['Source'] }, // Código fuente
+                { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', '-', 'Undo', 'Redo'] },
+                { name: 'styles', items: ['Styles', 'Format', 'FontSize'] }, // Tamaño y fuente
+                { name: 'colors', items: ['TextColor', 'BGColor'] }, // Color de texto y fondo
+                { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat'] },
+                { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Blockquote'] },
+                { name: 'insert', items: ['Table', 'HorizontalRule'] },
+                { name: 'links', items: ['Link', 'Unlink'] },
+                { name: 'tools', items: ['Maximize'] } // Maximizar
+            ],
+            extraPlugins: 'colorbutton,font', // Activa plugins para color y fuentes
+            removePlugins: 'elementspath', // Elimina la ruta de elementos
+            resize_enabled: true // Permite redimensionar el editor
+        });
+
+        CKEDITOR.replace('reclamo_one', {
+            toolbar: [
+                { name: 'document', items: ['Source'] }, // Código fuente
+                { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', '-', 'Undo', 'Redo'] },
+                { name: 'styles', items: ['Styles', 'Format', 'FontSize'] }, // Tamaño y fuente
+                { name: 'colors', items: ['TextColor', 'BGColor'] }, // Color de texto y fondo
+                { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat'] },
+                { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Blockquote'] },
+                { name: 'insert', items: ['Table', 'HorizontalRule'] },
+                { name: 'links', items: ['Link', 'Unlink'] },
+                { name: 'tools', items: ['Maximize'] } // Maximizar
+            ],
+            extraPlugins: 'colorbutton,font', // Activa plugins para color y fuentes
+            removePlugins: 'elementspath', // Elimina la ruta de elementos
+            resize_enabled: true // Permite redimensionar el editor
+        });
+
+        CKEDITOR.replace('reclamo_two', {
+            toolbar: [
+                { name: 'document', items: ['Source'] }, // Código fuente
+                { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', '-', 'Undo', 'Redo'] },
+                { name: 'styles', items: ['Styles', 'Format', 'FontSize'] }, // Tamaño y fuente
+                { name: 'colors', items: ['TextColor', 'BGColor'] }, // Color de texto y fondo
+                { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat'] },
+                { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Blockquote'] },
+                { name: 'insert', items: ['Table', 'HorizontalRule'] },
+                { name: 'links', items: ['Link', 'Unlink'] },
+                { name: 'tools', items: ['Maximize'] } // Maximizar
+            ],
+            extraPlugins: 'colorbutton,font', // Activa plugins para color y fuentes
+            removePlugins: 'elementspath', // Elimina la ruta de elementos
+            resize_enabled: true // Permite redimensionar el editor
+        });
+
+        CKEDITOR.replace('reclamo_tree', {
+            toolbar: [
+                { name: 'document', items: ['Source'] }, // Código fuente
+                { name: 'clipboard', items: ['Cut', 'Copy', 'Paste', '-', 'Undo', 'Redo'] },
+                { name: 'styles', items: ['Styles', 'Format', 'FontSize'] }, // Tamaño y fuente
+                { name: 'colors', items: ['TextColor', 'BGColor'] }, // Color de texto y fondo
+                { name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', '-', 'RemoveFormat'] },
+                { name: 'paragraph', items: ['NumberedList', 'BulletedList', '-', 'Blockquote'] },
+                { name: 'insert', items: ['Table', 'HorizontalRule'] },
+                { name: 'links', items: ['Link', 'Unlink'] },
+                { name: 'tools', items: ['Maximize'] } // Maximizar
+            ],
+            extraPlugins: 'colorbutton,font', // Activa plugins para color y fuentes
+            removePlugins: 'elementspath', // Elimina la ruta de elementos
+            resize_enabled: true // Permite redimensionar el editor
+        });
+    </script>
     <script>
         $('document').ready(function() {
-
-            tinymce.init({
-                selector: 'textarea#description',
-                height: 500,
-                plugins: [
-                    'advlist', 'autolink', 'lists', 'link', 'charmap', 'preview',
-                    'searchreplace', 'visualblocks', 'code', 'fullscreen',
-                    'insertdatetime', 'table'
-                ],
-                toolbar: 'undo redo | blocks | ' +
-                    'bold italic backcolor | alignleft aligncenter ' +
-                    'alignright alignjustify | bullist numlist outdent indent | ' +
-                    'removeformat | help',
-                content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px;}'
-            });
             // Función para mostrar la alerta de confirmación antes de enviar el formulario
             function confirmarActualizacion() {
                 Swal.fire({

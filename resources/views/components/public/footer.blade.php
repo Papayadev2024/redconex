@@ -38,7 +38,7 @@
                     <a class="cursor-pointer" id="linkTerminos">Términos y Condiciones</a>
                     <a class="cursor-pointer" id="linkreclamo">Atención de Reclamos y
                         Solicitudes en Línea</a>
-                    <a href="{{ route('librodereclamaciones') }}"><img class="w-24"
+                    <a href="{{ route('atencionreclamo') }}"><img class="w-24"
                         src="{{ asset('images/img/reclamaciones.png') }}" />
                     </a>
                 </div>

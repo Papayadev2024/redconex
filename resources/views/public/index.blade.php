@@ -96,6 +96,20 @@
         }
     </style>
 
+    @foreach ($slider as $index => $slide)
+    <style>
+        .custom-slide-bg-{{ $index }} {
+            background-image: url('{{ asset($slide->url_image2 . $slide->name_image2) }}');
+        }
+
+        @media (min-width: 768px) {
+            .custom-slide-bg-{{ $index }} {
+                background-image: url('{{ asset($slide->url_image . $slide->name_image) }}');
+            }
+        }
+    </style>
+    @endforeach
+
 @stop
 
 
@@ -108,7 +122,8 @@
                 <div class="swiper-wrapper">
                     @foreach ($slider as $slide)    
                         <div class="swiper-slide">
-                            <section class="bg-center h-svh bg-cover flex flex-col justify-center relative" style="background-image: url({{asset($slide->url_image . $slide->name_image)}})">
+                            <section class="bg-center h-[65svh] md:h-[80svh] bg-cover flex flex-col justify-center relative 
+                                            custom-slide-bg-{{ $loop->index }}">
                                 
                                     {{-- <img class="opacity-40 object-cover absolute top-0 h-full w-full" src="{{asset('images/img/texturaconex.png')}}" /> --}}
                                     <div class="flex flex-col lg:flex-row px-[5%] py-[5%] lg:px-[10%] pt-20 gap-5 justify-center items-start lg:items-end">
