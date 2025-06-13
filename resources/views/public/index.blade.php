@@ -437,14 +437,14 @@
                         </div>   
                     </div>
 
-                    <div class="w-full lg:w-1/2">
+                    <div class="w-full lg:w-1/2 lg:pl-[10%]">
                         <div>
                             <div class="swiper testimonios h-[500px]" data-aos="fade-down">
                                 <div class="swiper-wrapper ">   
                                     @foreach ($testimonie as $testimonio)
                                         <div class="swiper-slide">
                                             <div class="flex flex-col justify-center">
-                                                <div class="relative max-w-md mx-auto  xl:ml-auto mt-6 lg:mt-12">
+                                                <div class="relative max-w-md mx-auto xl:ml-auto mt-6 lg:mt-12 flex flex-row items-center justify-center">
                                                     
                                                     @if ($testimonio->email)
                                                         
@@ -457,17 +457,16 @@
                                                                 <iframe class="youtube-video w-full h-full hidden" width="100%" height="100%" src="https://www.youtube.com/embed/{{ $testimonio->email }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                                                 
                                                         </div>
-                                                        <div class="bg-[#21149E] p-4 rounded-2xl max-w-[300px] md:max-w-[370px] absolute -bottom-12 left-5 -right-14 md:-right-1/2">
-                                                                {{-- <p class="font-gotham_book text-white text-base line-clamp-[7]">{{$testimonio->testimonie}}</p> --}}
-                                                                <h3 class="font-gotham_bold text-white text-base text-right mt-1">{{$testimonio->name}}</h3>
+                                                        <div class="bg-[#21149E] p-4 rounded-2xl max-w-[300px] md:max-w-[370px] absolute -bottom-12 ">
+                                                                <h3 class="font-gotham_bold text-white text-base mt-1 w-auto">{{$testimonio->name}}</h3>
                                                         </div>
-                                                        
+                                                        {{-- left-5 -right-14 md:-right-1/2 --}}
                                                     @else
                                                         <div>
                                                             <img class="rounded-3xl overflow-hidden h-[400px] w-72 object-cover " src="{{asset($testimonio->ocupation)}}" onerror="this.onerror=null;this.src='{{ asset('images/img/noimagen.jpg') }}';" />
-                                                            <div class="bg-[#21149E] p-4 rounded-2xl max-w-[300px] md:max-w-[370px] absolute -bottom-12 left-5 -right-14 md:-right-1/2">
-                                                                <p class="font-gotham_book text-white text-base line-clamp-[7]">{{$testimonio->testimonie}}</p>
-                                                                <h3 class="font-gotham_bold text-white text-base text-right mt-1">{{$testimonio->name}}</h3>
+                                                            <div class="bg-[#21149E] p-4 rounded-2xl max-w-[300px] md:max-w-[370px] absolute -bottom-12 -ml-5 -mr-5">
+                                                                <p class="font-gotham_book text-white text-base line-clamp-[7]">{{$testimonio->testimonie}}font-gotham_book text-white text-base line-clamp-[7]</p>
+                                                                <h3 class="font-gotham_bold text-white text-base  mt-1">{{$testimonio->name}}</h3>
                                                             </div>
                                                         </div>
                                                     @endif
@@ -477,6 +476,8 @@
                                         </div>
                                     @endforeach
                                 </div>
+                                <div class="swiper-testimonios-prev absolute top-1/2 -translate-y-1/2  left-2 z-50 bg-white rounded-full"><i class="fa-solid fa-circle-chevron-left text-5xl text-[#21149E]"></i></div>
+                                <div class="swiper-testimonios-next absolute top-1/2 -translate-y-1/2  right-2 z-50 bg-white rounded-full"><i class="fa-solid fa-circle-chevron-right text-5xl text-[#21149E]"></i></div>
                             </div>
                         </div>
                     </div>
@@ -1146,13 +1147,18 @@
                     iframe.setAttribute('src', src + (src.includes('?') ? '&autoplay=1' : '?autoplay=1'));
                 });
             });
-
+            
             // Inicializar Swiper
             const swiper = new Swiper(".testimonios", {
                 slidesPerView: 1,
                 spaceBetween: 15,
                 loop: true,
                 centeredSlides: false,
+                navigation: {
+                    nextEl: ".swiper-testimonios-next",
+                    prevEl: ".swiper-testimonios-prev",
+                },
+               
                 on: {
                     slideChange: function () {
                         pauseVideos();
